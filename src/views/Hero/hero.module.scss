@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.heroMainContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/dark-waves.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+
+  @media screen and (max-width: $large-tablet) {
+    background-image: url('../../assets/images/dark-waves-mobile.jpg');
+  }
+}

@@ -1,0 +1,100 @@
+@import '../../styles/variables.scss';
+
+@mixin nav-item-styles {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: $roboto-mono;
+  gap: 10px;
+  margin: 30px 0px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+
+  .menuIcon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: none;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    z-index: 999;
+
+    &:active {
+      opacity: 0.2;
+      transition: all ease 0.3s;
+    }
+
+    @media screen and (max-width: $large-tablet) {
+      display: block;
+    }
+  }
+
+  .childrenContainer {
+    width: calc(100% - 50px);
+    max-height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    z-index: 99;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #212121;
+      border-radius: 4px;
+    }
+
+    @media screen and (max-width: $large-tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.navBar {
+  z-index: 100;
+  @media screen and (max-width: $large-tablet) {
+    display: none;
+  }
+}
+
+.drawer {
+  width: 100px;
+  z-index: 99;
+
+  .navItemButton {
+    @include nav-item-styles;
+    color: $white-2;
+  }
+
+  .navItemButtonActive {
+    @include nav-item-styles;
+    color: $primary;
+  }
+
+  .linksContainer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 20px;
+    margin-top: 100px;
+  }
+}
