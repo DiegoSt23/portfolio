@@ -1,7 +1,10 @@
-import { Button } from 'diego-react-delta-ui';
+import { BrowserRouter } from 'react-router-dom';
+import { Main } from './layouts';
 
 const App = () => (
-  <Button>testing</Button>
-)
+  <BrowserRouter>
+    <Main />
+  </BrowserRouter>
+);
 
 export default App
