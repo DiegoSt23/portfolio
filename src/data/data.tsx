@@ -1,4 +1,3 @@
-import React, { CSSProperties } from 'react';
 import {
   SiTypescript,
   SiReact,
@@ -11,20 +10,13 @@ import {
   SiCypress,
   SiVuedotjs,
   SiStripe,
-  SiAntdesign,
-  SiTailwindcss,
-  SiBootstrap,
-  SiRedux,
 } from 'react-icons/si';
-import { FaSass } from 'react-icons/fa';
 import space from '../assets/images/space.jpeg';
 import metal from '../assets/images/metal.jpeg';
 import github from '../assets/images/github.jpeg';
 import todo from '../assets/images/todo.jpeg';
-import weather from '../assets/images/weather.jpeg';
 import pokemon from '../assets/images/pokemon.png';
 import countdown from '../assets/images/countdown.jpeg';
-import trivia from '../assets/images/trivia.png';
 
 const statsData = [
   {
