@@ -40,7 +40,7 @@ export const Main = () => {
   const handleDisplayDrawer = () => setIsOpen(!isOpen);
 
   const handleNavigate = (path: string) => {
-    navigate(`#${path}`);
+    navigate(`${path}`);
   };
 
   const handleIsActive = (path: string) => hash.includes(path);
@@ -49,49 +49,49 @@ export const Main = () => {
     {
       name: 'Home',
       icon: <RiHomeLine size={20} />,
-      onClick: () => handleNavigate('home'),
-      isActive: handleIsActive('home'),
+      onClick: () => handleNavigate('#home'),
+      isActive: !hash ? true : handleIsActive('home'),
     },
     {
       name: 'About',
       icon: <BsFillPersonFill size={20} />,
-      onClick: () => handleNavigate('about'),
+      onClick: () => handleNavigate('#about'),
       isActive: handleIsActive('about'),
     },
     {
       name: 'Hard Skills',
       icon: <AiOutlineCode size={20} />,
-      onClick: () => handleNavigate('hard-skills'),
+      onClick: () => handleNavigate('#hard-skills'),
       isActive: handleIsActive('hard-skills'),
     },
     {
       name: 'Soft Skills',
       icon: <BsFillPeopleFill size={20} />,
-      onClick: () => handleNavigate('soft-skills'),
+      onClick: () => handleNavigate('#soft-skills'),
       isActive: handleIsActive('soft-skills'),
     },
     {
       name: 'Stats',
       icon: <IoIosStats size={20} />,
-      onClick: () => handleNavigate('stats'),
+      onClick: () => handleNavigate('#stats'),
       isActive: handleIsActive('stats'),
     },
     {
       name: 'Projects',
       icon: <BsFillGridFill size={20} />,
-      onClick: () => handleNavigate('projects'),
+      onClick: () => handleNavigate('#projects'),
       isActive: handleIsActive('projects'),
     },
     {
-      name: 'GitHub',
+      name: 'GitHub Heatmap',
       icon: <AiFillGithub size={20} />,
-      onClick: () => handleNavigate('github'),
+      onClick: () => handleNavigate('#github'),
       isActive: handleIsActive('github'),
     },
     {
       name: 'Contact',
       icon: <BiMessageSquareDetail size={20} />,
-      onClick: () => handleNavigate('contact'),
+      onClick: () => handleNavigate('#contact'),
       isActive: handleIsActive('contact'),
     },
   ];

@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.githubMainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 200px;
+  transition: all ease 0.3s;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media screen and (max-width: $large-tablet) {
+    height: auto;
+    padding: 130px 30px 30px 30px;
+    gap: 60px;
+  }
+
+  @media screen and (max-width: $phone) {
+    padding: 130px 20px 20px 20px;
+  }
+
+  .text {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+    @media screen and (max-width: $large-tablet) {
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}

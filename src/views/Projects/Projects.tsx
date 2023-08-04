@@ -59,6 +59,11 @@ export const Projects = () => {
               alt={selectedData?.name}
               className={styles.img}
             />
+            {selectedData?.isNew && (
+              <div className={styles.chip}>
+                <Chip color="purple">New</Chip>
+              </div>
+            )}
           </div>
           <div className={styles.infoContainer}>
             <div>
