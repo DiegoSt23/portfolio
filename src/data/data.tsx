@@ -11,6 +11,8 @@ import {
   SiVuedotjs,
   SiStripe,
 } from 'react-icons/si';
+import spotify from '../assets/images/spotify.png';
+import delta from '../assets/images/delta-ui.png';
 import space from '../assets/images/space.jpeg';
 import metal from '../assets/images/metal.jpeg';
 import github from '../assets/images/github.jpeg';
@@ -32,7 +34,7 @@ const statsData = [
   {
     title: 'HTML',
     Icon: <SiHtml5 size={20} color='#fff' />,
-    percent: 85,
+    percent: 80,
   },
   {
     title: 'CSS',
@@ -40,20 +42,16 @@ const statsData = [
     percent: 80,
   },
   {
-    title: 'Cypress',
-    Icon: <SiCypress size={20} color='#fff' />,
-    percent: 10,
-  },
-  {
-    title: 'TypeScript',
-    Icon: <SiTypescript size={20} color='#fff' />,
-    percent: 70,
-  },
-  {
     title: 'React Native',
     Icon: <SiReact size={20} color='#fff' />,
     percent: 60,
   },
+  {
+    title: 'TypeScript',
+    Icon: <SiTypescript size={20} color='#fff' />,
+    percent: 75,
+  },
+
   {
     title: 'GitHub',
     Icon: <SiGithub size={20} color='#fff' />,
@@ -62,17 +60,22 @@ const statsData = [
   {
     title: 'Next',
     Icon: <SiNextdotjs size={20} color='#fff' />,
-    percent: 50,
+    percent: 60,
   },
   {
     title: 'Jest',
     Icon: <SiJest size={20} color='#fff' />,
+    percent: 50,
+  },
+  {
+    title: 'Cypress',
+    Icon: <SiCypress size={20} color='#fff' />,
     percent: 30,
   },
   {
     title: 'Vue',
     Icon: <SiVuedotjs size={20} color='#fff' />,
-    percent: 20,
+    percent: 40,
   },
   {
     title: 'Stripe',
@@ -83,7 +86,7 @@ const statsData = [
 
 const projectsData = [
   {
-    imageUrl: space,
+    imageUrl: spotify,
     projectUrl: '',
     repoUrl: '',
     name: 'Spotify',
@@ -94,8 +97,9 @@ const projectsData = [
     releaseDate: 'NA',
   },
   {
-    imageUrl: space,
-    projectUrl: '',
+    imageUrl: delta,
+    projectUrl:
+      'https://64c82a77442a234e83128ff8-bheesekwfv.chromatic.com/?path=/story/deltaui-textarea--error',
     repoUrl: 'https://github.com/DiegoSt23/delta-ui',
     name: 'Delta UI',
     description:
@@ -148,17 +152,6 @@ const projectsData = [
     isNew: false,
     releaseDate: 'Dec 9, 2021',
   },
-  // {
-  //   imageUrl: weather,
-  //   projectUrl: 'https://weather-app-nine-coral.vercel.app/',
-  //   repoUrl: 'https://github.com/DiegoSt23/Weather-Pro',
-  //   name: 'Weather App',
-  //   description:
-  //     'Made with the Open Weather Map API, you can check the current weather or the 7 day forecast in any city of the world.',
-  //   id: 5,
-  //   isNew: false,
-  //   releaseDate: 'Dec 25, 2021',
-  // },
   {
     imageUrl: pokemon,
     projectUrl: 'https://pokedex-app-diego.vercel.app/',
@@ -181,16 +174,6 @@ const projectsData = [
     isNew: false,
     releaseDate: 'Dec 6, 2021',
   },
-  // {
-  //   imageUrl: trivia,
-  //   projectUrl: 'https://trivia-livid.vercel.app/',
-  //   repoUrl: 'https://github.com/DiegoSt23/Trivia',
-  //   name: 'Trivia',
-  //   description: 'A trivia to test your knowledge about different topics.',
-  //   id: 8,
-  //   isNew: false,
-  //   releaseDate: 'Jun 18, 2021',
-  // },
 ];
 
 // const hardSkillsData = [

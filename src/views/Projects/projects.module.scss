@@ -47,6 +47,12 @@
 
     @media screen and (max-width: $phone) {
       width: 100%;
+      padding: 20px 0px;
+
+      &:active {
+        opacity: 0.6;
+        transition: all ease 0.2s;
+      }
     }
 
     .img {
@@ -70,6 +76,10 @@
       transition: all ease 0.2s;
       opacity: 0;
       border: solid 1px $gray-border;
+
+      @media screen and (max-width: $phone) {
+        margin: 15px 0px;
+      }
     }
 
     .chip {
@@ -81,6 +91,10 @@
     &:hover {
       transform: scale(1.1);
       transition: all ease 0.2s;
+
+      @media screen and (max-width: $phone) {
+        transform: scale(1);
+      }
     }
 
     &:hover .overlay {
@@ -88,6 +102,10 @@
       opacity: 1;
       transition: 0.2s;
       color: $white-2;
+
+      @media screen and (max-width: $phone) {
+        display: none;
+      }
     }
   }
 }
@@ -109,6 +127,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       @media screen and (max-width: $large-tablet) {
         width: 100%;
@@ -117,6 +136,12 @@
       .img {
         width: 100%;
         border-radius: 10px;
+      }
+
+      .chip {
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
 

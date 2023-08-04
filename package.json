@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "diego-react-delta-ui": "0.0.4",
     "formik": "^2.4.2",
+    "framer-motion": "^10.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-github-calendar": "^4.0.1",
     "react-icons": "^4.10.1",
+    "react-intersection-observer": "^9.5.2",
     "react-parallax": "^3.5.1",
     "react-router-dom": "^6.14.2",
     "yup": "^1.2.0"
