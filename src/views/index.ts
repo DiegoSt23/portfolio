@@ -1,6 +1,7 @@
 export * from './Hero';
 export * from './About';
 export * from './HardSkills';
+export * from './Technologies';
 export * from './SoftSkills';
 export * from './Stats';
 export * from './Projects';

@@ -10,6 +10,7 @@ import {
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail, BiLogoFacebook } from 'react-icons/bi';
 import { IoIosStats } from 'react-icons/io';
+import { GoStack } from 'react-icons/go';
 import {
   BsFillPersonFill,
   BsFillPeopleFill,
@@ -22,6 +23,7 @@ import {
   Hero,
   About,
   HardSkills,
+  Technologies,
   SoftSkills,
   Stats,
   Projects,
@@ -60,9 +62,15 @@ export const Main = () => {
     },
     {
       name: 'Hard Skills',
-      icon: <AiOutlineCode size={20} />,
+      icon: <GoStack size={20} />,
       onClick: () => handleNavigate('#hard-skills'),
       isActive: handleIsActive('hard-skills'),
+    },
+    {
+      name: 'Technologies',
+      icon: <AiOutlineCode size={20} />,
+      onClick: () => handleNavigate('#technologies'),
+      isActive: handleIsActive('technologies'),
     },
     {
       name: 'Soft Skills',
@@ -121,6 +129,7 @@ export const Main = () => {
         <Hero />
         <About />
         <HardSkills />
+        <Technologies />
         <SoftSkills />
         <Stats />
         <Projects />
