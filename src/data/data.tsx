@@ -9,8 +9,27 @@ import {
   SiJest,
   SiCypress,
   SiVuedotjs,
+  SiMui,
+  SiAntdesign,
+  SiTailwindcss,
+  SiBootstrap,
+  SiRedux,
+  SiAxios,
+  SiGatsby,
+  SiAstro,
+  SiStrapi,
+  SiHandlebarsdotjs,
+  SiGit,
   SiStripe,
+  SiJira,
+  SiTestinglibrary,
+  SiFramer,
+  SiShopify,
+  SiFirebase,
 } from 'react-icons/si';
+import {
+  FaSass
+} from 'react-icons/fa';
 import spotify from '../assets/images/spotify.png';
 import delta from '../assets/images/delta-ui.png';
 import space from '../assets/images/space.jpeg';
@@ -70,12 +89,12 @@ const statsData = [
   {
     title: 'Cypress',
     Icon: <SiCypress size={20} color='#fff' />,
-    percent: 30,
+    percent: 35,
   },
   {
     title: 'Vue',
     Icon: <SiVuedotjs size={20} color='#fff' />,
-    percent: 40,
+    percent: 35,
   },
   {
     title: 'Stripe',
@@ -176,87 +195,127 @@ const projectsData = [
   },
 ];
 
-// const hardSkillsData = [
-//   {
-//     name: 'React',
-//     Icon: <SiReact size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Typescript',
-//     Icon: <SiTypescript size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Javascript',
-//     Icon: <SiJavascript size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Vue',
-//     Icon: <SiVuedotjs size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'React Native',
-//     Icon: <SiReact size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Jest',
-//     Icon: <SiJest size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Cypress',
-//     Icon: <SiCypress size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'CSS',
-//     Icon: <SiCss3 size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'SASS',
-//     Icon: <FaSass size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'HTML',
-//     Icon: <SiHtml5 size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'MUI',
-//     Icon: <SiMaterialui size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Ant Design',
-//     Icon: <SiAntdesign size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Tailwind',
-//     Icon: <SiTailwindcss size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Bootstrap',
-//     Icon: <SiBootstrap size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Next',
-//     Icon: <SiNextdotjs size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Redux',
-//     Icon: <SiRedux size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'Next UI',
-//     Icon: <SiNextdotjs size={20} color='#8b8b8b' />,
-//   },
-//   // {
-//   //   name: 'Axios',
-//   //   Icon: <SiAxios size={20} color='#8b8b8b' />,
-//   // },
-//   {
-//     name: 'Formik',
-//     Icon: <SiTypescript size={20} color='#8b8b8b' />,
-//   },
-//   {
-//     name: 'GitHub',
-//     Icon: <SiGithub size={20} color='#8b8b8b' />,
-//   },
-// ];
+const technologiesData = [
+  {
+    name: 'React',
+    Icon: <SiReact size={35} color='#fff' />,
+  },
+  {
+    name: 'Typescript',
+    Icon: <SiTypescript size={35} color='#fff' />,
+  },
+  {
+    name: 'Javascript',
+    Icon: <SiJavascript size={35} color='#fff' />,
+  },
+  {
+    name: 'Vue',
+    Icon: <SiVuedotjs size={35} color='#fff' />,
+  },
+  {
+    name: 'React Native',
+    Icon: <SiReact size={35} color='#fff' />,
+  },
+  {
+    name: 'Jest',
+    Icon: <SiJest size={35} color='#fff' />,
+  },
+  {
+    name: 'React Testing Library',
+    Icon: <SiTestinglibrary size={35} color='#fff' />,
+  },
+  {
+    name: 'Cypress',
+    Icon: <SiCypress size={35} color='#fff' />,
+  },
+  {
+    name: 'CSS',
+    Icon: <SiCss3 size={35} color='#fff' />,
+  },
+  {
+    name: 'SASS',
+    Icon: <FaSass size={35} color='#fff' />,
+  },
+  {
+    name: 'HTML',
+    Icon: <SiHtml5 size={35} color='#fff' />,
+  },
+  {
+    name: 'MUI',
+    Icon: <SiMui size={35} color='#fff' />,
+  },
+  {
+    name: 'Ant Design',
+    Icon: <SiAntdesign size={35} color='#fff' />,
+  },
+  {
+    name: 'Tailwind',
+    Icon: <SiTailwindcss size={35} color='#fff' />,
+  },
+  {
+    name: 'Bootstrap',
+    Icon: <SiBootstrap size={35} color='#fff' />,
+  },
+  {
+    name: 'Next UI',
+    Icon: <SiNextdotjs size={35} color='#fff' />,
+  },
+  {
+    name: 'Handlebars',
+    Icon: <SiHandlebarsdotjs size={35} color='#fff' />,
+  },
+  {
+    name: 'Next',
+    Icon: <SiNextdotjs size={35} color='#fff' />,
+  },
+  {
+    name: 'Gatsby',
+    Icon: <SiGatsby size={35} color='#fff' />,
+  },
+  {
+    name: 'Astro',
+    Icon: <SiAstro size={35} color='#fff' />,
+  },
+  {
+    name: 'Redux',
+    Icon: <SiRedux size={35} color='#fff' />,
+  },
+  {
+    name: 'Axios',
+    Icon: <SiAxios size={35} color='#fff' />,
+  },
+  {
+    name: 'Framer Motion',
+    Icon: <SiFramer size={35} color='#fff' />,
+  },
+  {
+    name: 'Stripe',
+    Icon: <SiStripe size={35} color='#fff' />,
+  },
+  {
+    name: 'Git',
+    Icon: <SiGit size={35} color='#fff' />,
+  },
+  {
+    name: 'GitHub',
+    Icon: <SiGithub size={35} color='#fff' />,
+  },
+  {
+    name: 'Shopify',
+    Icon: <SiShopify size={35} color='#fff' />,
+  },
+  {
+    name: 'Firebase',
+    Icon: <SiFirebase size={35} color='#fff' />,
+  },
+  {
+    name: 'Strapi',
+    Icon: <SiStrapi size={35} color='#fff' />,
+  },
+  {
+    name: 'Jira',
+    Icon: <SiJira size={35} color='#fff' />,
+  },
+];
 
-export { statsData, projectsData };
+export { statsData, projectsData, technologiesData };
