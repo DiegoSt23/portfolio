@@ -4,7 +4,7 @@ import { ViewLayout } from '../../components';
 import styles from './github.module.scss';
 
 export const GitHub = () => (
-  <ViewLayout id='github' title='GitHub Heatmap'>
+  <ViewLayout id='github' title='GitHub'>
     <div className={styles.githubMainContainer}>
       <Typography type='paragraph' className={styles.title}>
         2022

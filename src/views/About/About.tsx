@@ -6,6 +6,9 @@ import styles from './about.module.scss';
 export const About = () => (
   <ViewLayout id='about' title='About'>
     <div className={styles.aboutMainContainer}>
+      <div className={styles.imgContainer}>
+        <img src={img} alt='diego' className={styles.img} />
+      </div>
       <div className={styles.infoContainer}>
         <Typography type='heading2' className={styles.title}>
           Hey, I'm Diego
@@ -23,9 +26,9 @@ export const About = () => (
           applications I take pride in delivering high-quality code that not
           only meets project requirements but also adheres to best coding
           practices and standards. I'm committed to staying up-to-date with the
-          latest trends and best practices in web and mobile development, ensuring that I
-          deliver cutting-edge solutions that meet the evolving needs of the
-          industry.
+          latest trends and best practices in web and mobile development,
+          ensuring that I deliver cutting-edge solutions that meet the evolving
+          needs of the industry.
         </Typography>
         <br />
         <Typography className={styles.text} type='paragraph2'>
@@ -40,9 +43,6 @@ export const About = () => (
           exceptional results and contributing to the success of any team I work
           with.
         </Typography>
-      </div>
-      <div className={styles.imgContainer}>
-        <img src={img} alt='diego' className={styles.img} />
       </div>
     </div>
   </ViewLayout>

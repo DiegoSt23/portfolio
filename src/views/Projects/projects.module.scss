@@ -11,17 +11,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
+  padding: 120px 150px 100px 150px;
   transition: all ease 0.3s;
   flex-wrap: wrap;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 130px 30px 30px 30px;
+    padding: 100px 30px 30px 30px;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 130px 20px 20px 20px;
+    padding: 100px 20px 20px 20px;
   }
 
   .projectContainer {
@@ -36,10 +36,6 @@
     transition: all ease 0.2s;
     cursor: pointer;
     position: relative;
-
-    @media screen and (max-width: $small-desktop) {
-      width: 33.333%;
-    }
 
     @media screen and (max-width: $large-tablet) {
       width: 50%;

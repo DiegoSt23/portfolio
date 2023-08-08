@@ -1,5 +1,5 @@
 import { useState, useEffect, ReactNode } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
   AiOutlineCode,
@@ -10,7 +10,7 @@ import {
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail, BiLogoFacebook } from 'react-icons/bi';
-import { IoIosStats } from 'react-icons/io';
+// import { IoIosStats } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
   BsFillPersonFill,
@@ -26,7 +26,7 @@ import {
   HardSkills,
   Technologies,
   SoftSkills,
-  Stats,
+  // Stats,
   Projects,
   GitHub,
   Contact,
@@ -49,7 +49,6 @@ const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
 
 export const Main = () => {
   const { hash } = useLocation();
-  const navigate = useNavigate();
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const isMobile = width < 900;
@@ -63,7 +62,7 @@ export const Main = () => {
       name: 'Home',
       icon: <RiHomeLine size={20} />,
       isActive: !hash ? true : handleIsActive('home'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#home' />
       ),
     },
@@ -71,7 +70,7 @@ export const Main = () => {
       name: 'About',
       icon: <BsFillPersonFill size={20} />,
       isActive: handleIsActive('about'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#about' />
       ),
     },
@@ -79,7 +78,7 @@ export const Main = () => {
       name: 'Hard Skills',
       icon: <GoStack size={20} />,
       isActive: handleIsActive('hard-skills'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#hard-skills' />
       ),
     },
@@ -87,7 +86,7 @@ export const Main = () => {
       name: 'Technologies',
       icon: <AiOutlineCode size={20} />,
       isActive: handleIsActive('technologies'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#technologies' />
       ),
     },
@@ -95,31 +94,31 @@ export const Main = () => {
       name: 'Soft Skills',
       icon: <BsFillPeopleFill size={20} />,
       isActive: handleIsActive('soft-skills'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#soft-skills' />
       ),
     },
-    {
-      name: 'Stats',
-      icon: <IoIosStats size={20} />,
-      isActive: handleIsActive('stats'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
-        <NavBarItem icon={icon} isActive={isActive} path='#stats' />
-      ),
-    },
+    // {
+    //   name: 'Stats',
+    //   icon: <IoIosStats size={20} />,
+    //   isActive: handleIsActive('stats'),
+    //   render: (name: string, icon: ReactNode, isActive: boolean) => (
+    //     <NavBarItem icon={icon} isActive={isActive} path='#stats' />
+    //   ),
+    // },
     {
       name: 'Projects',
       icon: <BsFillGridFill size={20} />,
       isActive: handleIsActive('projects'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#projects' />
       ),
     },
     {
-      name: 'GitHub Heatmap',
+      name: 'GitHub',
       icon: <AiFillGithub size={20} />,
       isActive: handleIsActive('github'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#github' />
       ),
     },
@@ -127,7 +126,7 @@ export const Main = () => {
       name: 'Contact',
       icon: <BiMessageSquareDetail size={20} />,
       isActive: handleIsActive('contact'),
-      render: (name: string, icon: ReactNode, isActive: boolean) => (
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#contact' />
       ),
     },
@@ -138,7 +137,7 @@ export const Main = () => {
     '#hard-skills',
     '#technologies',
     '#soft-skills',
-    '#stats',
+    // '#stats',
     '#projects',
     '#github',
     '#contact',
@@ -170,7 +169,7 @@ export const Main = () => {
         <HardSkills />
         <Technologies />
         <SoftSkills />
-        <Stats />
+        {/* <Stats /> */}
         <Projects />
         <GitHub />
         <Contact />
