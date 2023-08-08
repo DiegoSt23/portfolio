@@ -111,7 +111,7 @@ export const Contact = () => {
                 <Typography>+52 55 40 76 24 69</Typography>
                 <button
                   className={styles.iconContainer}
-                  onClick={() => handleCopy('+52 55 40 76 24 69')}
+                  onClick={() => handleCopy('525540762469')}
                 >
                   <FiCopy size={20} color='#31dab5' />
                 </button>

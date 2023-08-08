@@ -26,7 +26,12 @@ export const Technologies = () => {
                 className={styles.techContainer}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+                transition={{
+                  delay: index * 0.2,
+                  duration: 0.5,
+                  type: 'spring',
+                  bounce: 0.5,
+                }}
               >
                 <Tooltip tooltipContent={tech.name}>{tech.Icon}</Tooltip>
               </motion.div>

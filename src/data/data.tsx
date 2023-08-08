@@ -109,10 +109,9 @@ const projectsData = [
     projectUrl: '',
     repoUrl: '',
     name: 'Spotify',
-    description:
-      'A Frontendmentor.io challenge made with React, a multipage web app about space tourism, destinations, the team and their technologies.',
+    description: 'My own version of Spotify with the Spotify API, created with Delta UI. Still under development.',
     id: 1,
-    isNew: true,
+    status: 'In Progress',
     releaseDate: 'NA',
   },
   {
@@ -124,7 +123,7 @@ const projectsData = [
     description:
       'A lightweight and minimalistic React components library designed to provide a seamless user experience. It offers a curated set of reusable and customizable components that can easily be integrated into any React project.',
     id: 1,
-    isNew: true,
+    status: 'New',
     releaseDate: 'NA',
   },
   {
@@ -135,8 +134,7 @@ const projectsData = [
     description:
       'A Frontendmentor.io challenge made with React, a multipage web app about space tourism, destinations, the team and their technologies.',
     id: 1,
-    isNew: false,
-    releaseDate: 'Dec 1, 2021',
+    releaseDate: 'Dec 2021',
   },
   {
     imageUrl: metal,
@@ -146,8 +144,7 @@ const projectsData = [
     description:
       "A demo store with some awesome metal records. It's been made with React, Router, Context and some Hooks like useState, useEffect, useReducer, etc.",
     id: 2,
-    isNew: false,
-    releaseDate: 'Oct 10, 2021',
+    releaseDate: 'Oct 2021',
   },
   {
     imageUrl: github,
@@ -157,8 +154,7 @@ const projectsData = [
     description:
       'React App made with the GitHub API, you search for developers to find their information, repos, followers; etc.',
     id: 3,
-    isNew: false,
-    releaseDate: 'Nov 29, 2021',
+    releaseDate: 'Nov 2021',
   },
   {
     imageUrl: todo,
@@ -168,8 +164,7 @@ const projectsData = [
     description:
       'Made with React, a simple app to make a todo list, you can filter by all, incomplete or completed tasks. Also select light or dark themes.',
     id: 4,
-    isNew: false,
-    releaseDate: 'Dec 9, 2021',
+    releaseDate: 'Dec 2021',
   },
   {
     imageUrl: pokemon,
@@ -179,8 +174,7 @@ const projectsData = [
     description:
       'Made with the Pokemon API, you can search for Pokemons by name, ID or type to find images, type, statistics and general information about them, also you can save your favorites!.',
     id: 6,
-    isNew: false,
-    releaseDate: 'Sep 25, 2021',
+    releaseDate: 'Sep 2021',
   },
   {
     imageUrl: countdown,
@@ -190,8 +184,7 @@ const projectsData = [
     description:
       'A React App which displays the remaining days, hours, minutes and seconds until new year! It works with every year. This is one of the Frontendmentor.io challenges.',
     id: 7,
-    isNew: false,
-    releaseDate: 'Dec 6, 2021',
+    releaseDate: 'Dec 2021',
   },
 ];
 

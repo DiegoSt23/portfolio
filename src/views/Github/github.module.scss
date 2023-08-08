@@ -6,19 +6,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
+  padding: 150px 200px 60px 200px;
   transition: all ease 0.3s;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
     padding: 130px 30px 30px 30px;
-    gap: 60px;
+    gap: 20px;
   }
 
   @media screen and (max-width: $phone) {
     padding: 130px 20px 20px 20px;
+  }
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
   }
 
   .text {

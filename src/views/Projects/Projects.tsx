@@ -12,7 +12,7 @@ export type ProjectProps = {
   name: string;
   description: string;
   id: number;
-  isNew: boolean;
+  status?: string;
   releaseDate: string;
 };
 
@@ -37,9 +37,9 @@ export const Projects = () => {
           >
             <img src={item.imageUrl} alt={item.name} className={styles.img} />
             <div className={styles.overlay}>
-              {item.isNew && (
+              {item?.status && (
                 <div className={styles.chip}>
-                  <Chip>New</Chip>
+                  <Chip>{item.status}</Chip>
                 </div>
               )}
               <BsInfoCircleFill size={20} />
@@ -59,9 +59,9 @@ export const Projects = () => {
               alt={selectedData?.name}
               className={styles.img}
             />
-            {selectedData?.isNew && (
+            {selectedData?.status && (
               <div className={styles.chip}>
-                <Chip color="purple">New</Chip>
+                <Chip color='purple'>{selectedData.status}</Chip>
               </div>
             )}
           </div>
@@ -76,12 +76,16 @@ export const Projects = () => {
                 {selectedData?.releaseDate}
               </Typography>
               <div className={styles.linksContainer}>
-                <Link href={selectedData?.repoUrl}>
-                  <BsGithub size={20} />
-                </Link>
-                <Link href={selectedData?.projectUrl}>
-                  <BsLink45Deg size={25} />
-                </Link>
+                {selectedData?.repoUrl && (
+                  <Link href={selectedData?.repoUrl}>
+                    <BsGithub size={20} />
+                  </Link>
+                )}
+                {selectedData?.projectUrl && (
+                  <Link href={selectedData?.projectUrl}>
+                    <BsLink45Deg size={25} />
+                  </Link>
+                )}
               </div>
             </div>
           </div>

@@ -97,6 +97,11 @@
       }
     }
 
+    &:active {
+      transform: scale(1);
+      transition: all ease 0.2s;
+    }
+
     &:hover .overlay {
       background-color: #000000ea;
       opacity: 1;
