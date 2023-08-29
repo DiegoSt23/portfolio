@@ -18,7 +18,6 @@ import {
   SiGatsby,
   SiAstro,
   SiStrapi,
-  SiHandlebarsdotjs,
   SiGit,
   SiStripe,
   SiJira,
