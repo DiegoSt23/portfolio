@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
+  padding: 150px 150px 100px 150px;
   transition: all ease 0.3s;
   background-image: url('../../assets/images/black-sky.jpg');
   background-size: cover;
@@ -14,12 +14,12 @@
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 130px 30px 60px 30px;
+    padding: 100px 30px 60px 30px;
     flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 130px 20px 60px 20px;
+    padding: 100px 20px 60px 20px;
   }
 }
 

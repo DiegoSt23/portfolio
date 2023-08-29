@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import { motion } from 'framer-motion';
 import {
   AiOutlineCode,
   AiFillGithub,
@@ -9,7 +11,7 @@ import {
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail, BiLogoFacebook } from 'react-icons/bi';
-import { IoIosStats } from 'react-icons/io';
+// import { IoIosStats } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
   BsFillPersonFill,
@@ -18,32 +20,46 @@ import {
   BsFillTriangleFill,
 } from 'react-icons/bs';
 import { HiMenuAlt4 } from 'react-icons/hi';
-import { SideNavBar, Drawer, Link, useWindowDimensions } from 'diego-react-delta-ui';
+import {
+  Drawer,
+  Link,
+  useWindowDimensions,
+  SideNavBar,
+} from 'diego-react-delta-ui';
 import {  
   Hero,
   About,
   HardSkills,
   Technologies,
   SoftSkills,
-  Stats,
+  // Stats,
   Projects,
   GitHub,
   Contact,
 } from '../../views';
 import styles from './main.module.scss';
 
+type NavBarItemProps = {
+  icon: ReactNode,
+  isActive: boolean,
+  path: string,
+};
+
+const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
+  <HashLink to={path} smooth>
+    <div className={`${isActive ? styles.buttonActive : styles.button}`}>
+      {icon}
+    </div>
+  </HashLink>
+);
+
 export const Main = () => {
   const { hash } = useLocation();
-  const navigate = useNavigate();
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const isMobile = width < 900;
 
   const handleDisplayDrawer = () => setIsOpen(!isOpen);
-
-  const handleNavigate = (path: string) => {
-    navigate(`${path}`);
-  };
 
   const handleIsActive = (path: string) => hash.includes(path);
 
@@ -51,57 +67,86 @@ export const Main = () => {
     {
       name: 'Home',
       icon: <RiHomeLine size={20} />,
-      onClick: () => handleNavigate('#home'),
       isActive: !hash ? true : handleIsActive('home'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#home' />
+      ),
     },
     {
       name: 'About',
       icon: <BsFillPersonFill size={20} />,
-      onClick: () => handleNavigate('#about'),
       isActive: handleIsActive('about'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#about' />
+      ),
     },
     {
       name: 'Hard Skills',
       icon: <GoStack size={20} />,
-      onClick: () => handleNavigate('#hard-skills'),
       isActive: handleIsActive('hard-skills'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#hard-skills' />
+      ),
     },
     {
       name: 'Technologies',
       icon: <AiOutlineCode size={20} />,
-      onClick: () => handleNavigate('#technologies'),
       isActive: handleIsActive('technologies'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#technologies' />
+      ),
     },
     {
       name: 'Soft Skills',
       icon: <BsFillPeopleFill size={20} />,
-      onClick: () => handleNavigate('#soft-skills'),
       isActive: handleIsActive('soft-skills'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#soft-skills' />
+      ),
     },
-    {
-      name: 'Stats',
-      icon: <IoIosStats size={20} />,
-      onClick: () => handleNavigate('#stats'),
-      isActive: handleIsActive('stats'),
-    },
+    // {
+    //   name: 'Stats',
+    //   icon: <IoIosStats size={20} />,
+    //   isActive: handleIsActive('stats'),
+    //   render: (name: string, icon: ReactNode, isActive: boolean) => (
+    //     <NavBarItem icon={icon} isActive={isActive} path='#stats' />
+    //   ),
+    // },
     {
       name: 'Projects',
       icon: <BsFillGridFill size={20} />,
-      onClick: () => handleNavigate('#projects'),
       isActive: handleIsActive('projects'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#projects' />
+      ),
     },
     {
-      name: 'GitHub Heatmap',
+      name: 'GitHub',
       icon: <AiFillGithub size={20} />,
-      onClick: () => handleNavigate('#github'),
       isActive: handleIsActive('github'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#github' />
+      ),
     },
     {
       name: 'Contact',
       icon: <BiMessageSquareDetail size={20} />,
-      onClick: () => handleNavigate('#contact'),
       isActive: handleIsActive('contact'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#contact' />
+      ),
     },
+  ];
+  const paths = [
+    '#home',
+    '#about',
+    '#hard-skills',
+    '#technologies',
+    '#soft-skills',
+    // '#stats',
+    '#projects',
+    '#github',
+    '#contact',
   ];
 
   useEffect(() => {
@@ -116,7 +161,6 @@ export const Main = () => {
         items={items}
         mainContainerClassName={styles.navBar}
         mainIcon={<BsFillTriangleFill size={25} color='#89ffe5' />}
-        onClickMainIcon={() => navigate('#home')}
       />
       <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
         {isOpen ? (
@@ -131,7 +175,7 @@ export const Main = () => {
         <HardSkills />
         <Technologies />
         <SoftSkills />
-        <Stats />
+        {/* <Stats /> */}
         <Projects />
         <GitHub />
         <Contact />
@@ -143,20 +187,29 @@ export const Main = () => {
         className={styles.drawer}
       >
         <BsFillTriangleFill size={25} color='#89ffe5' />
-        {items.map(({ name, icon, onClick, isActive }) => (
-          <button
-            key={name}
-            className={`${
-              isActive ? styles.navItemButtonActive : styles.navItemButton
-            }`}
-            onClick={() => {
-              handleDisplayDrawer();
-              onClick();
-            }}
-          >
-            {icon}
-            {name}
-          </button>
+        {items.map(({ name, icon, isActive }, index) => (
+          <HashLink key={name} to={paths[index]} className={styles.link} smooth>
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: (index + 1) * 0.1,
+                duration: 0.2,
+              }}
+            >
+              <button
+                className={`${
+                  isActive ? styles.navItemButtonActive : styles.navItemButton
+                }`}
+                onClick={() => {
+                  handleDisplayDrawer();
+                }}
+              >
+                {icon}
+                {name}
+              </button>
+            </motion.div>
+          </HashLink>
         ))}
         <div className={styles.linksContainer}>
           <Link href='https://github.com/DiegoSt23'>

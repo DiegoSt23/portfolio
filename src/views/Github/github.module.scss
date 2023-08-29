@@ -6,19 +6,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
+  padding: 150px 150px 60px 150px;
   transition: all ease 0.3s;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 130px 30px 30px 30px;
-    gap: 60px;
+    padding: 100px 30px 30px 30px;
+    gap: 20px;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 130px 20px 20px 20px;
+    padding: 100px 20px 20px 20px;
+  }
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
   }
 
   .text {
@@ -30,6 +36,36 @@
     @media screen and (max-width: $large-tablet) {
       justify-content: center;
       margin-top: 30px;
+    }
+  }
+}
+
+.tooltip {
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px $gray-2;
+  background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
+  backdrop-filter: blur(10px);
+  transition: all ease 0.2s;
+
+  .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .label {
+      margin-right: 10px;
+      color: #c4c4c4;
+      font-size: 12px;
+      font-weight: 300;
+      font-family: 'Roboto Mono';
+    }
+
+    .value {
+      color: #eeeeee;
+      font-size: 12px;
+      font-family: 'Roboto Mono';
     }
   }
 }

@@ -25,7 +25,7 @@ export const ViewLayout = ({
     className={styles.mainContainerViewLayout}
   >
     <div className={styles.header}>
-      {title && <Typography type='heading3'>{title}</Typography>}
+      {title && <Typography type='heading4'>{title}</Typography>}
       {headerElement || null}
     </div>
     {children}

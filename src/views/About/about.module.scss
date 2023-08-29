@@ -6,27 +6,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
+  padding: 100px 150px;
   transition: all ease 0.3s;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 130px 30px 30px 30px;
-    flex-direction: column-reverse;
+    padding: 100px 30px 30px 30px;
+    flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 130px 20px 20px 20px;
+    padding: 100px 20px 20px 20px;
   }
 
   .imgContainer {
-    width: 40%;
-    padding-left: 30px;
+    width: 35%;
+    padding-right: 30px;
 
     @media screen and (max-width: $large-tablet) {
       width: 50%;
       margin: auto;
-      padding-left: 0px;
+      padding-right: 0px;
       margin-bottom: 60px; 
     }
 
@@ -43,12 +43,12 @@
   }
 
   .infoContainer {
-    width: 60%;
-    padding-right: 30px;
+    width: 65%;
+    padding-left: 30px;
 
     @media screen and (max-width: $large-tablet) {
       width: 100%;
-      padding-right: 0px;
+      padding-left: 0px;
     }
 
     .title {
