@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { BiLogoFacebook } from 'react-icons/bi';
@@ -14,11 +15,18 @@ import {
   Card,
   Button,
   TextArea,
+  Toast,
+  ToastRefProps,
+  useWindowDimensions,
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import styles from './contact.module.scss';
 
 export const Contact = () => {
+  const { width } = useWindowDimensions();
+  const ref = useRef<ToastRefProps>(null);
+  const isMobile = width < 900;
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -50,13 +58,17 @@ export const Contact = () => {
     values,
     errors,
     handleSubmit,
-    setFieldValue
+    setFieldValue,
   } = formik;
+
+  const handleDisplayToast = () => {
+    ref?.current?.handleDisplayToast();
+  };
 
   const handleCopy = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
+      handleDisplayToast();
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
@@ -123,7 +135,13 @@ export const Contact = () => {
             <Typography type='paragraph2' className={styles.text}>
               or
             </Typography>
-            <div className={styles.subContainer2}>
+            <form
+              className={styles.subContainer2}
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >
               <Input
                 name='name'
                 label='Name'
@@ -158,13 +176,24 @@ export const Contact = () => {
               />
               <br />
               <br />
-              <Button small variant='filled' onClick={() => handleSubmit()}>
+              <Button
+                small
+                variant='filled'
+                onClick={() => handleSubmit()}
+                type='submit'
+              >
                 Submit
               </Button>
-            </div>
+            </form>
           </div>
         </Card>
       </div>
+      <Toast
+        ref={ref}
+        variant='success'
+        text='Copied!'
+        position={isMobile ? 'topLeft' : 'topRight'}
+      />
     </ViewLayout>
   );
 };
