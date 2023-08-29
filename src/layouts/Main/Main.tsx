@@ -2,11 +2,11 @@ import { useState, useEffect, ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
+import { Pivot as Hamburger } from 'hamburger-react';
 import {
   AiOutlineCode,
   AiFillGithub,
   AiFillLinkedin,
-  AiOutlineClose,
   AiOutlineInstagram,
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
@@ -19,7 +19,6 @@ import {
   BsFillGridFill,
   BsFillTriangleFill,
 } from 'react-icons/bs';
-import { HiMenuAlt4 } from 'react-icons/hi';
 import {
   Drawer,
   Link,
@@ -163,11 +162,12 @@ export const Main = () => {
         mainIcon={<BsFillTriangleFill size={25} color='#89ffe5' />}
       />
       <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
-        {isOpen ? (
+        {/* {isOpen ? (
           <AiOutlineClose size={25} color='gray' />
         ) : (
           <HiMenuAlt4 size={25} color='gray' />
-        )}
+        )} */}
+        <Hamburger toggled={isOpen} toggle={handleDisplayDrawer} size={25} color='gray' />
       </button>
       <div className={styles.childrenContainer}>
         <Hero />

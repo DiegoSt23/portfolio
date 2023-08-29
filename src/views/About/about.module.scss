@@ -6,57 +6,67 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 150px;
+  padding: 120px 150px 100px 150px;
   transition: all ease 0.3s;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 100px 30px 30px 30px;
+    padding: 120px 30px 30px 30px;
     flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 100px 20px 20px 20px;
+    padding: 120px 20px 20px 20px;
   }
 
-  .imgContainer {
-    width: 35%;
-    padding-right: 30px;
-
-    @media screen and (max-width: $large-tablet) {
-      width: 50%;
-      margin: auto;
-      padding-right: 0px;
-      margin-bottom: 60px; 
-    }
-
-    @media screen and (max-width: $phone) {
-      width: 80%;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 100%;
-      overflow: hidden;
-      border: solid 5px $gray-border;
-    }
+  .title {
+    background: $primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
   }
 
-  .infoContainer {
-    width: 65%;
-    padding-left: 30px;
+  .contentContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    transition: all ease 0.3s;
 
     @media screen and (max-width: $large-tablet) {
-      width: 100%;
-      padding-left: 0px;
+      flex-direction: column;
+      padding-top: 60px;
     }
 
-    .title {
-      background: $primary;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      border-bottom: solid 1px $gray-border;
-      padding-bottom: 25px;
+    .imgContainer {
+      width: 35%;
+      padding-right: 30px;
+
+      @media screen and (max-width: $large-tablet) {
+        width: 50%;
+        margin: auto;
+        padding-right: 0px;
+        margin-bottom: 60px; 
+      }
+
+      @media screen and (max-width: $phone) {
+        width: 80%;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+    }
+
+    .infoContainer {
+      width: 65%;
+      padding-left: 30px;
+
+      @media screen and (max-width: $large-tablet) {
+        width: 100%;
+        padding-left: 0px;
+      }
     }
   }
 }

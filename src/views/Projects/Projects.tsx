@@ -78,12 +78,12 @@ export const Projects = () => {
               </Typography>
               <div className={styles.linksContainer}>
                 {selectedData?.repoUrl && (
-                  <Link href={selectedData?.repoUrl}>
+                  <Link href={selectedData?.repoUrl} target='_blank'>
                     <BsGithub size={20} />
                   </Link>
                 )}
                 {selectedData?.projectUrl && (
-                  <Link href={selectedData?.projectUrl}>
+                  <Link href={selectedData?.projectUrl} target='_blank'>
                     <BsLink45Deg size={25} />
                   </Link>
                 )}

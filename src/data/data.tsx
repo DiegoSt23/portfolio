@@ -111,7 +111,8 @@ const projectsData = [
     projectUrl: '',
     repoUrl: '',
     name: 'Spotify',
-    description: 'My own version of Spotify with the Spotify API, created with Delta UI. Still under development.',
+    description:
+      'My own version of Spotify with the Spotify API, created with Delta UI. Still under development.',
     id: 1,
     status: 'In Progress',
     releaseDate: 'NA',
@@ -119,14 +120,14 @@ const projectsData = [
   {
     imageUrl: delta,
     projectUrl:
-      'https://64c82a77442a234e83128ff8-bheesekwfv.chromatic.com/?path=/story/deltaui-textarea--error',
+      'https://diego-delta-ui.vercel.app/?path=/story/deltaui-accordion--default',
     repoUrl: 'https://github.com/DiegoSt23/delta-ui',
     name: 'Delta UI',
     description:
       'A lightweight and minimalistic React components library designed to provide a seamless user experience. It offers a curated set of reusable and customizable components that can easily be integrated into any React project.',
     id: 1,
     status: 'New',
-    releaseDate: 'NA',
+    releaseDate: 'Aug 2023',
   },
   {
     imageUrl: space,
