@@ -32,6 +32,7 @@ export const Projects = () => {
       <div className={styles.projectsMainContainer}>
         {projectsData.map((item) => (
           <button
+            key={item.name}
             className={styles.projectContainer}
             onClick={() => handleSelectProject(item)}
           >

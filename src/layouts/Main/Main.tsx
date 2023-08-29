@@ -1,6 +1,7 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { motion } from 'framer-motion';
 import {
   AiOutlineCode,
   AiFillGithub,
@@ -19,7 +20,12 @@ import {
   BsFillTriangleFill,
 } from 'react-icons/bs';
 import { HiMenuAlt4 } from 'react-icons/hi';
-import { SideNavBar, Drawer, Link, useWindowDimensions } from 'diego-react-delta-ui';
+import {
+  Drawer,
+  Link,
+  useWindowDimensions,
+  SideNavBar,
+} from 'diego-react-delta-ui';
 import {  
   Hero,
   About,
@@ -183,17 +189,26 @@ export const Main = () => {
         <BsFillTriangleFill size={25} color='#89ffe5' />
         {items.map(({ name, icon, isActive }, index) => (
           <HashLink key={name} to={paths[index]} className={styles.link} smooth>
-            <button
-              className={`${
-                isActive ? styles.navItemButtonActive : styles.navItemButton
-              }`}
-              onClick={() => {
-                handleDisplayDrawer();
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: (index + 1) * 0.1,
+                duration: 0.2,
               }}
             >
-              {icon}
-              {name}
-            </button>
+              <button
+                className={`${
+                  isActive ? styles.navItemButtonActive : styles.navItemButton
+                }`}
+                onClick={() => {
+                  handleDisplayDrawer();
+                }}
+              >
+                {icon}
+                {name}
+              </button>
+            </motion.div>
           </HashLink>
         ))}
         <div className={styles.linksContainer}>

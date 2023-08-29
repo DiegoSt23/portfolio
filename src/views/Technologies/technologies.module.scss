@@ -12,6 +12,7 @@
   background-image: url('../../assets/images/dark-dune-2.jpg');
   background-size: cover;
   background-attachment: fixed;
+  gap: 30px;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;

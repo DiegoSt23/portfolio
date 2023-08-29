@@ -39,3 +39,33 @@
     }
   }
 }
+
+.tooltip {
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px $gray-2;
+  background: -webkit-linear-gradient(-45deg,#1e1e1e,#0a0a0a);
+  backdrop-filter: blur(10px);
+  transition: all ease 0.2s;
+
+  .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .label {
+      margin-right: 10px;
+      color: #c4c4c4;
+      font-size: 12px;
+      font-weight: 300;
+      font-family: 'Roboto Mono';
+    }
+
+    .value {
+      color: #eeeeee;
+      font-size: 12px;
+      font-family: 'Roboto Mono';
+    }
+  }
+}

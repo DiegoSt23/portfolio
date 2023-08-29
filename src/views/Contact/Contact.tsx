@@ -70,16 +70,19 @@ export const Contact = () => {
           headerTitle='Lets talk'
           headerElement={
             <div className={styles.linksContainer}>
-              <Link href='https://github.com/DiegoSt23'>
+              <Link href='https://github.com/DiegoSt23' target='_blank'>
                 <AiFillGithub size={20} />
               </Link>
-              <Link href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'>
+              <Link
+                href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+                target='_blank'
+              >
                 <AiFillLinkedin size={20} />
               </Link>
-              <Link>
+              <Link target='_blank'>
                 <AiOutlineInstagram size={20} />
               </Link>
-              <Link>
+              <Link target='_blank'>
                 <BiLogoFacebook size={20} />
               </Link>
             </div>

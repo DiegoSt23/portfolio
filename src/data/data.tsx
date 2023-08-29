@@ -25,7 +25,10 @@ import {
   SiTestinglibrary,
   SiFramer,
   SiShopify,
-  SiFirebase,
+  SiRollupdotjs,
+  SiVite,
+  SiGraphql,
+  SiStorybook,
 } from 'react-icons/si';
 import {
   FaSass
@@ -250,12 +253,8 @@ const technologiesData = [
     Icon: <SiBootstrap size={35} color='#fff' />,
   },
   {
-    name: 'Next UI',
-    Icon: <SiNextdotjs size={35} color='#fff' />,
-  },
-  {
-    name: 'Handlebars',
-    Icon: <SiHandlebarsdotjs size={35} color='#fff' />,
+    name: 'Storybook',
+    Icon: <SiStorybook size={35} color='#fff' />,
   },
   {
     name: 'Next',
@@ -282,8 +281,16 @@ const technologiesData = [
     Icon: <SiFramer size={35} color='#fff' />,
   },
   {
-    name: 'Stripe',
-    Icon: <SiStripe size={35} color='#fff' />,
+    name: 'Rollup',
+    Icon: <SiRollupdotjs size={35} color='#fff' />,
+  },
+  {
+    name: 'Vite',
+    Icon: <SiVite size={35} color='#fff' />,
+  },
+  {
+    name: 'GraphQL',
+    Icon: <SiGraphql size={35} color='#fff' />,
   },
   {
     name: 'Git',
@@ -296,10 +303,6 @@ const technologiesData = [
   {
     name: 'Shopify',
     Icon: <SiShopify size={35} color='#fff' />,
-  },
-  {
-    name: 'Firebase',
-    Icon: <SiFirebase size={35} color='#fff' />,
   },
   {
     name: 'Strapi',
