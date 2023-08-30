@@ -76,7 +76,8 @@
         opacity: 0;
         border: solid 1px $gray-border;
 
-        @media screen and (max-width: $phone) {
+        @media screen and (max-width: $large-tablet) {
+          padding: 0px;
           margin: 15px 0px;
         }
       }
