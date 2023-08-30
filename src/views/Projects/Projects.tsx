@@ -30,23 +30,25 @@ export const Projects = () => {
   return (
     <ViewLayout id='projects' title='Projects'>
       <div className={styles.projectsMainContainer}>
-        {projectsData.map((item) => (
-          <button
-            key={item.name}
-            className={styles.projectContainer}
-            onClick={() => handleSelectProject(item)}
-          >
-            <img src={item.imageUrl} alt={item.name} className={styles.img} />
-            <div className={styles.overlay}>
-              {item?.status && (
-                <div className={styles.chip}>
-                  <Chip>{item.status}</Chip>
-                </div>
-              )}
-              <BsInfoCircleFill size={20} />
-            </div>
-          </button>
-        ))}
+        <div className={styles.projectsContainer}>
+          {projectsData.map((item) => (
+            <button
+              key={item.name}
+              className={styles.projectContainer}
+              onClick={() => handleSelectProject(item)}
+            >
+              <img src={item.imageUrl} alt={item.name} className={styles.img} />
+              <div className={styles.overlay}>
+                {item?.status && (
+                  <div className={styles.chip}>
+                    <Chip>{item.status}</Chip>
+                  </div>
+                )}
+                <BsInfoCircleFill size={20} />
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
       <Modal
         isOpen={isModalOpen}

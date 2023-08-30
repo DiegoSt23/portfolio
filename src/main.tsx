@@ -16,7 +16,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = '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';
+  const token = import.meta.env.VITE_GITHUB_TOKEN;
   // return the headers to the context so httpLink can read them
   return {
     headers: {
