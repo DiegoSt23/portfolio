@@ -34,11 +34,12 @@
   height: 100vh;
   display: flex;
   position: relative;
+  overflow: hidden;
 
   .menuIcon {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 16px;
+    top: 8px;
     border: none;
     background-color: transparent;
     padding: 0;
