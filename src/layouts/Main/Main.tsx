@@ -28,9 +28,9 @@ import {
 import {  
   Hero,
   About,
-  HardSkills,
+  // HardSkills,
   Technologies,
-  SoftSkills,
+  // SoftSkills,
   // Stats,
   Projects,
   GitHub,
@@ -172,9 +172,9 @@ export const Main = () => {
       <div className={styles.childrenContainer}>
         <Hero />
         <About />
-        <HardSkills />
+        {/* <HardSkills /> */}
         <Technologies />
-        <SoftSkills />
+        {/* <SoftSkills /> */}
         {/* <Stats /> */}
         <Projects />
         <GitHub />

@@ -1,138 +1,205 @@
-// import { useState, useEffect } from 'react';
-// import { useQuery, gql } from '@apollo/client';
-// import { ResponsiveCalendar } from '@nivo/calendar';
-import { Typography } from 'diego-react-delta-ui';
+import { useState, useEffect } from 'react';
+import { useQuery, gql } from '@apollo/client';
+import { ResponsiveCalendar } from '@nivo/calendar';
+import { AiFillGithub } from 'react-icons/ai';
+import {
+  Typography,
+  Card,
+  Spinner,
+  useWindowDimensions
+} from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import styles from './github.module.scss';
 
-// const getActivity = gql`
-//   query {
-//     user(login: "diegoSt23") {
-//       name
-//       contributionsCollection {
-//         contributionCalendar {
-//           colors
-//           totalContributions
-//           weeks {
-//             contributionDays {
-//               color
-//               contributionCount
-//               date
-//               weekday
-//             }
-//             firstDay
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+interface WeekProps {
+  color: string;
+  contributionCount: number;
+  date: string;
+}
 
-// const theme = {
-//   text: {
-//     fontSize: 11,
-//     fill: '#ffffff',
-//     outlineWidth: 0,
-//     outlineColor: 'transparent',
-//   },
-//   axis: {
-//     legend: {
-//       text: {
-//         fontSize: 12,
-//         fill: '#ffffff',
-//         outlineWidth: 0,
-//         outlineColor: 'transparent',
-//       },
-//     },
-//     ticks: {
-//       line: {
-//         stroke: '#ffffff',
-//         strokeWidth: 1,
-//       },
-//       text: {
-//         fontSize: 11,
-//         fill: '#ffffff',
-//         outlineWidth: 0,
-//         outlineColor: 'transparent',
-//       },
-//     },
-//   },
-// };
+interface WeeksProps {
+  contributionDays: WeekProps[];
+}
+
+interface ItemProps {
+  day: string;
+  value: number;
+  color: string;
+}
+
+const getActivity2022 = gql`
+  query {
+    user(login: "diegoSt23") {
+      name
+      contributionsCollection(
+        to: "2022-12-31T01:01:00"
+        from: "2022-01-01T01:01:00"
+      ) {
+        contributionCalendar {
+          colors
+          totalContributions
+          weeks {
+            contributionDays {
+              color
+              contributionCount
+              date
+              weekday
+            }
+            firstDay
+          }
+        }
+      }
+    }
+  }
+`;
+
+const getActivity2023 = gql`
+  query {
+    user(login: "diegoSt23") {
+      name
+      contributionsCollection {
+        contributionCalendar {
+          colors
+          totalContributions
+          weeks {
+            contributionDays {
+              color
+              contributionCount
+              date
+              weekday
+            }
+            firstDay
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const GitHub = () => {
-  // const { loading, data } = useQuery(getActivity);
-  // const [localData, setLocalData] = useState([]);
-  // const [totalContributions, setTotalContributions] = useState<number>(0); 
-  // const { width } = useWindowDimensions();
-  // const isMobile = width < 900;
+  const { loading: loading2022, data: data2022 } = useQuery(getActivity2022);
+  const { loading: loading2023, data: data2023 } = useQuery(getActivity2023);
+  const [localData, setLocalData] = useState<ItemProps[]>([]);
+  const [totalContributions, setTotalContributions] = useState<number>(0); 
+  const { width } = useWindowDimensions();
+  const isMobile = width < 768;
 
-  // useEffect(() => {
-  //   if (data?.user) {
-  //     const formattedData =
-  //       data.user.contributionsCollection?.contributionCalendar?.weeks
-  //         .map((item) => item.contributionDays)
-  //         .flat()
-  //         .map((item) => ({
-  //           day: item.date,
-  //           value: item.contributionCount,
-  //           color: item.value > 6 ? 'red' : 'teal'
-  //         }));
-  //     // .filter((item) => item.value !== 0);
-  //     setLocalData(formattedData);
-  //     setTotalContributions(data.user.contributionsCollection?.contributionCalendar.totalContributions)
-  //   }
-    
-  // }, [data?.user]);
+  useEffect(() => {
+    if (data2023?.user && data2022?.user) {
+      const formattedData2022 =
+        data2022.user.contributionsCollection?.contributionCalendar?.weeks
+          .map((item: WeeksProps) => item.contributionDays)
+          .flat()
+          .map((item: WeekProps) => ({
+            day: item.date,
+            value: item.contributionCount,
+            color: item.color,
+          }));
+      const formattedData2023 =
+        data2023.user.contributionsCollection?.contributionCalendar?.weeks
+          .map((item: WeeksProps) => item.contributionDays)
+          .flat()
+          .map((item: WeekProps) => ({
+            day: item.date,
+            value: item.contributionCount,
+            color: item.color,
+          }));
+      const all = formattedData2022
+        ?.concat(formattedData2023)
+        .filter((item: ItemProps) => item.value !== 0);
+      const uniqueDates = all.reduce(
+        (acc: Record<string, ItemProps>, item: ItemProps) => {
+          const key = item.day as string;
+          if (!acc[key]) {
+            acc[key] = item;
+          }
+          return acc;
+        }, {});
+      const uniqueArray: ItemProps[] = Object.values(uniqueDates);
+      const totalContributions =
+        data2022.user.contributionsCollection?.contributionCalendar
+          .totalContributions +
+        data2023.user.contributionsCollection?.contributionCalendar
+          .totalContributions;
+
+      setLocalData(uniqueArray);
+      setTotalContributions(totalContributions);
+    }
+  }, [data2023?.user, data2022?.user]);
 
   return (
     <ViewLayout id='github' title='GitHub'>
       <div className={styles.githubMainContainer}>
-        <Typography type='paragraph'>
-          {/* {`Total Contributions: ${totalContributions.toString()}`} */}
-          Github
-        </Typography>
-        {/* {!loading && localData?.length ? (
-          <div style={{ height: isMobile ? 900 : 500, width: '100%' }}>
-            <ResponsiveCalendar
-              data={localData}
-              from='2023-01-01'
-              to={new Date().toDateString()}
-              theme={theme}
-              direction={isMobile ? 'vertical' : 'horizontal'}
-              minValue={1}
-              emptyColor='#3d3d3d'
-              // colors={['#c2edd2', '#97eeb7', '#64ff9d', '#00ff5e']}
-              margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-              yearSpacing={60}
-              monthBorderColor='#000000'
-              monthBorderWidth={0}
-              dayBorderWidth={0.1}
-              dayBorderColor='#000000'
-              tooltip={(info) => {
-                return (
-                  <div className={styles.tooltip}>
-                    <div className={styles.row}>
-                      <p className={styles.label}>Date:</p>
-                      <p className={styles.value}>
-                        {new Date(info.day).toLocaleDateString('en', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric',
-                        })}
-                      </p>
-                    </div>
-                    <div className={styles.row}>
-                      <p className={styles.label}>Contributions:</p>
-                      <p className={styles.value}>{info.value}</p>
-                    </div>
-                  </div>
-                );
+        <Card
+          headerTitle='Contributions'
+          headerElement={<AiFillGithub size={30} color='#d9d9d9' />}
+          footer={
+            <div className={styles.totalContainer}>
+              <Typography type='paragraph'>Total:</Typography>
+              <Typography type='subtitle'>
+                {`${totalContributions.toString()}`}
+              </Typography>
+            </div>
+          }
+          fullWidth
+          mainContainerClassName={styles.card}
+        >
+          {(!loading2023 || !loading2022) && localData?.length ? (
+            <div
+              style={{
+                height: isMobile ? 600 : 400,
+                width: '100%',
               }}
-            />
-          </div>
-        ) : (
-          <p>loading</p>
-        )} */}
+            >
+              <ResponsiveCalendar
+                data={localData}
+                from='2023-01-01'
+                to={new Date().toDateString()}
+                direction={isMobile ? 'vertical' : 'horizontal'}
+                emptyColor='#1b1b1b'
+                colors={['#216e39', '#30a14e', '#40c463', '#9be9a8']}
+                theme={{
+                  labels: { text: { fill: '#d9d9d9' } },
+                }}
+                margin={{
+                  top: isMobile ? 80 : 20,
+                  right: 40,
+                  bottom: isMobile ? 40 : 0,
+                  left: 40,
+                }}
+                yearSpacing={isMobile ? 100 : 60}
+                monthBorderColor='#000000'
+                monthBorderWidth={0}
+                dayBorderWidth={1}
+                dayBorderColor='#121212'
+                tooltip={(info) => {
+                  return (
+                    <div className={styles.tooltip}>
+                      <div className={styles.row}>
+                        <p className={styles.label}>Date:</p>
+                        <p className={styles.value}>
+                          {new Date(info.day).toLocaleDateString('en', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                          })}
+                        </p>
+                      </div>
+                      <div className={styles.row}>
+                        <p className={styles.label}>Contributions:</p>
+                        <p className={styles.value}>{info.value}</p>
+                      </div>
+                    </div>
+                  );
+                }}
+              />
+            </div>
+          ) : (
+            <div className={styles.spinnerContainer}>
+              <Spinner />
+            </div>
+          )}
+        </Card>
       </div>
     </ViewLayout>
   );

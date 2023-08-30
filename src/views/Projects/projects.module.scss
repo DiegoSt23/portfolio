@@ -13,7 +13,6 @@
   justify-content: center;
   padding: 120px 150px 100px 150px;
   transition: all ease 0.3s;
-  flex-wrap: wrap;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
@@ -24,81 +23,99 @@
     padding: 100px 20px 20px 20px;
   }
 
-  .projectContainer {
-    width: 25%;
-    margin: 0;
-    border: none;
-    background-color: transparent;
+  .projectsContainer {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    transition: all ease 0.2s;
-    cursor: pointer;
-    position: relative;
+    flex-wrap: wrap;
 
     @media screen and (max-width: $large-tablet) {
-      width: 50%;
+      justify-content: space-between;
     }
 
-    .img {
-      width: 100%;
-      border-radius: 10px;
-      border: solid 1px $gray-border;
-    }
-
-    .overlay {
-      margin: 15px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      color: transparent;
-      justify-content: center;
+    .projectContainer {
+      width: 25%;
+      margin: 0;
+      border: none;
+      background-color: transparent;
       display: flex;
       align-items: center;
-      border-radius: 10px;
+      justify-content: center;
+      padding: 15px;
       transition: all ease 0.2s;
-      opacity: 0;
-      border: solid 1px $gray-border;
+      cursor: pointer;
+      position: relative;
 
-      @media screen and (max-width: $phone) {
-        margin: 15px 0px;
+      @media screen and (max-width: $large-tablet) {
+        width: 48%;
+        padding: 15px 0px;
       }
-    }
-
-    .chip {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-
-    &:hover {
-      transform: scale(1.1);
-      transition: all ease 0.2s;
 
       @media screen and (max-width: $phone) {
+        padding: 5px 0px;
+      }
+
+      .img {
+        width: 100%;
+        border-radius: 10px;
+        border: solid 1px $gray-border;
+      }
+
+      .overlay {
+        margin: 15px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        color: transparent;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        transition: all ease 0.2s;
+        opacity: 0;
+        border: solid 1px $gray-border;
+
+        @media screen and (max-width: $phone) {
+          margin: 15px 0px;
+        }
+      }
+
+      .chip {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all ease 0.2s;
+
+        @media screen and (max-width: $phone) {
+          transform: scale(1);
+        }
+      }
+
+      &:active {
         transform: scale(1);
+        transition: all ease 0.2s;
+      }
+
+      &:hover .overlay {
+        background-color: #000000ea;
+        opacity: 1;
+        transition: 0.2s;
+        color: $white-2;
+
+        @media screen and (max-width: $phone) {
+          display: none;
+        }
       }
     }
-
-    &:active {
-      transform: scale(1);
-      transition: all ease 0.2s;
-    }
-
-    &:hover .overlay {
-      background-color: #000000ea;
-      opacity: 1;
-      transition: 0.2s;
-      color: $white-2;
-
-      @media screen and (max-width: $phone) {
-        display: none;
-      }
-    }
+    
   }
+
+
 }
 
 .modal {
