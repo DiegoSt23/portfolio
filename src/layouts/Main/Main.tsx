@@ -159,7 +159,7 @@ export const Main = () => {
       <SideNavBar
         items={items}
         mainContainerClassName={styles.navBar}
-        mainIcon={<BsFillTriangleFill size={25} color='#89ffe5' />}
+        mainIcon={<BsFillTriangleFill size={20} color='#89ffe5' />}
       />
       <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
         {/* {isOpen ? (
