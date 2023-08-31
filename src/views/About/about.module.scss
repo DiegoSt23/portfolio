@@ -19,17 +19,9 @@
     padding: 100px 20px 20px 20px;
   }
 
-  .title {
-    background: $primary;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3em;
-  }
-
   .contentContainer {
     display: flex;
     align-items: center;
-    padding-top: 30px;
     transition: all ease 0.3s;
 
     @media screen and (max-width: $large-tablet) {
@@ -37,35 +29,11 @@
       padding-top: 60px;
     }
 
-    .imgContainer {
-      width: 35%;
-      padding-right: 30px;
-
-      @media screen and (max-width: $large-tablet) {
-        width: 50%;
-        margin: auto;
-        padding-right: 0px;
-        margin-bottom: 60px; 
-      }
-
-      @media screen and (max-width: $phone) {
-        width: 80%;
-      }
-
-      img {
-        width: 100%;
-        border-radius: 100%;
-        overflow: hidden;
-      }
-    }
-
     .infoContainer {
       width: 65%;
-      padding-left: 30px;
 
       @media screen and (max-width: $large-tablet) {
         width: 100%;
-        padding-left: 0px;
       }
     }
   }
