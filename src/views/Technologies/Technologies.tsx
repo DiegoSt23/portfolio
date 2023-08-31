@@ -17,7 +17,7 @@ export const Technologies = () => {
   }, [inView]);
 
   return (
-    <ViewLayout id='technologies' title='Technologies'>
+    <ViewLayout id='stack' title='Stack'>
       <div className={styles.technologiesMainContainer} ref={ref}>
         {isInView && (
           <>

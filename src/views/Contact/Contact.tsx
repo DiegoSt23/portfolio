@@ -19,6 +19,7 @@ import {
   ToastRefProps,
   useWindowDimensions,
 } from 'diego-react-delta-ui';
+import delta from '../../assets/svg/delta.svg';
 import { ViewLayout } from '../../components';
 import styles from './contact.module.scss';
 
@@ -187,6 +188,14 @@ export const Contact = () => {
             </form>
           </div>
         </Card>
+        <div className={styles.deltaLink}>
+          <Typography type='paragraph3' className={styles.createdWith}>
+            Created with
+          </Typography>
+          <Link href='https://github.com/DiegoSt23/delta-ui' target='_blank'>
+            <img src={delta} alt='Delta' width={70} />
+          </Link>
+        </div>
       </div>
       <Toast
         ref={ref}
