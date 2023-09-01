@@ -12,7 +12,7 @@ export const Me = () => (
             Hey, I'm Diego
           </Typography>
           <Typography type='heading3' className={styles.subtitle}>
-            Front End Developer
+            frontEndDeveloper
           </Typography>
         </div>
         <img src={img} alt="Diego" />
