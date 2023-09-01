@@ -9,7 +9,7 @@
   background-image: url('../../assets/images/skylar.jpg');
   background-size: cover;
   background-attachment: fixed;
-  padding: 100px 150px 100px 180px;
+  padding: 100px 150px 100px 200px;
   transition: all ease 0.3s;
 
   @media screen and (max-width: $large-tablet) {
@@ -24,6 +24,8 @@
 
   .contentContainer {
     width: 100%;
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +53,10 @@
         -webkit-text-fill-color: transparent;
         margin-top: 20px;
         font-family: 'Roboto Mono';
+
+        @media screen and (max-width: $large-tablet) {
+          margin-top: 40px;;
+        }
       }
     }
 

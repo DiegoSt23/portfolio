@@ -4,10 +4,33 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 120px 150px 100px 180px;
+  align-items: center;
+  padding: 120px 150px 100px 200px;
+  background-image: url('../../assets/images/dark-dune.jpg');
+  background-size: cover;
+  background-attachment: fixed;
   transition: all ease 0.3s;
+
+  .about {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    @media screen and (max-width: $large-tablet) {
+      flex-direction: column;
+    }
+
+    .textContainer {
+      width: 45%;
+
+      @media screen and (max-width: $large-tablet) {
+        width: 100%;
+      }
+    }
+  }
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
@@ -17,24 +40,5 @@
 
   @media screen and (max-width: $phone) {
     padding: 100px 20px 60px 20px;
-  }
-
-  .contentContainer {
-    display: flex;
-    align-items: center;
-    transition: all ease 0.3s;
-
-    @media screen and (max-width: $large-tablet) {
-      flex-direction: column;
-      padding-top: 60px;
-    }
-
-    .infoContainer {
-      width: 65%;
-
-      @media screen and (max-width: $large-tablet) {
-        width: 100%;
-      }
-    }
   }
 }

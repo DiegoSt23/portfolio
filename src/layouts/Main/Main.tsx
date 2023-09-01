@@ -172,7 +172,7 @@ export const Main = () => {
         initial={{ x: '-100%' }}
         animate={{ x: '0%' }}
         transition={{
-          delay: 2,
+          delay: 1,
           duration: 0.3,
         }}
       >
@@ -235,19 +235,19 @@ export const Main = () => {
         ))}
         <div className={styles.linksContainer}>
           <Link href='https://github.com/DiegoSt23' target='_blank'>
-            <AiFillGithub size={30} />
+            <AiFillGithub size={25} />
           </Link>
           <Link
             href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
             target='_blank'
           >
-            <AiFillLinkedin size={30} />
+            <AiFillLinkedin size={25} />
           </Link>
           <Link target='_blank'>
-            <AiOutlineInstagram size={30} />
+            <AiOutlineInstagram size={25} />
           </Link>
           <Link target='_blank'>
-            <BiLogoFacebook size={30} />
+            <BiLogoFacebook size={25} />
           </Link>
         </div>
       </Drawer>

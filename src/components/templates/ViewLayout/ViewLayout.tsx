@@ -20,10 +20,7 @@ export const ViewLayout = ({
   title,
   headerElement,
 }: ViewLayoutProps) => (
-  <div
-    id={id}
-    className={styles.mainContainerViewLayout}
-  >
+  <div id={id} className={styles.mainContainerViewLayout}>
     <div className={styles.header}>
       {title && <Typography type='heading4'>{title}</Typography>}
       {headerElement || null}

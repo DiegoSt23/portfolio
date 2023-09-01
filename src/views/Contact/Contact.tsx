@@ -100,6 +100,7 @@ export const Contact = () => {
               </Link>
             </div>
           }
+          mainContainerClassName={styles.contactCard}
         >
           <div className={styles.cardContentContainer}>
             <div className={styles.subContainer1}>

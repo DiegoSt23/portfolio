@@ -77,16 +77,6 @@
     scroll-behavior: smooth;
     z-index: 99;
 
-    &::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: #212121;
-      border-radius: 4px;
-    }
-
     @media screen and (max-width: $large-tablet) {
       width: 100%;
     }
