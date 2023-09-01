@@ -63,7 +63,6 @@ export const Main = () => {
   const handleDisplayDrawer = () => setIsOpen(!isOpen);
 
   const handleIsActive = (path: string) => path === hash;
-  console.log(hash)
 
   const items = [
     {
@@ -168,11 +167,21 @@ export const Main = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <SideNavBar
-        items={items}
-        mainContainerClassName={styles.navBar}
-        mainIcon={<BsFillTriangleFill size={20} color='#89ffe5' />}
-      />
+      <motion.div
+        className={styles.barContainer}
+        initial={{ x: '-100%' }}
+        animate={{ x: '0%' }}
+        transition={{
+          delay: 2,
+          duration: 0.3,
+        }}
+      >
+        <SideNavBar
+          items={items}
+          mainContainerClassName={styles.navBar}
+          mainIcon={<BsFillTriangleFill size={20} color='#89ffe5' />}
+        />
+      </motion.div>
       <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
         <Hamburger
           toggled={isOpen}
@@ -226,19 +235,19 @@ export const Main = () => {
         ))}
         <div className={styles.linksContainer}>
           <Link href='https://github.com/DiegoSt23' target='_blank'>
-            <AiFillGithub size={20} />
+            <AiFillGithub size={30} />
           </Link>
           <Link
             href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
             target='_blank'
           >
-            <AiFillLinkedin size={20} />
+            <AiFillLinkedin size={30} />
           </Link>
           <Link target='_blank'>
-            <AiOutlineInstagram size={20} />
+            <AiOutlineInstagram size={30} />
           </Link>
           <Link target='_blank'>
-            <BiLogoFacebook size={20} />
+            <BiLogoFacebook size={30} />
           </Link>
         </div>
       </Drawer>
