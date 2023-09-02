@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 150px 150px 100px 180px;
+  padding: 150px 150px 100px 200px;
   transition: all ease 0.3s;
   background-image: url('../../assets/images/black-sky.jpg');
   background-size: cover;
@@ -40,67 +40,72 @@
   }
 }
 
-.cardContentContainer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.contactCard {
+  max-width: 1280px;
+  margin: auto;
 
-  @media screen and (max-width: $large-tablet) {
-    flex-direction: column;
-  }
-
-  .subContainer1 {
-    width: 45%;
+  .cardContentContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
     @media screen and (max-width: $large-tablet) {
-      width: 100%;
-      margin-bottom: 60px;
+      flex-direction: column;
     }
 
-    .row {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      position: relative;
+    .subContainer1 {
+      width: 45%;
 
-      .iconContainer {
-        position: absolute;
-        border: none;
-        background-color: transparent;
-        margin: 0;
-        padding: 0;
-        right: 0;
-        cursor: pointer;
-        transition: all ease 0.2s;
+      @media screen and (max-width: $large-tablet) {
+        width: 100%;
+        margin-bottom: 60px;
+      }
 
-        &:active {
-          opacity: 0.5;
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+
+        .iconContainer {
+          position: absolute;
+          border: none;
+          background-color: transparent;
+          margin: 0;
+          padding: 0;
+          right: 0;
+          cursor: pointer;
           transition: all ease 0.2s;
+
+          &:active {
+            opacity: 0.5;
+            transition: all ease 0.2s;
+          }
         }
       }
     }
-  }
 
-  .subContainer2 {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    .subContainer2 {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
 
-    @media screen and (max-width: $large-tablet) {
-      width: 100%;
+      @media screen and (max-width: $large-tablet) {
+        width: 100%;
+      }
+    }
+
+    .text {
+      align-self: center;
+      margin-bottom: 60px;
     }
   }
 
-  .text {
-    align-self: center;
-    margin-bottom: 60px;
+  .linksContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-}
-
-.linksContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
