@@ -16,7 +16,7 @@ export const About = () => (
             Equipped with an in-depth understanding of TypeScript, I embrace
             type safety and modern development practices to ensure the highest
             quality codebase. My expertise in front-end development extends to
-            crafting responsive layouts and optimizing performance.
+            crafting responsive layouts, beautiful interfaces and optimizing performance.
           </Typography>
           <br />
           <Typography className={styles.text} type='paragraph'>
@@ -43,11 +43,6 @@ export const About = () => (
             developers to bring ideas to life in an agile and collaborative
             environment.
           </Typography>
-          {/* <Typography className={styles.text} type='paragraph'>
-            As a dedicated front-end developer, I am committed to delivering
-            exceptional and beautiful results and contributing to the success of
-            any team I work with.
-          </Typography> */}
         </div>
       </div>
     </div>
