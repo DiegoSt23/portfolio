@@ -14,12 +14,12 @@
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 60px 30px;
+    padding: 50px 30px;
     flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 60px 20px;
+    padding: 50px 20px;
   }
 
   .contentContainer {
