@@ -21,10 +21,6 @@
 
     @media screen and (max-width: $large-tablet) {
       flex-direction: column;
-
-      &:first-child {
-        margin-bottom: 15px;
-      }
     }
 
     .textContainer {
