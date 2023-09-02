@@ -151,7 +151,7 @@ export const Main = () => {
     '#me',
     '#about',
     // '#hard-skills',
-    '#technologies',
+    '#stack',
     // '#soft-skills',
     // '#stats',
     '#projects',
