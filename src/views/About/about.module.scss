@@ -33,6 +33,19 @@
       .text {
         color: #d9d9d9;
       }
+
+      .text2 {
+        color: #d9d9d9;
+        display: inline;
+      }
+
+      .link {
+        color: #31dab5;
+        text-decoration: none;
+        display: inline;
+        font-family: $roboto;
+        font-weight: 500;
+      }
     }
   }
 

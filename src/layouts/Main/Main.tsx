@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import {
-  // AiOutlineCode,
+  AiOutlineCode,
   AiFillGithub,
   AiFillLinkedin,
   AiOutlineInstagram,
@@ -18,7 +18,6 @@ import {
   // BsFillPeopleFill,
   BsFillGridFill,
   BsFillTriangleFill,
-  // BsTextLeft,
 } from 'react-icons/bs';
 import {
   Drawer,
@@ -30,7 +29,7 @@ import {
   Hero,
   Me,
   About,
-  // HardSkills,
+  HardSkills,
   Technologies,
   // SoftSkills,
   // Stats,
@@ -89,14 +88,14 @@ export const Main = () => {
         <NavBarItem icon={icon} isActive={isActive} path='#about' />
       ),
     },
-    // {
-    //   name: 'Hard Skills',
-    //   icon: <IoIosStats size={20} />,
-    //   isActive: handleIsActive('#hard-skills'),
-    //   render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
-    //     <NavBarItem icon={icon} isActive={isActive} path='#hard-skills' />
-    //   ),
-    // },
+    {
+      name: 'Hard Skills',
+      icon: <AiOutlineCode size={20} />,
+      isActive: handleIsActive('#hard-skills'),
+      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
+        <NavBarItem icon={icon} isActive={isActive} path='#hard-skills' />
+      ),
+    },
     {
       name: 'Stack',
       icon: <GoStack size={20} />,
@@ -150,7 +149,7 @@ export const Main = () => {
     '#home',
     '#me',
     '#about',
-    // '#hard-skills',
+    '#hard-skills',
     '#stack',
     // '#soft-skills',
     // '#stats',
@@ -194,7 +193,7 @@ export const Main = () => {
         <Hero />
         <Me />
         <About />
-        {/* <HardSkills /> */}
+        <HardSkills />
         <Technologies />
         {/* <SoftSkills /> */}
         {/* <Stats /> */}

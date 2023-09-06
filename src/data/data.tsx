@@ -32,6 +32,7 @@ import {
 import {
   FaSass
 } from 'react-icons/fa';
+import { Typography } from 'diego-react-delta-ui';
 import spotify from '../assets/images/spotify.png';
 import delta from '../assets/images/delta-ui.png';
 import space from '../assets/images/space.jpeg';
@@ -314,4 +315,138 @@ const technologiesData = [
   },
 ];
 
-export { statsData, projectsData, technologiesData };
+const hardSkillsData = [
+  {
+    title: 'HTML & CSS',
+    // backgroundColor: '#8120ff2b',
+    content: (
+      <>
+        <Typography>
+          The standard markup language for constructing web pages is HyperText
+          Markup Language (HTML). It is the most fundamental building block for
+          creating web pages.
+        </Typography>
+        <br />
+        <Typography>
+          CSS, it is used to create the page’s layout, colour, fonts, and style.
+        </Typography>
+      </>
+    ),
+  },
+  {
+    title: 'Javascript & Typescript',
+    // backgroundColor: '#20c0ff2b',
+    content: (
+      <Typography>
+        Programming languages used in web development to create dynamic and
+        interactive web pages. Javascript is a scripting language that allows
+        you to create dynamically updating content, control multimedia, animate
+        images, and pretty much everything else, while TypeScript is a
+        statically typed superset of JavaScript, adding strong typing for
+        enhanced code reliability.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Responsive Design',
+    // backgroundColor: '#fffb202b',
+    content: (
+      <Typography>
+        Approach to web design ensuring websites adapt and display effectively
+        on various screen sizes and devices, providing a seamless user
+        experience.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Version Control/Git',
+    // backgroundColor: '#ff51002b',
+    content: (
+      <Typography>
+        A system for tracking changes in code, managing project history, and
+        facilitating collaboration among developers. Git is a widely used
+        version control tool in software development.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Javascript Frameworks and Libraries',
+    // backgroundColor: '#8dff1b2b',
+    content: (
+      <Typography>
+        Pre-built libraries and tools that provide a structured and efficient
+        way to develop web applications. These frameworks facilitate the
+        creation of interactive user interfaces and simplify complex tasks in
+        web development. e.g. React, React Native, Vue.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Testing/Debugging',
+    // backgroundColor: '#ff1ba42b',
+    content: (
+      <Typography>
+        Processes and tools used to evaluate code functionality, identify
+        issues, and ensure software reliability. Testing involves systematically
+        assessing code behavior, while debugging involves locating and resolving
+        errors or bugs in the code.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Browser Developer Tools',
+    // backgroundColor: '#1b41ff2b',
+    content: (
+      <Typography>
+        Built-in web browser features that enable developers to inspect, debug,
+        and analyze web pages and web applications in real-time. These tools
+        provide valuable insights into HTML, CSS, and JavaScript, aiding in
+        troubleshooting and optimization.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Web Performance',
+    // backgroundColor: '#1bf0ff2b',
+    content: (
+      <Typography>
+        Set of techniques and practices aimed at improving the speed,
+        efficiency, and overall user experience of websites and web
+        applications. This involves optimizing page loading times, reducing
+        resource consumption, and enhancing responsiveness.
+      </Typography>
+    ),
+  },
+  {
+    title: 'CSS Preprocessing',
+    // backgroundColor: '#d51bff2b',
+    content: (
+      <Typography>
+        A workflow enhancement technique that involves using preprocessor
+        languages like SASS or LESS to write CSS in a more organized and
+        efficient manner. These preprocessors offer features like variables,
+        nesting, and mixins, which make it easier to manage and maintain complex
+        stylesheets.
+      </Typography>
+    ),
+  },
+  {
+    title: 'Command Line',
+    // backgroundColor: '#c6ff1b2b',
+    content: (
+      <Typography>
+        A text-based interface used for interacting with a computer's operating
+        system or software through commands. It allows users to perform a wide
+        range of tasks, including file management, software installation, and
+        automation, using text commands instead of graphical interfaces.
+      </Typography>
+    ),
+  },
+];
+
+export {
+  statsData,
+  projectsData,
+  technologiesData,
+  hardSkillsData,
+};

@@ -5,17 +5,24 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 100px 200px;
+  justify-content: space-between;
+  padding: 120px 150px 60px 200px;
   transition: all ease 0.3s;
+  background-image: url('../../assets/images/black-sand-2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 100px 30px 60px 30px;
-    flex-direction: column;
+    padding: 100px 30px 50px 30px;
+    gap: 5px;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 100px 20px 60px 20px;
+    padding: 100px 20px 50px 20px;
+  }
+
+  .subContainer {
+    width: 48%;
   }
 }

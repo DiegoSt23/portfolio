@@ -28,7 +28,7 @@ export const Projects = () => {
   };
 
   return (
-    <ViewLayout id='projects' title='Projects'>
+    <ViewLayout id='projects' title='Projects (Personal)'>
       <div className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {projectsData.map((item) => (
