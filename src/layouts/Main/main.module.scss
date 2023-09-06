@@ -80,6 +80,18 @@
     @media screen and (max-width: $large-tablet) {
       width: 100%;
     }
+
+    @media screen and (min-width: $large-tablet) {
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #303030;
+        border-radius: 4px;
+      }
+    }    
   }
 }
 

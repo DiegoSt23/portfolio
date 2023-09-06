@@ -30,18 +30,26 @@ export const About = () => {
                   duration: 0.7,
                 }}
               >
-                <Typography className={styles.text} type='paragraph'>
-                  A Front-End Developer based in Mexico specialized in modern
-                  React.js with TypeScript.
+                <Typography className={styles.text2} type='paragraph'>
+                  As a Front-End Developer specialized in React JS with Typescript at
+                </Typography>
+                <a
+                  href='https://www.blackstone.studio/'
+                  className={styles.link}
+                  target='_blank'
+                >
+                  {'  '}
+                  Blackstone Studio
+                </a>
+                <Typography className={styles.text2} type='paragraph'>
+                  , I am responsible for crafting visually engaging and
+                  functionally robust web and mobile applications using a
+                  variety of cutting-edge technologies. My role involves working
+                  on diverse projects spanning different domains, including real
+                  estate, e-commerce, technology, fitness, and wellness, among
+                  others.
                 </Typography>
                 <br />
-                <Typography className={styles.text} type='paragraph'>
-                  Equipped with an in-depth understanding of TypeScript, I
-                  embrace type safety and modern development practices to ensure
-                  the highest quality codebase. My expertise in front-end
-                  development extends to crafting responsive layouts, beautiful
-                  interfaces and optimizing performance.
-                </Typography>
                 <br />
                 <Typography className={styles.text} type='paragraph'>
                   Driven by a strong problem-solving aptitude, a keen eye for
@@ -73,7 +81,11 @@ export const About = () => {
                   In my toolkit, React's component-based architecture is my
                   go-to canvas, allowing me to piece together intricate user
                   interfaces that seamlessly blend creativity with
-                  functionality. I thrive on collaborating with designers,
+                  functionality.
+                </Typography>
+                <br />
+                <Typography className={styles.text} type='paragraph'>
+                  I thrive on collaborating with designers,
                   product managers, and fellow developers to bring ideas to life
                   in an agile and collaborative environment.
                 </Typography>
