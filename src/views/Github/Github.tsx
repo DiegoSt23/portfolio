@@ -178,7 +178,9 @@ export const GitHub = () => {
                       <div className={styles.row}>
                         <p className={styles.label}>Date:</p>
                         <p className={styles.value}>
-                          {new Date(info.day).toLocaleDateString('en', {
+                          {new Date(
+                            info.day.replace(/-/g, '/')
+                          ).toLocaleDateString('en', {
                             year: 'numeric',
                             month: 'short',
                             day: 'numeric',
