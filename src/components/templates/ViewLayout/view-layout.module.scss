@@ -3,12 +3,10 @@
 .mainContainerViewLayout {
   width: 100%;
   height: 100%;
-  scroll-snap-align: start;
   position: relative;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    scroll-snap-align: unset;
   }
 
   .header {

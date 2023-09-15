@@ -20,13 +20,13 @@ export const ViewLayout = ({
   title,
   headerElement,
 }: ViewLayoutProps) => (
-  <div id={id} className={styles.mainContainerViewLayout}>
+  <section id={id} className={styles.mainContainerViewLayout}>
     <div className={styles.header}>
       {title && <Typography type='heading4'>{title}</Typography>}
       {headerElement || null}
     </div>
     {children}
-  </div>
+  </section>
 );
 
 ViewLayout.defaultProps = defaultProps;
