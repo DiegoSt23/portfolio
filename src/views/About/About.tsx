@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Typography } from 'diego-react-delta-ui';
+import { Typography, useTheme } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import styles from './about.module.scss';
 
 export const About = () => {
+  const { theme } = useTheme();
   const { ref, inView } = useInView();
   const [isInView, setIsInView] = useState<boolean>(false);
 
@@ -30,18 +31,19 @@ export const About = () => {
                   duration: 0.7,
                 }}
               >
-                <Typography className={styles.text2} type='paragraph'>
-                  As a Front-End Developer specialized in React JS with Typescript at
+                <Typography className={styles.text} type='paragraph'>
+                  As a Front-End Developer specialized in React JS with
+                  Typescript at
                 </Typography>
                 <a
                   href='https://www.blackstone.studio/'
-                  className={styles.link}
+                  className={styles[`link${theme}`]}
                   target='_blank'
                 >
                   {'  '}
                   Blackstone Studio
                 </a>
-                <Typography className={styles.text2} type='paragraph'>
+                <Typography className={styles.text} type='paragraph'>
                   , I am responsible for crafting visually engaging and
                   functionally robust web and mobile applications using a
                   variety of cutting-edge technologies. My role involves working
@@ -51,7 +53,7 @@ export const About = () => {
                 </Typography>
                 <br />
                 <br />
-                <Typography className={styles.text} type='paragraph'>
+                <Typography type='paragraph'>
                   Driven by a strong problem-solving aptitude, a keen eye for
                   detail and a passion for crafting elegant and performant web
                   and mobile applications I take pride in delivering
@@ -69,7 +71,7 @@ export const About = () => {
                   duration: 0.7,
                 }}
               >
-                <Typography className={styles.text} type='paragraph'>
+                <Typography type='paragraph'>
                   My commitment to writing clean, maintainable code, coupled
                   with a strong foundation in UI/UX principles and my passion
                   for continuous learning and innovation empowers me to embrace
@@ -77,17 +79,17 @@ export const About = () => {
                   tasks.
                 </Typography>
                 <br />
-                <Typography className={styles.text} type='paragraph'>
+                <Typography type='paragraph'>
                   In my toolkit, React's component-based architecture is my
                   go-to canvas, allowing me to piece together intricate user
                   interfaces that seamlessly blend creativity with
                   functionality.
                 </Typography>
                 <br />
-                <Typography className={styles.text} type='paragraph'>
-                  I thrive on collaborating with designers,
-                  product managers, and fellow developers to bring ideas to life
-                  in an agile and collaborative environment.
+                <Typography type='paragraph'>
+                  I thrive on collaborating with designers, product managers,
+                  and fellow developers to bring ideas to life in an agile and
+                  collaborative environment.
                 </Typography>
               </motion.div>
             </>

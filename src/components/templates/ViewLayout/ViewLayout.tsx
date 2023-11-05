@@ -21,10 +21,12 @@ export const ViewLayout = ({
   headerElement,
 }: ViewLayoutProps) => (
   <section id={id} className={styles.mainContainerViewLayout}>
-    <div className={styles.header}>
-      {title && <Typography type='heading4'>{title}</Typography>}
-      {headerElement || null}
-    </div>
+    {title && (
+      <div className={styles.header}>
+        {title && <Typography type='heading4'>{title}</Typography>}
+        {headerElement || null}
+      </div>
+    )}
     {children}
   </section>
 );

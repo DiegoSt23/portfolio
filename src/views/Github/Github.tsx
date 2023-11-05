@@ -6,7 +6,8 @@ import {
   Typography,
   Card,
   Spinner,
-  useWindowDimensions
+  useWindowDimensions,
+  useTheme,
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import styles from './github.module.scss';
@@ -77,6 +78,7 @@ const getActivity2023 = gql`
 `;
 
 export const GitHub = () => {
+  const { isDark, theme } = useTheme();
   const { loading: loading2022, data: data2022 } = useQuery(getActivity2022);
   const { loading: loading2023, data: data2023 } = useQuery(getActivity2023);
   const [localData, setLocalData] = useState<ItemProps[]>([]);
@@ -128,11 +130,11 @@ export const GitHub = () => {
   }, [data2023?.user, data2022?.user]);
 
   return (
-    <ViewLayout id='github' title='GitHub'>
+    <ViewLayout id='github'>
       <div className={styles.githubMainContainer}>
         <Card
-          headerTitle='Contributions'
-          headerElement={<AiFillGithub size={30} color='#d9d9d9' />}
+          headerElement={<AiFillGithub size={30} color='#888888' />}
+          headerTitle='GitHub contributions'
           footer={
             <div className={styles.totalContainer}>
               <Typography type='paragraph'>Total:</Typography>
@@ -147,7 +149,7 @@ export const GitHub = () => {
           {(!loading2023 || !loading2022) && localData?.length ? (
             <div
               style={{
-                height: isMobile ? 600 : 400,
+                height: isMobile ? 600 : 350,
                 width: '100%',
               }}
             >
@@ -156,10 +158,14 @@ export const GitHub = () => {
                 from='2023-01-01'
                 to={new Date().toDateString()}
                 direction={isMobile ? 'vertical' : 'horizontal'}
-                emptyColor='#1b1b1b'
-                colors={['#216e39', '#30a14e', '#40c463', '#9be9a8']}
+                emptyColor={isDark ? '#1b1b1b' : '#ededed'}
+                colors={
+                  isDark
+                    ? ['#216e39', '#30a14e', '#40c463', '#9be9a8']
+                    : ['#445795', '#5a74c6', '#7191f8', '#8da7f9']
+                }
                 theme={{
-                  labels: { text: { fill: '#d9d9d9' } },
+                  labels: { text: { fill: '#888888' } },
                 }}
                 margin={{
                   top: isMobile ? 80 : 20,
@@ -171,10 +177,10 @@ export const GitHub = () => {
                 monthBorderColor='#000000'
                 monthBorderWidth={0}
                 dayBorderWidth={1}
-                dayBorderColor='#121212'
+                dayBorderColor={isDark ? '#121212' : '#e6e6e6'}
                 tooltip={(info) => {
                   return (
-                    <div className={styles.tooltip}>
+                    <div className={styles[`tooltip${theme}`]}>
                       <div className={styles.row}>
                         <p className={styles.label}>Date:</p>
                         <p className={styles.value}>

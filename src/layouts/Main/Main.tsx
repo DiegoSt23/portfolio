@@ -6,24 +6,24 @@ import { Pivot as Hamburger } from 'hamburger-react';
 import {
   AiOutlineCode,
   AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineInstagram,
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
-import { BiMessageSquareDetail, BiLogoFacebook } from 'react-icons/bi';
+import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
   BsFillPersonFill,
   // BsFillPeopleFill,
   BsFillGridFill,
-  BsFillTriangleFill,
+  BsFillSunFill,
+  BsMoon,
 } from 'react-icons/bs';
 import {
   Drawer,
-  Link,
   useWindowDimensions,
   SideNavBar,
+  Typography,
+  useTheme,
 } from 'diego-react-delta-ui';
 import {  
   Hero,
@@ -45,19 +45,30 @@ type NavBarItemProps = {
   path: string,
 };
 
-const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
-  <HashLink to={path} smooth>
-    <div className={`${isActive ? styles.buttonActive : styles.button}`}>
-      {icon}
-    </div>
-  </HashLink>
-);
-
 export const Main = () => {
+  const { isDark, switchTheme } = useTheme();
   const { hash } = useLocation();
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const isMobile = width < 900;
+
+  const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
+    <HashLink to={path} smooth>
+      <div
+        className={`${
+          isActive
+            ? isDark
+              ? styles.buttonActiveDark
+              : styles.buttonActiveLight
+            : isDark
+              ? styles.buttonDark
+              : styles.buttonLight
+        }`}
+      >
+        {icon}
+      </div>
+    </HashLink>
+  );
 
   const handleDisplayDrawer = () => setIsOpen(!isOpen);
 
@@ -145,6 +156,19 @@ export const Main = () => {
       ),
     },
   ];
+
+  const bottomItems = [
+    {
+      name: isDark ? 'Light Mode' : 'Dark Mode',
+      icon: (
+        <button className={styles.themeSwitcherButton} onClick={switchTheme}>
+          {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
+        </button>
+      ),
+      isActive: false,
+    },
+  ];
+
   const paths = [
     '#home',
     '#me',
@@ -167,7 +191,7 @@ export const Main = () => {
   return (
     <div className={styles.mainContainer}>
       <motion.div
-        className={styles.barContainer}
+        className={isDark ? styles.barContainerDark : styles.barContainerLight}
         initial={{ x: '-100%' }}
         animate={{ x: '0%' }}
         transition={{
@@ -177,8 +201,8 @@ export const Main = () => {
       >
         <SideNavBar
           items={items}
+          bottomItems={bottomItems}
           mainContainerClassName={styles.navBar}
-          mainIcon={<BsFillTriangleFill size={20} color='#89ffe5' />}
         />
       </motion.div>
       <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
@@ -189,7 +213,11 @@ export const Main = () => {
           color='gray'
         />
       </button>
-      <div className={styles.childrenContainer}>
+      <div
+        className={
+          isDark ? styles.childrenContainerDark : styles.childrenContainerLight
+        }
+      >
         <Hero />
         <Me />
         <About />
@@ -207,7 +235,7 @@ export const Main = () => {
         onClose={handleDisplayDrawer}
         className={styles.drawer}
       >
-        <BsFillTriangleFill size={25} color='#89ffe5' />
+        {/* <BsFillTriangleFill size={25} color='#89ffe5' /> */}
         {items.map(({ name, icon, isActive }, index) => (
           <HashLink key={name} to={paths[index]} className={styles.link} smooth>
             <motion.div
@@ -220,34 +248,35 @@ export const Main = () => {
             >
               <button
                 className={`${
-                  isActive ? styles.navItemButtonActive : styles.navItemButton
+                  isActive
+                    ? isDark
+                      ? styles.navItemButtonActiveDark
+                      : styles.navItemButtonActiveLight
+                    : styles.navItemButton
                 }`}
                 onClick={() => {
                   handleDisplayDrawer();
                 }}
               >
                 {icon}
-                {name}
+                <Typography
+                  className={
+                    isDark
+                      ? styles.navItemTextActiveDark
+                      : styles.navItemTextActiveLight
+                  }
+                >
+                  {name}
+                </Typography>
               </button>
             </motion.div>
           </HashLink>
         ))}
+
         <div className={styles.linksContainer}>
-          <Link href='https://github.com/DiegoSt23' target='_blank'>
-            <AiFillGithub size={25} />
-          </Link>
-          <Link
-            href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
-            target='_blank'
-          >
-            <AiFillLinkedin size={25} />
-          </Link>
-          <Link target='_blank'>
-            <AiOutlineInstagram size={25} />
-          </Link>
-          <Link target='_blank'>
-            <BiLogoFacebook size={25} />
-          </Link>
+          <button onClick={switchTheme}>
+            {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
+          </button>
         </div>
       </Drawer>
     </div>

@@ -28,7 +28,7 @@ export const Projects = () => {
   };
 
   return (
-    <ViewLayout id='projects' title='Projects (Personal)'>
+    <ViewLayout id='projects' title='Personal projects'>
       <div className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {projectsData.map((item) => (
@@ -54,6 +54,7 @@ export const Projects = () => {
         isOpen={isModalOpen}
         onClose={handleDisplayModal}
         mainContainerClassName={styles.modal}
+        headerTitle={selectedData?.name}
       >
         <div className={styles.modalContentContainer}>
           <div className={styles.imgContainer}>
@@ -69,11 +70,7 @@ export const Projects = () => {
             )}
           </div>
           <div className={styles.infoContainer}>
-            <div>
-              <Typography type='heading3'>{selectedData?.name}</Typography>
-              <br />
-              <Typography>{selectedData?.description}</Typography>
-            </div>
+            <Typography>{selectedData?.description}</Typography>
             <div className={styles.subContainer}>
               <Typography type='paragraph2'>
                 {selectedData?.releaseDate}
