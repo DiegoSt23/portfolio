@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from 'react';
 import { Modal, Typography, Link, Chip } from 'diego-react-delta-ui';
 import { BsLink45Deg, BsGithub, BsInfoCircleFill } from 'react-icons/bs';
 import { ViewLayout } from '../../components';
@@ -16,19 +17,27 @@ export type ProjectProps = {
   releaseDate: string;
 };
 
-export const Projects = () => {
-  const [selectedData, setSelectedData] = useState<ProjectProps | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+interface ProjectViewProps {
+  isModalOpen: (val: boolean) => void;
+}
 
-  const handleDisplayModal = () => setIsModalOpen(!isModalOpen);
+export const Projects = ({ isModalOpen }: ProjectViewProps) => {
+  const [selectedData, setSelectedData] = useState<ProjectProps | null>(null);
+  const [isModalOpenLocal, setIsModalOpenLocal] = useState<boolean>(false);
+
+  const handleDisplayModal = () => setIsModalOpenLocal(!isModalOpenLocal);
 
   const handleSelectProject = (data: ProjectProps) => {
     setSelectedData(data);
     handleDisplayModal();
   };
 
+  useEffect(() => {
+    isModalOpen(isModalOpenLocal)
+  }, [isModalOpenLocal]);
+
   return (
-    <ViewLayout id='projects' title='Projects (Personal)'>
+    <ViewLayout id='projects' title='Personal projects'>
       <div className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {projectsData.map((item) => (
@@ -51,9 +60,10 @@ export const Projects = () => {
         </div>
       </div>
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isModalOpenLocal}
         onClose={handleDisplayModal}
         mainContainerClassName={styles.modal}
+        headerTitle={selectedData?.name}
       >
         <div className={styles.modalContentContainer}>
           <div className={styles.imgContainer}>
@@ -69,11 +79,7 @@ export const Projects = () => {
             )}
           </div>
           <div className={styles.infoContainer}>
-            <div>
-              <Typography type='heading3'>{selectedData?.name}</Typography>
-              <br />
-              <Typography>{selectedData?.description}</Typography>
-            </div>
+            <Typography>{selectedData?.description}</Typography>
             <div className={styles.subContainer}>
               <Typography type='paragraph2'>
                 {selectedData?.releaseDate}

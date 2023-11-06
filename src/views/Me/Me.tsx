@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ViewLayout } from '../../components';
-import { Typography } from 'diego-react-delta-ui';
-import img from '../../assets/images/diego.jpg';
+import { Typography, useTheme } from 'diego-react-delta-ui';
+import img from '../../assets/images/diego-2.jpg';
 import styles from './me.module.scss';
 
 export const Me = () => {
+  const { theme } = useTheme();
   const { ref, inView } = useInView();
   const [isInView, setIsInView] = useState<boolean>(false);
 
@@ -33,8 +34,11 @@ export const Me = () => {
               <Typography type='heading1' className={styles.title}>
                 Hey, I'm Diego
               </Typography>
-              <Typography type='heading3' className={styles.subtitle}>
-                frontEndDeveloper
+              <Typography
+                type='heading3'
+                className={styles[`subtitle${theme}`]}
+              >
+                frontEndDeveloper()
               </Typography>
             </motion.div>
           )}

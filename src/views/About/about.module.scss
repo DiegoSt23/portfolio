@@ -1,16 +1,30 @@
 @import '../../styles/variables.scss';
 
+@mixin link-style {
+  text-decoration: none;
+  display: inline;
+  font-family: $roboto;
+  font-weight: 500;
+}
+
 .aboutMainContainer {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 150px 100px 200px;
-  background-image: url('../../assets/images/dark-dune.jpg');
-  background-size: cover;
-  background-attachment: fixed;
+  padding: 50px 150px 80px 200px;
   transition: all ease 0.3s;
+
+  @media screen and (max-width: $large-tablet) {
+    height: auto;
+    padding: 30px 30px 50px 30px;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $phone) {
+    padding: 30px 20px 50px 20px;
+  }
 
   .about {
     max-width: 1280px;
@@ -31,31 +45,18 @@
       }
 
       .text {
-        color: #d9d9d9;
-      }
-
-      .text2 {
-        color: #d9d9d9;
         display: inline;
       }
 
-      .link {
+      .linkDark {
+        @include link-style;
         color: #31dab5;
-        text-decoration: none;
-        display: inline;
-        font-family: $roboto;
-        font-weight: 500;
+      }
+
+      .linkLight {
+        @include link-style;
+        color: #7191f8;
       }
     }
-  }
-
-  @media screen and (max-width: $large-tablet) {
-    height: auto;
-    padding: 100px 30px 50px 30px;
-    flex-direction: column;
-  }
-
-  @media screen and (max-width: $phone) {
-    padding: 100px 20px 50px 20px;
   }
 }

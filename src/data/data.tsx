@@ -45,63 +45,63 @@ import countdown from '../assets/images/countdown.jpeg';
 const statsData = [
   {
     title: 'React',
-    Icon: <SiReact size={20} color='#fff' />,
+    Icon: <SiReact size={20} color='gray' />,
     percent: 85,
   },
   {
     title: 'JavaScript',
-    Icon: <SiJavascript size={20} color='#fff' />,
+    Icon: <SiJavascript size={20} color='gray' />,
     percent: 80,
   },
   {
     title: 'HTML',
-    Icon: <SiHtml5 size={20} color='#fff' />,
+    Icon: <SiHtml5 size={20} color='gray' />,
     percent: 80,
   },
   {
     title: 'CSS',
-    Icon: <SiCss3 size={20} color='#fff' />,
+    Icon: <SiCss3 size={20} color='gray' />,
     percent: 80,
   },
   {
     title: 'React Native',
-    Icon: <SiReact size={20} color='#fff' />,
+    Icon: <SiReact size={20} color='gray' />,
     percent: 60,
   },
   {
     title: 'TypeScript',
-    Icon: <SiTypescript size={20} color='#fff' />,
+    Icon: <SiTypescript size={20} color='gray' />,
     percent: 75,
   },
 
   {
     title: 'GitHub',
-    Icon: <SiGithub size={20} color='#fff' />,
+    Icon: <SiGithub size={20} color='gray' />,
     percent: 80,
   },
   {
     title: 'Next',
-    Icon: <SiNextdotjs size={20} color='#fff' />,
+    Icon: <SiNextdotjs size={20} color='gray' />,
     percent: 60,
   },
   {
     title: 'Jest',
-    Icon: <SiJest size={20} color='#fff' />,
+    Icon: <SiJest size={20} color='gray' />,
     percent: 50,
   },
   {
     title: 'Cypress',
-    Icon: <SiCypress size={20} color='#fff' />,
+    Icon: <SiCypress size={20} color='gray' />,
     percent: 35,
   },
   {
     title: 'Vue',
-    Icon: <SiVuedotjs size={20} color='#fff' />,
+    Icon: <SiVuedotjs size={20} color='gray' />,
     percent: 35,
   },
   {
     title: 'Stripe',
-    Icon: <SiStripe size={20} color='#fff' />,
+    Icon: <SiStripe size={20} color='gray' />,
     percent: 20,
   },
 ];
@@ -195,123 +195,123 @@ const projectsData = [
 const technologiesData = [
   {
     name: 'React',
-    Icon: <SiReact size={35} color='#fff' />,
+    Icon: <SiReact size={35} color='gray' />,
   },
   {
     name: 'Typescript',
-    Icon: <SiTypescript size={35} color='#fff' />,
+    Icon: <SiTypescript size={35} color='gray' />,
   },
   {
     name: 'Javascript',
-    Icon: <SiJavascript size={35} color='#fff' />,
+    Icon: <SiJavascript size={35} color='gray' />,
   },
   {
     name: 'Vue',
-    Icon: <SiVuedotjs size={35} color='#fff' />,
+    Icon: <SiVuedotjs size={35} color='gray' />,
   },
   {
     name: 'React Native',
-    Icon: <SiReact size={35} color='#fff' />,
+    Icon: <SiReact size={35} color='gray' />,
   },
   {
     name: 'Jest',
-    Icon: <SiJest size={35} color='#fff' />,
+    Icon: <SiJest size={35} color='gray' />,
   },
   {
     name: 'React Testing Library',
-    Icon: <SiTestinglibrary size={35} color='#fff' />,
+    Icon: <SiTestinglibrary size={35} color='gray' />,
   },
   {
     name: 'Cypress',
-    Icon: <SiCypress size={35} color='#fff' />,
+    Icon: <SiCypress size={35} color='gray' />,
   },
   {
     name: 'CSS',
-    Icon: <SiCss3 size={35} color='#fff' />,
+    Icon: <SiCss3 size={35} color='gray' />,
   },
   {
     name: 'SASS',
-    Icon: <FaSass size={35} color='#fff' />,
+    Icon: <FaSass size={35} color='gray' />,
   },
   {
     name: 'HTML',
-    Icon: <SiHtml5 size={35} color='#fff' />,
+    Icon: <SiHtml5 size={35} color='gray' />,
   },
   {
     name: 'MUI',
-    Icon: <SiMui size={35} color='#fff' />,
+    Icon: <SiMui size={35} color='gray' />,
   },
   {
     name: 'Ant Design',
-    Icon: <SiAntdesign size={35} color='#fff' />,
+    Icon: <SiAntdesign size={35} color='gray' />,
   },
   {
     name: 'Tailwind',
-    Icon: <SiTailwindcss size={35} color='#fff' />,
+    Icon: <SiTailwindcss size={35} color='gray' />,
   },
   {
     name: 'Bootstrap',
-    Icon: <SiBootstrap size={35} color='#fff' />,
+    Icon: <SiBootstrap size={35} color='gray' />,
   },
   {
     name: 'Storybook',
-    Icon: <SiStorybook size={35} color='#fff' />,
+    Icon: <SiStorybook size={35} color='gray' />,
   },
   {
     name: 'Next',
-    Icon: <SiNextdotjs size={35} color='#fff' />,
+    Icon: <SiNextdotjs size={35} color='gray' />,
   },
   {
     name: 'Gatsby',
-    Icon: <SiGatsby size={35} color='#fff' />,
+    Icon: <SiGatsby size={35} color='gray' />,
   },
   {
     name: 'Astro',
-    Icon: <SiAstro size={35} color='#fff' />,
+    Icon: <SiAstro size={35} color='gray' />,
   },
   {
     name: 'Redux',
-    Icon: <SiRedux size={35} color='#fff' />,
+    Icon: <SiRedux size={35} color='gray' />,
   },
   {
     name: 'Axios',
-    Icon: <SiAxios size={35} color='#fff' />,
+    Icon: <SiAxios size={35} color='gray' />,
   },
   {
     name: 'Framer Motion',
-    Icon: <SiFramer size={35} color='#fff' />,
+    Icon: <SiFramer size={35} color='gray' />,
   },
   {
     name: 'Rollup',
-    Icon: <SiRollupdotjs size={35} color='#fff' />,
+    Icon: <SiRollupdotjs size={35} color='gray' />,
   },
   {
     name: 'Vite',
-    Icon: <SiVite size={35} color='#fff' />,
+    Icon: <SiVite size={35} color='gray' />,
   },
   {
     name: 'GraphQL',
-    Icon: <SiGraphql size={35} color='#fff' />,
+    Icon: <SiGraphql size={35} color='gray' />,
   },
   {
     name: 'Git',
-    Icon: <SiGit size={35} color='#fff' />,
+    Icon: <SiGit size={35} color='gray' />,
   },
   {
     name: 'GitHub',
-    Icon: <SiGithub size={35} color='#fff' />,
+    Icon: <SiGithub size={35} color='gray' />,
   },
   {
     name: 'Shopify',
-    Icon: <SiShopify size={35} color='#fff' />,
+    Icon: <SiShopify size={35} color='gray' />,
   },
   {
     name: 'Strapi',
-    Icon: <SiStrapi size={35} color='#fff' />,
+    Icon: <SiStrapi size={35} color='gray' />,
   },
   {
     name: 'Jira',
-    Icon: <SiJira size={35} color='#fff' />,
+    Icon: <SiJira size={35} color='gray' />,
   },
 ];
 
@@ -349,7 +349,7 @@ const hardSkillsData = [
   },
   {
     title: 'Responsive Design',
-    // backgroundColor: '#fffb202b',
+    // backgroundColor: 'grayb202b',
     content: (
       <Typography>
         Approach to web design ensuring websites adapt and display effectively
