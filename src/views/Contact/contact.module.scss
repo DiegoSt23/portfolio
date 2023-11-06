@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 150px 120px 200px;
+  padding: 80px 150px 120px 200px;
   // transition: all ease 0.3s;
   // background-image: url('../../assets/images/black-sky.jpg');
   // background-size: cover;
@@ -14,12 +14,12 @@
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 30px 30px 120px 30px;
+    padding: 50px 30px 120px 30px;
     flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 30px 20px 100px 20px;
+    padding: 50px 20px 100px 20px;
   }
 
   .deltaLink {

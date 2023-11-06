@@ -50,6 +50,7 @@ export const Main = () => {
   const { hash } = useLocation();
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const isMobile = width < 900;
 
   const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
@@ -205,14 +206,16 @@ export const Main = () => {
           mainContainerClassName={styles.navBar}
         />
       </motion.div>
-      <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
-        <Hamburger
-          toggled={isOpen}
-          toggle={handleDisplayDrawer}
-          size={25}
-          color='gray'
-        />
-      </button>
+      {!isModalOpen && (
+        <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
+          <Hamburger
+            toggled={isOpen}
+            toggle={handleDisplayDrawer}
+            size={25}
+            color='gray'
+          />
+        </button>
+      )}
       <div
         className={
           isDark ? styles.childrenContainerDark : styles.childrenContainerLight
@@ -225,7 +228,7 @@ export const Main = () => {
         <Technologies />
         {/* <SoftSkills /> */}
         {/* <Stats /> */}
-        <Projects />
+        <Projects isModalOpen={(val) => setIsModalOpen(val)} />
         <GitHub />
         <Contact />
       </div>
