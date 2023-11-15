@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { BiLogoFacebook } from 'react-icons/bi';
 import { FiCopy } from 'react-icons/fi';
 import {
   AiFillGithub,
   AiFillLinkedin,
   AiOutlineInstagram,
 } from 'react-icons/ai';
+import { BsTwitterX } from 'react-icons/bs';
 import {
   Typography,
   Link,
@@ -126,7 +126,7 @@ export const Contact = () => {
               <AiOutlineInstagram size={20} />
             </Link>
             <Link target='_blank' className={isDark ? '' : styles.link}>
-              <BiLogoFacebook size={20} />
+              <BsTwitterX size={16} />
             </Link>
           </div>
         </div>
@@ -177,11 +177,7 @@ export const Contact = () => {
           />
           <br />
           <br />
-          <Button
-            small
-            onClick={() => handleSubmit()}
-            type='submit'
-          >
+          <Button small onClick={() => handleSubmit()} type='submit'>
             Submit
           </Button>
         </form>
