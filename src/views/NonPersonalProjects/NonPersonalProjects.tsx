@@ -34,7 +34,7 @@ export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
   }, [isModalOpenLocal]);
 
   return (
-    <ViewLayout id='projects' title='Projects that I have participated in'>
+    <ViewLayout id='projects' title='Projects I have participated in'>
       <div className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {nonPersonalProjectsData.map((item) => (
