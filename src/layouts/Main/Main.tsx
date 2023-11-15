@@ -36,6 +36,7 @@ import {
   Projects,
   GitHub,
   Contact,
+  NonPersonalProjects,
 } from '../../views';
 import styles from './main.module.scss';
 
@@ -228,6 +229,7 @@ export const Main = () => {
         <Technologies />
         {/* <SoftSkills /> */}
         {/* <Stats /> */}
+        <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
         <Projects isModalOpen={(val) => setIsModalOpen(val)} />
         <GitHub />
         <Contact />
