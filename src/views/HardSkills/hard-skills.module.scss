@@ -30,6 +30,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .title {
+      text-align: left;
+    }
   }
 
   .subContainer2 {
