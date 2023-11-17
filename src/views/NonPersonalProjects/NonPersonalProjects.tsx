@@ -55,6 +55,7 @@ export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
         isOpen={isModalOpenLocal}
         onClose={handleDisplayModal}
         mainContainerClassName={styles.modal}
+        headerClassName={styles.header}
         headerTitle={selectedData?.name}
         size='sm'
       >

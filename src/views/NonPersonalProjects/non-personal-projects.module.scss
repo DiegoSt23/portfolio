@@ -125,6 +125,10 @@
 }
 
 .modal {
+  .header {
+    gap: 20px;
+  }
+
   .imgContainer {
     width: 100%;
     display: flex;
