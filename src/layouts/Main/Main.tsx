@@ -12,7 +12,6 @@ import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
-  BsFillPersonFill,
   // BsFillPeopleFill,
   BsFillGridFill,
   BsFillSunFill,
@@ -27,7 +26,6 @@ import {
 } from 'diego-react-delta-ui';
 import {  
   Hero,
-  Me,
   About,
   HardSkills,
   Technologies,
@@ -52,6 +50,7 @@ export const Main = () => {
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [displayLoader, setDisplayLoader] = useState<boolean>(true);
   const isMobile = width < 900;
 
   const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
@@ -83,14 +82,6 @@ export const Main = () => {
       isActive: !hash ? true : handleIsActive('#home'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#home' />
-      ),
-    },
-    {
-      name: 'Me',
-      icon: <BsFillPersonFill size={20} />,
-      isActive: handleIsActive('#me'),
-      render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
-        <NavBarItem icon={icon} isActive={isActive} path='#me' />
       ),
     },
     {
@@ -184,6 +175,25 @@ export const Main = () => {
     '#contact',
   ];
 
+  const icon = {
+    hidden: {
+      opacity: 0,
+      pathLength: 0,
+      scale: 0.8,
+      fill: 'transparent',
+    },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      scale: 1,
+      fill: '#fff',
+    },
+  };
+
+  setTimeout(() => {
+    setDisplayLoader(false);
+  }, 5000);
+
   useEffect(() => {
     if (!isMobile) {
       setIsOpen(false);
@@ -192,98 +202,133 @@ export const Main = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <motion.div
-        className={isDark ? styles.barContainerDark : styles.barContainerLight}
-        initial={{ x: '-100%' }}
-        animate={{ x: '0%' }}
-        transition={{
-          delay: 1,
-          duration: 0.3,
-        }}
-      >
-        <SideNavBar
-          items={items}
-          bottomItems={bottomItems}
-          mainContainerClassName={styles.navBar}
-        />
-      </motion.div>
-      {!isModalOpen && (
-        <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
-          <Hamburger
-            toggled={isOpen}
-            toggle={handleDisplayDrawer}
-            size={25}
-            color='gray'
-          />
-        </button>
-      )}
-      <div
-        className={
-          isDark ? styles.childrenContainerDark : styles.childrenContainerLight
-        }
-      >
-        <Hero />
-        <Me />
-        <About />
-        <HardSkills />
-        <Technologies />
-        {/* <SoftSkills /> */}
-        {/* <Stats /> */}
-        <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
-        <Projects isModalOpen={(val) => setIsModalOpen(val)} />
-        <GitHub />
-        <Contact />
-      </div>
-      <Drawer
-        position='right'
-        isOpen={isOpen}
-        onClose={handleDisplayDrawer}
-        className={styles.drawer}
-      >
-        {/* <BsFillTriangleFill size={25} color='#89ffe5' /> */}
-        {items.map(({ name, icon, isActive }, index) => (
-          <HashLink key={name} to={paths[index]} className={styles.link} smooth>
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
+      {displayLoader ? (
+        <div className={styles.loaderContainer}>
+          <motion.svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 100 100'
+            width={100}
+            height={100}
+          >
+            <motion.path
+              d='M 49 0 L 0 85 H 99 L 49 0'
+              variants={icon}
+              initial='hidden'
+              animate='visible'
+              stroke='#ffffff'
+              strokeWidth={1}
+              strokeLinecap='round'
               transition={{
-                delay: (index + 1) * 0.1,
-                duration: 0.2,
+                default: { duration: 4, ease: 'easeInOut' },
+                fill: { duration: 4, ease: 'easeInOut' },
               }}
-            >
-              <button
-                className={`${
-                  isActive
-                    ? isDark
-                      ? styles.navItemButtonActiveDark
-                      : styles.navItemButtonActiveLight
-                    : styles.navItemButton
-                }`}
-                onClick={() => {
-                  handleDisplayDrawer();
-                }}
-              >
-                {icon}
-                <Typography
-                  className={
-                    isDark
-                      ? styles.navItemTextActiveDark
-                      : styles.navItemTextActiveLight
-                  }
-                >
-                  {name}
-                </Typography>
-              </button>
-            </motion.div>
-          </HashLink>
-        ))}
-
-        <div className={styles.linksContainer}>
-          <button onClick={switchTheme}>
-            {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
-          </button>
+            />
+          </motion.svg>
         </div>
-      </Drawer>
+      ) : (
+        <>
+          <motion.div
+            className={
+              isDark ? styles.barContainerDark : styles.barContainerLight
+            }
+            initial={{ x: '-100%' }}
+            animate={{ x: '0%' }}
+            transition={{
+              delay: 2,
+              duration: 0.3,
+            }}
+          >
+            <SideNavBar
+              items={items}
+              bottomItems={bottomItems}
+              mainContainerClassName={styles.navBar}
+            />
+          </motion.div>
+          {!isModalOpen && (
+            <button className={styles.menuIcon} onClick={handleDisplayDrawer}>
+              <Hamburger
+                toggled={isOpen}
+                toggle={handleDisplayDrawer}
+                size={25}
+                color='gray'
+              />
+            </button>
+          )}
+          <div
+            className={
+              isDark
+                ? styles.childrenContainerDark
+                : styles.childrenContainerLight
+            }
+          >
+            <Hero />
+            <About />
+            <HardSkills />
+            <Technologies />
+            {/* <SoftSkills /> */}
+            {/* <Stats /> */}
+            <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
+            <Projects isModalOpen={(val) => setIsModalOpen(val)} />
+            <GitHub />
+            <Contact />
+          </div>
+          <Drawer
+            position='right'
+            isOpen={isOpen}
+            onClose={handleDisplayDrawer}
+            className={styles.drawer}
+          >
+            {/* <BsFillTriangleFill size={25} color='#89ffe5' /> */}
+            {items.map(({ name, icon, isActive }, index) => (
+              <HashLink
+                key={name}
+                to={paths[index]}
+                className={styles.link}
+                smooth
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: (index + 1) * 0.1,
+                    duration: 0.2,
+                  }}
+                >
+                  <button
+                    className={`${
+                      isActive
+                        ? isDark
+                          ? styles.navItemButtonActiveDark
+                          : styles.navItemButtonActiveLight
+                        : styles.navItemButton
+                    }`}
+                    onClick={() => {
+                      handleDisplayDrawer();
+                    }}
+                  >
+                    {icon}
+                    <Typography
+                      className={
+                        isDark
+                          ? styles.navItemTextActiveDark
+                          : styles.navItemTextActiveLight
+                      }
+                    >
+                      {name}
+                    </Typography>
+                  </button>
+                </motion.div>
+              </HashLink>
+            ))}
+
+            <div className={styles.linksContainer}>
+              <button onClick={switchTheme}>
+                {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
+              </button>
+            </div>
+          </Drawer>
+        </>
+      )}
     </div>
   );
 };

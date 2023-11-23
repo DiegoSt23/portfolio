@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { ResponsiveCalendar } from '@nivo/calendar';
-import { AiFillGithub } from 'react-icons/ai';
+import { Parallax } from 'react-scroll-parallax';
 import {
   Typography,
   Card,
@@ -130,11 +130,12 @@ export const GitHub = () => {
   }, [data2023?.user, data2022?.user]);
 
   return (
-    <ViewLayout id='github'>
-      <div className={styles.githubMainContainer}>
+    <ViewLayout
+      id='github'
+      title='GitHub Contributions'
+    >
+      <Parallax speed={15} className={styles.githubMainContainer}>
         <Card
-          headerElement={<AiFillGithub size={30} color='#888888' />}
-          headerTitle='GitHub contributions'
           footer={
             <div className={styles.totalContainer}>
               <Typography type='paragraph'>Total:</Typography>
@@ -208,7 +209,7 @@ export const GitHub = () => {
             </div>
           )}
         </Card>
-      </div>
+      </Parallax>
     </ViewLayout>
   );
 };

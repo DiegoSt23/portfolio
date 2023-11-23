@@ -28,22 +28,21 @@
     max-width: 1280px;
     margin: auto;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    .techContainer {
-      width: 20%;
+    .parallax {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
+      width: 20%;
 
-      @media screen and (max-width: $large-tablet) {
-        width: 33.333%;
-      }
-
-      @media screen and (max-width: $phone) {
-        width: 50%;
+      .techContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
       }
     }
   }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Parallax } from 'react-scroll-parallax';
 import { Typography, useTheme } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import styles from './about.module.scss';
@@ -17,8 +18,8 @@ export const About = () => {
   }, [inView]);
 
   return (
-    <ViewLayout id='about' title='About'>
-      <div className={styles.aboutMainContainer}>
+    <ViewLayout id='about' title='About' parallaxEffectTitle={false}>
+      <Parallax speed={15} className={styles.aboutMainContainer}>
         <div className={styles.about} ref={ref}>
           {isInView && (
             <>
@@ -48,7 +49,7 @@ export const About = () => {
                   functionally robust web and mobile applications using a
                   variety of cutting-edge technologies. My role involves working
                   on diverse projects spanning different domains, including real
-                  estate, e-commerce, technology, fitness, and wellness, among
+                  estate, e-commerce, technology, fitness & wellness, among
                   others.
                 </Typography>
                 <br />
@@ -95,7 +96,7 @@ export const About = () => {
             </>
           )}
         </div>
-      </div>
+      </Parallax>
     </ViewLayout>
   );
 };
