@@ -39,7 +39,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
 
   return (
     <ViewLayout id='projects' title='Personal projects'>
-      <Parallax speed={15} className={styles.projectsMainContainer}>
+      <Parallax speed={20} className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {projectsData.map((item) => (
             <button

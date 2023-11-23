@@ -11,7 +11,7 @@ const data = hardSkillsData.map((item) => ({
 
 export const HardSkills = () => (
   <ViewLayout id='hard-skills' title='Hard Skills'>
-    <Parallax speed={15} className={styles.hardSkillsMainContainer}>
+    <Parallax speed={20} className={styles.hardSkillsMainContainer}>
       <div className={styles.subContainer}>
         <Accordion items={data} singleOpen />
       </div>

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { Parallax } from 'react-scroll-parallax';
 import { FiCopy } from 'react-icons/fi';
 import {
   AiFillGithub,
@@ -203,8 +204,8 @@ export const Contact = () => {
   ];
 
   return (
-    <ViewLayout id='contact' title="Let's talk" parallaxEffectTitle={false}>
-      <div className={styles.contactMainContainer}>
+    <ViewLayout id='contact' title="Let's talk">
+      <Parallax speed={-10} className={styles.contactMainContainer}>
         <Card
           fullWidth
           mainContainerClassName={styles.contactCard}
@@ -220,7 +221,7 @@ export const Contact = () => {
             {'Created with <3'}
           </Typography>
         </div>
-      </div>
+      </Parallax>
       <Toast
         ref={ref}
         variant='success'

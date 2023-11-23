@@ -36,7 +36,7 @@ export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
 
   return (
     <ViewLayout id='projects' title='Projects I have participated in'>
-      <Parallax speed={15} className={styles.projectsMainContainer}>
+      <Parallax speed={20} className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {nonPersonalProjectsData.map((item) => (
             <button

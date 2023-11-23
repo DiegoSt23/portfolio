@@ -134,7 +134,7 @@ export const GitHub = () => {
       id='github'
       title='GitHub Contributions'
     >
-      <Parallax speed={15} className={styles.githubMainContainer}>
+      <Parallax speed={20} className={styles.githubMainContainer}>
         <Card
           footer={
             <div className={styles.totalContainer}>
