@@ -14,7 +14,6 @@
   justify-content: center;
   align-items: center;
   padding: 50px 150px 80px 200px;
-  transition: all ease 0.3s;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
@@ -31,10 +30,11 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: flex-start; 
 
     @media screen and (max-width: $large-tablet) {
       flex-direction: column;
+      align-items: center;
     }
 
     .textContainer {

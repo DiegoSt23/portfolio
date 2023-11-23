@@ -8,6 +8,7 @@ import {
   AiOutlineInstagram,
 } from 'react-icons/ai';
 import { BsTwitterX } from 'react-icons/bs';
+import { IoMdDownload } from 'react-icons/io';
 import {
   Typography,
   Link,
@@ -22,6 +23,7 @@ import {
   useTheme,
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
+import cv from '../../assets/docs/CV_Diego.pdf';
 import styles from './contact.module.scss';
 
 export const Contact = () => {
@@ -107,6 +109,20 @@ export const Contact = () => {
               <FiCopy size={20} color={isDark ? '#31dab5' : '#7191f8'} />
             </button>
           </div>
+          <br />
+          <Typography type='subtitle'>DOWNLOAD</Typography>
+          <br />
+          <div className={styles.row}>
+            <Typography>Download CV</Typography>
+            <div className={styles.iconContainer}>
+              <Link href={cv} download>
+                <IoMdDownload
+                  size={22}
+                  color={isDark ? '#31dab5' : '#7191f8'}
+                />
+              </Link>
+            </div>
+          </div>
           <div className={styles.linksContainer}>
             <Link
               href='https://github.com/DiegoSt23'
@@ -187,11 +203,10 @@ export const Contact = () => {
   ];
 
   return (
-    <ViewLayout id='contact'>
+    <ViewLayout id='contact' title="Let's talk" parallaxEffectTitle={false}>
       <div className={styles.contactMainContainer}>
         <Card
           fullWidth
-          headerTitle="Let's talk"
           mainContainerClassName={styles.contactCard}
         >
           <Typography className={styles.contactMessage}>

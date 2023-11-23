@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import { Parallax } from 'react-scroll-parallax';
 import { Modal, Typography, Link, Chip } from 'diego-react-delta-ui';
 import { BsLink45Deg, BsGithub, BsInfoCircleFill } from 'react-icons/bs';
 import { ViewLayout } from '../../components';
@@ -38,7 +39,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
 
   return (
     <ViewLayout id='projects' title='Personal projects'>
-      <div className={styles.projectsMainContainer}>
+      <Parallax speed={15} className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {projectsData.map((item) => (
             <button
@@ -58,7 +59,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
             </button>
           ))}
         </div>
-      </div>
+      </Parallax>
       <Modal
         isOpen={isModalOpenLocal}
         onClose={handleDisplayModal}
