@@ -21,28 +21,28 @@ export const Technologies = () => (
             </div>
           ))}
         </Parallax>
-        <Parallax className={styles.parallax} speed={15}>
+        <Parallax className={styles.parallax} speed={20}>
           {group2.map((tech) => (
             <div key={tech.name} className={styles.techContainer}>
               <Tooltip tooltipContent={tech.name}>{tech.Icon}</Tooltip>
             </div>
           ))}
         </Parallax>
-        <Parallax className={styles.parallax} speed={20}>
+        <Parallax className={styles.parallax} speed={30}>
           {group3.map((tech) => (
             <div key={tech.name} className={styles.techContainer}>
               <Tooltip tooltipContent={tech.name}>{tech.Icon}</Tooltip>
             </div>
           ))}
         </Parallax>
-        <Parallax className={styles.parallax} speed={25}>
+        <Parallax className={styles.parallax} speed={40}>
           {group4.map((tech) => (
             <div key={tech.name} className={styles.techContainer}>
               <Tooltip tooltipContent={tech.name}>{tech.Icon}</Tooltip>
             </div>
           ))}
         </Parallax>
-        <Parallax className={styles.parallax} speed={30}>
+        <Parallax className={styles.parallax} speed={50}>
           {group5.map((tech) => (
             <div key={tech.name} className={styles.techContainer}>
               <Tooltip tooltipContent={tech.name}>{tech.Icon}</Tooltip>

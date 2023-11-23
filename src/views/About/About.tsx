@@ -7,8 +7,8 @@ export const About = () => {
   const { theme } = useTheme();
 
   return (
-    <ViewLayout id='about' title='About' parallaxEffectTitle={false}>
-      <Parallax speed={15} className={styles.aboutMainContainer}>
+    <ViewLayout id='about' title='About'>
+      <Parallax speed={20} className={styles.aboutMainContainer}>
         <div className={styles.about}>
           <div className={styles.textContainer}>
             <Typography className={styles.text} type='paragraph'>
