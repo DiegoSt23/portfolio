@@ -13,16 +13,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 150px 80px 200px;
+  padding: 100px 150px 80px 200px;
 
   @media screen and (max-width: $large-tablet) {
     height: auto;
-    padding: 30px 30px 50px 30px;
+    padding: 100px 30px 50px 30px;
     flex-direction: column;
   }
 
   @media screen and (max-width: $phone) {
-    padding: 30px 20px 50px 20px;
+    padding: 100px 20px 50px 20px;
   }
 
   .about {

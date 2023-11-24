@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { FiCopy } from 'react-icons/fi';
 import {
   AiFillGithub,
@@ -24,6 +24,8 @@ import {
   useTheme,
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
+import backgroundDark from '../../assets/images/black-sky.jpg';
+import backgroundLight from '../../assets/images/white-marmol.jpg';
 import cv from '../../assets/docs/CV_Diego.pdf';
 import styles from './contact.module.scss';
 
@@ -205,23 +207,33 @@ export const Contact = () => {
 
   return (
     <ViewLayout id='contact' title="Let's talk">
-      <Parallax speed={-10} className={styles.contactMainContainer}>
-        <Card
-          fullWidth
-          mainContainerClassName={styles.contactCard}
-        >
-          <Typography className={styles.contactMessage}>
-            Have some big idea? Then please reach out, I would love to hear more
-            from you, your project and how can I help.
-          </Typography>
-          <Tabs items={items} tabPosition='fixed' />
-        </Card>
-        <div className={styles.deltaLink}>
-          <Typography type='paragraph3' className={styles.createdWith}>
-            {'Created with <3'}
-          </Typography>
-        </div>
-      </Parallax>
+      <ParallaxBanner
+        layers={[
+          {
+            image: isDark ? backgroundDark : backgroundLight,
+            speed: -25,
+          },
+        ]}
+        className={styles.contactMainContainer}
+      >
+        <Parallax speed={-10} style={{ width: '100%' }}>
+          <Card fullWidth mainContainerClassName={styles.contactCard}>
+            <Typography className={styles.contactMessage}>
+              Have some big idea? Then please reach out, I would love to hear
+              more from you, your project and how can I help.
+            </Typography>
+            <Tabs items={items} tabPosition='fixed' />
+          </Card>
+        </Parallax>
+      </ParallaxBanner>
+      <div
+        className={styles.footer}
+        style={{ backgroundColor: isDark ? '#31dab5' : '#7191f8' }}
+      >
+        <Typography type='paragraph2' className={styles.footerText}>
+          {'Created with Delta UI ▲'}
+        </Typography>
+      </div>
       <Toast
         ref={ref}
         variant='success'
