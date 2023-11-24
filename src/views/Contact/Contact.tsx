@@ -217,7 +217,11 @@ export const Contact = () => {
         className={styles.contactMainContainer}
       >
         <Parallax speed={-10} style={{ width: '100%' }}>
-          <Card fullWidth mainContainerClassName={styles.contactCard}>
+          <Card
+            headerTitle="Let's talk"
+            fullWidth
+            mainContainerClassName={styles.contactCard}
+          >
             <Typography className={styles.contactMessage}>
               Have some big idea? Then please reach out, I would love to hear
               more from you, your project and how can I help.
@@ -231,7 +235,10 @@ export const Contact = () => {
         style={{ backgroundColor: isDark ? '#31dab5' : '#7191f8' }}
       >
         <Typography type='paragraph2' className={styles.footerText}>
-          {'Created with Delta UI ▲'}
+          {'Created with Delta UI'}
+        </Typography>
+        <Typography type='paragraph2' className={styles.triangle}>
+          ▲
         </Typography>
       </div>
       <Toast

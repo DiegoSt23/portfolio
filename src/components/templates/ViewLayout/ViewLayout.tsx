@@ -7,11 +7,13 @@ interface ViewLayoutProps {
   id: string;
   title?: string;
   headerElement?: ReactNode;
+  titleZindex?: number;
 }
 
 const defaultProps: Partial<ViewLayoutProps> = {
   title: '',
   headerElement: undefined,
+  titleZindex: undefined,
 };
 
 export const ViewLayout = ({
@@ -19,10 +21,11 @@ export const ViewLayout = ({
   id,
   title,
   headerElement,
+  titleZindex,
 }: ViewLayoutProps) => (
   <section id={id} className={styles.mainContainerViewLayout}>
     {title && (
-      <div className={styles.header}>
+      <div className={styles.header} style={{ zIndex: titleZindex }}>
         {title && <Typography type='heading4'>{title}</Typography>}
         {headerElement || null}
       </div>
