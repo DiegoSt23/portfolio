@@ -16,7 +16,7 @@ export const Technologies = () => {
   const { theme } = useTheme();
   
   return (
-    <ViewLayout id='stack' title='Stack'>
+    <ViewLayout id='stack' title='Stack' titleZindex={99}>
       <ParallaxBanner
         layers={[
           {
