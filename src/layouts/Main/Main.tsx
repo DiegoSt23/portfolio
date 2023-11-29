@@ -207,8 +207,8 @@ export const Main = () => {
           <motion.svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 100 100'
-            width={100}
-            height={100}
+            width={40}
+            height={40}
           >
             <motion.path
               d='M 49 0 L 0 85 H 99 L 49 0'
@@ -278,6 +278,11 @@ export const Main = () => {
             onClose={handleDisplayDrawer}
             className={styles.drawer}
           >
+            <div className={styles.linksContainer}>
+              <button onClick={switchTheme}>
+                {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
+              </button>
+            </div>
             {/* <BsFillTriangleFill size={25} color='#89ffe5' /> */}
             {items.map(({ name, icon, isActive }, index) => (
               <HashLink
@@ -320,12 +325,6 @@ export const Main = () => {
                 </motion.div>
               </HashLink>
             ))}
-
-            <div className={styles.linksContainer}>
-              <button onClick={switchTheme}>
-                {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
-              </button>
-            </div>
           </Drawer>
         </>
       )}

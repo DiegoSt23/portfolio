@@ -97,7 +97,7 @@ export const Contact = () => {
               className={styles.iconContainer}
               onClick={() => handleCopy('diego.stonerough@gmail.com')}
             >
-              <FiCopy size={20} color={isDark ? '#31dab5' : '#7191f8'} />
+              <FiCopy size={20} color={isDark ? '#31dab5' : '#ff1d4a'} />
             </button>
           </div>
           <br />
@@ -109,7 +109,7 @@ export const Contact = () => {
               className={styles.iconContainer}
               onClick={() => handleCopy('525540762469')}
             >
-              <FiCopy size={20} color={isDark ? '#31dab5' : '#7191f8'} />
+              <FiCopy size={20} color={isDark ? '#31dab5' : '#ff1d4a'} />
             </button>
           </div>
           <br />
@@ -121,7 +121,7 @@ export const Contact = () => {
               <Link href={cv} download>
                 <IoMdDownload
                   size={22}
-                  color={isDark ? '#31dab5' : '#7191f8'}
+                  color={isDark ? '#31dab5' : '#ff1d4a'}
                 />
               </Link>
             </div>
@@ -232,7 +232,7 @@ export const Contact = () => {
       </ParallaxBanner>
       <div
         className={styles.footer}
-        style={{ backgroundColor: isDark ? '#31dab5' : '#7191f8' }}
+        style={{ backgroundColor: isDark ? '#31dab5' : '#ff1d4a' }}
       >
         <Typography type='paragraph2' className={styles.footerText}>
           {'Created with Delta UI'}
