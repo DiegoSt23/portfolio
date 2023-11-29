@@ -130,10 +130,7 @@ export const GitHub = () => {
   }, [data2023?.user, data2022?.user]);
 
   return (
-    <ViewLayout
-      id='github'
-      title='GitHub Contributions'
-    >
+    <ViewLayout id='github' title='GitHub Contributions'>
       <Parallax speed={20} className={styles.githubMainContainer}>
         <Card
           footer={
@@ -159,11 +156,11 @@ export const GitHub = () => {
                 from='2023-01-01'
                 to={new Date().toDateString()}
                 direction={isMobile ? 'vertical' : 'horizontal'}
-                emptyColor={isDark ? '#1b1b1b' : '#ededed'}
+                emptyColor={isDark ? '#1b1b1b' : '#f3f3f3'}
                 colors={
                   isDark
                     ? ['#216e39', '#30a14e', '#40c463', '#9be9a8']
-                    : ['#445795', '#5a74c6', '#7191f8', '#8da7f9']
+                    : ['#e61a43', '#ff345c', '#ff6180', '#ff8ea5']
                 }
                 theme={{
                   labels: { text: { fill: '#888888' } },
@@ -178,7 +175,7 @@ export const GitHub = () => {
                 monthBorderColor='#000000'
                 monthBorderWidth={0}
                 dayBorderWidth={1}
-                dayBorderColor={isDark ? '#121212' : '#e6e6e6'}
+                dayBorderColor={isDark ? '#121212' : '#fff'}
                 tooltip={(info) => {
                   return (
                     <div className={styles[`tooltip${theme}`]}>

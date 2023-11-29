@@ -9,7 +9,7 @@
 
 .aboutMainContainer {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,12 +50,12 @@
 
       .linkDark {
         @include link-style;
-        color: #31dab5;
+        color: $primary;
       }
 
       .linkLight {
         @include link-style;
-        color: #7191f8;
+        color: $primary-2;
       }
     }
   }

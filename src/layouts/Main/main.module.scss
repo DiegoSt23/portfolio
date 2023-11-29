@@ -53,6 +53,7 @@
   width: 100%;
   display: flex;
   position: relative;
+  overflow: hidden;
 
   .loaderContainer {
     width: 100%;
@@ -139,20 +140,17 @@
 
     .navItemButtonActiveLight {
       @include nav-item-styles;
-      color: $primary-2-light;
+      color: $primary-2;
 
       .navItemTextActiveLight {
         font-family: $roboto-mono;
-        color: $primary-2-light;
+        color: $primary-2;
       }
     }
   }
 
   .linksContainer {
-    position: absolute;
-    gap: 20px;
-    bottom: 20px;
-    right: 20px;
+    margin-bottom: 30px;
     
     button {
       border: none;
