@@ -1,6 +1,20 @@
 import { motion, useScroll } from 'framer-motion';
 import { ParallaxBanner, Parallax } from 'react-scroll-parallax';
-import { useTheme, Typography, useWindowDimensions } from 'diego-react-delta-ui';
+import {
+  useTheme,
+  Typography,
+  useWindowDimensions,
+  Link,
+} from 'diego-react-delta-ui';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineInstagram,
+} from 'react-icons/ai';
+import {
+  BsTwitterX,
+  BsFillTriangleFill,
+} from 'react-icons/bs';
 import { ViewLayout } from '../../components';
 import backgroundDark from '../../assets/images/skylar.jpg';
 import backgroundLight from '../../assets/images/white-background.jpg';
@@ -74,6 +88,43 @@ export const Hero = () => {
               </motion.div>
             </Parallax>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -150 }}
+            animate={{ opacity: 1, y: -80 }}
+            transition={{
+              delay: 2,
+              duration: 0.5,
+            }}
+            className={styles.linksContainer}
+          >
+            <Link
+              href='https://github.com/DiegoSt23'
+              target='_blank'
+              className={isDark ? '' : styles.link}
+            >
+              <AiFillGithub size={20} />
+            </Link>
+            <Link
+              href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+              target='_blank'
+              className={isDark ? '' : styles.link}
+            >
+              <AiFillLinkedin size={20} />
+            </Link>
+            <Link target='_blank' className={isDark ? '' : styles.link}>
+              <AiOutlineInstagram size={20} />
+            </Link>
+            <Link target='_blank' className={isDark ? '' : styles.link}>
+              <BsTwitterX size={16} />
+            </Link>
+            <Link
+              href='https://github.com/DiegoSt23/delta-ui'
+              target='_blank'
+              className={isDark ? '' : styles.link}
+            >
+              <BsFillTriangleFill size={16} />
+            </Link>
+          </motion.div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -82,7 +133,7 @@ export const Hero = () => {
             delay: 2,
             duration: 0.5,
           }}
-          className={styles.scrollDown}
+          className={isDark ? styles.scrollDownDark : styles.scrollDownLight}
           style={{ translateY: scrollY }}
         />
       </ParallaxBanner>
