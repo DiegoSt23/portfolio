@@ -6,22 +6,26 @@ import { Pivot as Hamburger } from 'hamburger-react';
 import {
   AiOutlineCode,
   AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineInstagram,
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
-  // BsFillPeopleFill,
   BsFillGridFill,
   BsFillSunFill,
   BsMoon,
+  BsTwitterX,
+  BsFillTriangleFill,
 } from 'react-icons/bs';
 import {
   Drawer,
   useWindowDimensions,
   SideNavBar,
   Typography,
+  Link,
   useTheme,
 } from 'diego-react-delta-ui';
 import {  
@@ -29,8 +33,6 @@ import {
   About,
   HardSkills,
   Technologies,
-  // SoftSkills,
-  // Stats,
   Projects,
   GitHub,
   Contact,
@@ -108,22 +110,6 @@ export const Main = () => {
         <NavBarItem icon={icon} isActive={isActive} path='#stack' />
       ),
     },
-    // {
-    //   name: 'Soft Skills',
-    //   icon: <BsFillPeopleFill size={20} />,
-    //   isActive: handleIsActive('soft-skills'),
-    //   render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
-    //     <NavBarItem icon={icon} isActive={isActive} path='#soft-skills' />
-    //   ),
-    // },
-    // {
-    //   name: 'Stats',
-    //   icon: <IoIosStats size={20} />,
-    //   isActive: handleIsActive('stats'),
-    //   render: (name: string, icon: ReactNode, isActive: boolean) => (
-    //     <NavBarItem icon={icon} isActive={isActive} path='#stats' />
-    //   ),
-    // },
     {
       name: 'Projects',
       icon: <BsFillGridFill size={20} />,
@@ -164,12 +150,9 @@ export const Main = () => {
 
   const paths = [
     '#home',
-    '#me',
     '#about',
     '#hard-skills',
     '#stack',
-    // '#soft-skills',
-    // '#stats',
     '#projects',
     '#github',
     '#contact',
@@ -265,8 +248,6 @@ export const Main = () => {
             <About />
             <HardSkills />
             <Technologies />
-            {/* <SoftSkills /> */}
-            {/* <Stats /> */}
             <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
             <Projects isModalOpen={(val) => setIsModalOpen(val)} />
             <GitHub />
@@ -278,12 +259,9 @@ export const Main = () => {
             onClose={handleDisplayDrawer}
             className={styles.drawer}
           >
-            <div className={styles.linksContainer}>
-              <button onClick={switchTheme}>
-                {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
-              </button>
-            </div>
-            {/* <BsFillTriangleFill size={25} color='#89ffe5' /> */}
+            <Typography type='heading4' className={styles.mainTitle}>
+              Diego
+            </Typography>
             {items.map(({ name, icon, isActive }, index) => (
               <HashLink
                 key={name}
@@ -292,10 +270,10 @@ export const Main = () => {
                 smooth
               >
                 <motion.div
-                  initial={{ opacity: 0, y: 25 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: (index + 1) * 0.1,
+                    delay: (index + 2) * 0.1,
                     duration: 0.2,
                   }}
                 >
@@ -325,6 +303,72 @@ export const Main = () => {
                 </motion.div>
               </HashLink>
             ))}
+            <div className={styles.settings}>
+              <Typography type='subtitle'>Settings</Typography>
+              <div className={styles.row}>
+                <Typography
+                  className={
+                    isDark
+                      ? styles.navItemButtonActiveDark
+                      : styles.navItemButtonActiveLight
+                  }
+                >
+                  Theme
+                </Typography>
+                <button onClick={switchTheme}>
+                  {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
+                </button>
+              </div>
+              <div className={styles.row}>
+                <Typography
+                  className={
+                    isDark
+                      ? styles.navItemButtonActiveDark
+                      : styles.navItemButtonActiveLight
+                  }
+                >
+                  Language
+                </Typography>
+                <Typography
+                  className={
+                    isDark
+                      ? styles.navItemButtonActiveDark
+                      : styles.navItemButtonActiveLight
+                  }
+                >
+                  EN
+                </Typography>
+              </div>
+            </div>
+            <div className={styles.linksContainer}>
+              <Link
+                href='https://github.com/DiegoSt23'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <AiFillGithub size={20} />
+              </Link>
+              <Link
+                href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <AiFillLinkedin size={20} />
+              </Link>
+              <Link target='_blank' className={isDark ? '' : styles.link}>
+                <AiOutlineInstagram size={20} />
+              </Link>
+              <Link target='_blank' className={isDark ? '' : styles.link}>
+                <BsTwitterX size={16} />
+              </Link>
+              <Link
+                href='https://github.com/DiegoSt23/delta-ui'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <BsFillTriangleFill size={16} />
+              </Link>
+            </div>
           </Drawer>
         </>
       )}

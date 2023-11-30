@@ -8,7 +8,7 @@ import {
   AiFillLinkedin,
   AiOutlineInstagram,
 } from 'react-icons/ai';
-import { BsTwitterX } from 'react-icons/bs';
+import { BsTwitterX, BsFillTriangleFill } from 'react-icons/bs';
 import { IoMdDownload } from 'react-icons/io';
 import {
   Typography,
@@ -146,6 +146,13 @@ export const Contact = () => {
             </Link>
             <Link target='_blank' className={isDark ? '' : styles.link}>
               <BsTwitterX size={16} />
+            </Link>
+            <Link
+              href='https://github.com/DiegoSt23/delta-ui'
+              target='_blank'
+              className={isDark ? '' : styles.link}
+            >
+              <BsFillTriangleFill size={17} />
             </Link>
           </div>
         </div>
