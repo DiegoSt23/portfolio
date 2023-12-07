@@ -1,5 +1,6 @@
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { Tooltip, Typography, useTheme } from 'diego-react-delta-ui';
+import { useTranslation } from 'react-i18next';
 import { ViewLayout } from '../../components';
 import { technologiesData } from '../../data/data';
 import backgroundDark from '../../assets/images/black-sand-2.jpg';
@@ -14,9 +15,10 @@ const group5 = technologiesData.slice(24);
 
 export const Technologies = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   
   return (
-    <ViewLayout id='stack' title='Stack' titleZindex={99}>
+    <ViewLayout id='stack' title={t('technologies.title')} titleZindex={99}>
       <ParallaxBanner
         layers={[
           {

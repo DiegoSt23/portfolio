@@ -1,5 +1,6 @@
 import { motion, useScroll } from 'framer-motion';
 import { ParallaxBanner, Parallax } from 'react-scroll-parallax';
+import { useTranslation } from 'react-i18next';
 import {
   useTheme,
   Typography,
@@ -25,6 +26,7 @@ import styles from './hero.module.scss';
 export const Hero = () => {
   const { theme } = useTheme();
   const { scrollY } = useScroll();
+  const { t } = useTranslation();
   const { width } =  useWindowDimensions();
   const isTablet = width < 900;
   const isDark = theme === 'Dark';
@@ -65,10 +67,10 @@ export const Hero = () => {
           >
             <Parallax speed={-25}>
               <Typography type={isTablet ? 'heading4' : 'heading3'}>
-                Hello!
+                {t('hero.line1')}
               </Typography>
               <Typography type='heading1' className={styles.title}>
-                I'm Diego
+                {t('hero.line2')}
               </Typography>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -83,7 +85,7 @@ export const Hero = () => {
                   type='heading2'
                   className={styles[`subtitle${theme}`]}
                 >
-                  Front-End Developer
+                  {t('hero.line3')}
                 </Typography>
               </motion.div>
             </Parallax>

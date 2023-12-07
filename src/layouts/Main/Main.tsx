@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
+import { useTranslation } from 'react-i18next';
 import {
   AiOutlineCode,
   AiFillGithub,
@@ -11,7 +12,6 @@ import {
 } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail } from 'react-icons/bi';
-import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { GoStack } from 'react-icons/go';
 import {
   BsFillGridFill,
@@ -20,6 +20,8 @@ import {
   BsTwitterX,
   BsFillTriangleFill,
 } from 'react-icons/bs';
+import { IoPersonSharp } from 'react-icons/io5';
+import { FaCode } from 'react-icons/fa6';
 import {
   Drawer,
   useWindowDimensions,
@@ -49,10 +51,12 @@ type NavBarItemProps = {
 export const Main = () => {
   const { isDark, switchTheme } = useTheme();
   const { hash } = useLocation();
+  const { i18n, t } = useTranslation();
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [displayLoader, setDisplayLoader] = useState<boolean>(true);
+  const [currentLang, setCurrentLang] = useState<'en' | 'es'>('en');
   const isMobile = width < 900;
 
   const NavBarItem = ({ icon, isActive, path }: NavBarItemProps) => (
@@ -73,13 +77,24 @@ export const Main = () => {
     </HashLink>
   );
 
+  const handleSwitchLanguage = () => {
+    if (currentLang === 'en') {
+      setCurrentLang('es');
+      i18n.changeLanguage('es');
+      return;
+    }
+
+    setCurrentLang('en');
+    i18n.changeLanguage('en');
+  };
+
   const handleDisplayDrawer = () => setIsOpen(!isOpen);
 
   const handleIsActive = (path: string) => path === hash;
 
   const items = [
     {
-      name: 'Home',
+      name: t('main.home'),
       icon: <RiHomeLine size={20} />,
       isActive: !hash ? true : handleIsActive('#home'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
@@ -87,23 +102,23 @@ export const Main = () => {
       ),
     },
     {
-      name: 'About',
-      icon: <IoMdInformationCircleOutline size={23} />,
+      name: t('main.about'),
+      icon: <IoPersonSharp size={20} />,
       isActive: handleIsActive('#about'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#about' />
       ),
     },
     {
-      name: 'Hard Skills',
-      icon: <AiOutlineCode size={20} />,
+      name: t('main.hardSkills'),
+      icon: <FaCode size={20} />,
       isActive: handleIsActive('#hard-skills'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
         <NavBarItem icon={icon} isActive={isActive} path='#hard-skills' />
       ),
     },
     {
-      name: 'Stack',
+      name: t('main.technologies'),
       icon: <GoStack size={20} />,
       isActive: handleIsActive('#stack'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
@@ -111,7 +126,7 @@ export const Main = () => {
       ),
     },
     {
-      name: 'Projects',
+      name: t('main.projects'),
       icon: <BsFillGridFill size={20} />,
       isActive: handleIsActive('#projects'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
@@ -119,7 +134,7 @@ export const Main = () => {
       ),
     },
     {
-      name: 'GitHub',
+      name: t('main.github'),
       icon: <AiFillGithub size={20} />,
       isActive: handleIsActive('#github'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
@@ -127,7 +142,7 @@ export const Main = () => {
       ),
     },
     {
-      name: 'Contact',
+      name: t('main.contact'),
       icon: <BiMessageSquareDetail size={20} />,
       isActive: handleIsActive('#contact'),
       render: ({ icon, isActive }: { icon: ReactNode; isActive: boolean }) => (
@@ -138,7 +153,19 @@ export const Main = () => {
 
   const bottomItems = [
     {
-      name: isDark ? 'Light Mode' : 'Dark Mode',
+      name: t('main.switchLanguage'),
+      icon: (
+        <button
+          className={styles.themeSwitcherButton}
+          onClick={handleSwitchLanguage}
+        >
+          <Typography>{currentLang.toUpperCase()}</Typography>
+        </button>
+      ),
+      isActive: false,
+    },
+    {
+      name: t('main.theme'),
       icon: (
         <button className={styles.themeSwitcherButton} onClick={switchTheme}>
           {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
@@ -269,42 +296,33 @@ export const Main = () => {
                 className={styles.link}
                 smooth
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: (index + 2) * 0.1,
-                    duration: 0.2,
+                <button
+                  className={`${
+                    isActive
+                      ? isDark
+                        ? styles.navItemButtonActiveDark
+                        : styles.navItemButtonActiveLight
+                      : styles.navItemButton
+                  }`}
+                  onClick={() => {
+                    handleDisplayDrawer();
                   }}
                 >
-                  <button
-                    className={`${
-                      isActive
-                        ? isDark
-                          ? styles.navItemButtonActiveDark
-                          : styles.navItemButtonActiveLight
-                        : styles.navItemButton
-                    }`}
-                    onClick={() => {
-                      handleDisplayDrawer();
-                    }}
+                  {icon}
+                  <Typography
+                    className={
+                      isDark
+                        ? styles.navItemTextActiveDark
+                        : styles.navItemTextActiveLight
+                    }
                   >
-                    {icon}
-                    <Typography
-                      className={
-                        isDark
-                          ? styles.navItemTextActiveDark
-                          : styles.navItemTextActiveLight
-                      }
-                    >
-                      {name}
-                    </Typography>
-                  </button>
-                </motion.div>
+                    {name}
+                  </Typography>
+                </button>
               </HashLink>
             ))}
             <div className={styles.settings}>
-              <Typography type='subtitle'>Settings</Typography>
+              <Typography type='subtitle'>{t('main.settings')}</Typography>
               <div className={styles.row}>
                 <Typography
                   className={
@@ -313,7 +331,7 @@ export const Main = () => {
                       : styles.navItemButtonActiveLight
                   }
                 >
-                  Theme
+                  {t('main.theme')}
                 </Typography>
                 <button onClick={switchTheme}>
                   {isDark ? <BsFillSunFill size={20} /> : <BsMoon size={18} />}
@@ -327,17 +345,19 @@ export const Main = () => {
                       : styles.navItemButtonActiveLight
                   }
                 >
-                  Language
+                  {t('main.switchLanguage')}
                 </Typography>
-                <Typography
-                  className={
-                    isDark
-                      ? styles.navItemButtonActiveDark
-                      : styles.navItemButtonActiveLight
-                  }
-                >
-                  EN
-                </Typography>
+                <button onClick={handleSwitchLanguage}>
+                  <Typography
+                    className={
+                      isDark
+                        ? styles.navItemButtonActiveDark
+                        : styles.navItemButtonActiveLight
+                    }
+                  >
+                    {currentLang.toUpperCase()}
+                  </Typography>
+                </button>
               </div>
             </div>
             <div className={styles.linksContainer}>

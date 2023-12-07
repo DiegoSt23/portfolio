@@ -1,0 +1,144 @@
+{
+  "main": {
+    "switchLanguage": "Language",
+    "theme": "Theme",
+    "settings": "Settings",
+    "home": "Home",
+    "about": "About",
+    "hardSkills": "Hard Skills",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "github": "GitHub",
+    "contact": "Contact"
+  },
+  "hero": {
+    "line1": "Hello!",
+    "line2": "I'm Diego",
+    "line3": "Front-End Developer"
+  },
+  "about": {
+    "title": "About",
+    "line1": "As a Front-End Developer specialized in React JS with Typescript at",
+    "line2": ", I am responsible for crafting visually engaging and functionally robust web and mobile applications using a variety of cutting-edge technologies. My role involves working on diverse projects spanning different domains, including real estate, e-commerce, technology, fitness & wellness, among others.",
+    "line3": "Driven by a strong problem-solving aptitude, a keen eye for detail and a passion for crafting elegant and performant web and mobile applications I take pride in delivering high-quality code that not only meets project requirements but also adheres to best coding practices and standards."
+  },
+  "hardSkills": {
+    "title": "Hard Skills",
+    "one": {
+      "title": "HTML & CSS",
+      "description": "The standard markup language for constructing web pages is HyperText Markup Language (HTML). It is the most fundamental building block for creating web pages. CSS, it is used to create the page’s layout, colour, fonts, and style."
+    },
+    "two": {
+      "title": "Javascript & Typescript",
+      "description": "Programming languages used in web development to create dynamic and interactive web pages. Javascript is a scripting language that allows you to create dynamically updating content, control multimedia, animate images, and pretty much everything else, while TypeScript is a statically typed superset of JavaScript, adding strong typing for enhanced code reliability."
+    },
+    "three": {
+      "title": "Responsive Design",
+      "description": "Approach to web design ensuring websites adapt and display effectively on various screen sizes and devices, providing a seamless user experience."
+    },
+    "four": {
+      "title": "Version Control/Git",
+      "description": "A system for tracking changes in code, managing project history, and facilitating collaboration among developers. Git is a widely used version control tool in software development."
+    },
+    "five": {
+      "title": "Javascript Frameworks and Libraries",
+      "description": "Pre-built libraries and tools that provide a structured and efficient way to develop web applications. These frameworks facilitate the creation of interactive user interfaces and simplify complex tasks in web development. e.g. React, React Native, Vue."
+    },
+    "six": {
+      "title": "Testing/Debugging",
+      "description": "Processes and tools used to evaluate code functionality, identify issues, and ensure software reliability. Testing involves systematically assessing code behavior, while debugging involves locating and resolving errors or bugs in the code."
+    },
+    "seven": {
+      "title": "Browser Developer Tools",
+      "description": "Built-in web browser features that enable developers to inspect, debug, and analyze web pages and web applications in real-time. These tools provide valuable insights into HTML, CSS, and JavaScript, aiding in troubleshooting and optimization."
+    },
+    "eight": {
+      "title": "Web Performance",
+      "description": "Set of techniques and practices aimed at improving the speed, efficiency, and overall user experience of websites and web applications. This involves optimizing page loading times, reducing resource consumption, and enhancing responsiveness."
+    },
+    "nine": {
+      "title": "CSS Preprocessing",
+      "description": "A workflow enhancement technique that involves using preprocessor languages like SASS or LESS to write CSS in a more organized and efficient manner. These preprocessors offer features like variables, nesting, and mixins, which make it easier to manage and maintain complex stylesheets."
+    },
+    "ten": {
+      "title": "Command Line",
+      "description": "A text-based interface used for interacting with a computer's operating system or software through commands. It allows users to perform a wide range of tasks, including file management, software installation, and automation, using text commands instead of graphical interfaces."
+    }
+  },
+  "technologies": {
+    "title": "Technologies"
+  },
+  "projects1": {
+    "title": "Projects I have participated in"
+  },
+  "projects2": {
+    "title": "Personal projects",
+    "projects": {
+      "spotify": {
+        "description": "My own version of Spotify with the Spotify API, created with Delta UI. Still under development."
+      },
+      "delta": {
+        "description": "A lightweight and minimalistic React components library designed to provide a seamless user experience. It offers a curated set of reusable and customizable components that can easily be integrated into any React project."
+      },
+      "space": {
+        "description": "A Frontendmentor.io challenge made with React, a multipage web app about space tourism, destinations, the team and their technologies."
+      },
+      "metal": {
+        "description": "A demo store with some awesome metal records. It's been made with React, Router, Context and some Hooks like useState, useEffect, useReducer, etc."
+      },
+      "github": {
+        "description": "React App made with the GitHub API, you search for developers to find their information, repos, followers; etc."
+      },
+      "todo": {
+        "description": "Made with React, a simple app to make a todo list, you can filter by all, incomplete or completed tasks. Also select light or dark themes."
+      },
+      "pokemon": {
+        "description": "Made with the Pokemon API, you can search for Pokemons by name, ID or type to find images, type, statistics and general information about them, also you can save your favorites!."
+      },
+      "countdown": {
+        "description": "A React App which displays the remaining days, hours, minutes and seconds until new year! It works with every year. This is one of the Frontendmentor.io challenges."
+      }
+    }
+  },
+  "github": {
+    "title": "GitHub Contributions",
+    "date": "Date:",
+    "contributions": "Contributions:"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "description": "Have some big idea? Then please reach out, I would love to hear more from you, your project and how can I help.",
+    "tabs": {
+      "one": {
+        "title": "Links",
+        "email": "EMAIL",
+        "phone": "PHONE",
+        "download": "DOWNLOAD",
+        "downloadDescription": "Download CV",
+        "copy": "Copied!",
+        "message": "Message sent successfully!"
+      },
+      "two": {
+        "title": "Form",
+        "form": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Name",
+            "error": "Required"
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "Email",
+            "error": "Required",
+            "error2": "Please enter a valid email"
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "Message",
+            "error": "Required"
+          }
+        }
+      }
+    }
+  }
+}

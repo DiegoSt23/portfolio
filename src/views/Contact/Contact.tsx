@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import { FiCopy } from 'react-icons/fi';
 import {
   AiFillGithub,
@@ -22,30 +24,36 @@ import {
   Tabs,
   useWindowDimensions,
   useTheme,
+  Spinner,
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import backgroundDark from '../../assets/images/black-sky.jpg';
 import backgroundLight from '../../assets/images/white-marmol.jpg';
 import cv from '../../assets/docs/CV_Diego.pdf';
+import cvSpanish from '../../assets/docs/CV_Diego_spanish.pdf';
 import styles from './contact.module.scss';
 
 export const Contact = () => {
+  const [isLoading, setIsLoading] =  useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
   const { isDark } = useTheme();
+  const { t, i18n } = useTranslation();
   const { width } = useWindowDimensions();
   const ref = useRef<ToastRefProps>(null);
   const isMobile = width < 900;
 
+  const handleDisplaySuccess = () => {
+    setToastMessage(t('contact.tabs.one.message'));
+    ref?.current?.handleDisplayToast();
+  };
+
   const validationSchema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Required'),
+    name: yup.string().required(t('contact.tabs.two.form.name.error')),
     email: yup
       .string()
-      .email('Please enter a valid email')
-      .required('Required'),
-    message: yup
-      .string()
-      .required('Required'),
+      .email(t('contact.tabs.two.form.email.error2'))
+      .required(t('contact.tabs.two.form.email.error')),
+    message: yup.string().required(t('contact.tabs.two.form.message.error')),
   });
 
   const formik = useFormik({
@@ -58,7 +66,23 @@ export const Contact = () => {
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
-      console.log(values);
+      const serviceId = import.meta.env.VITE_MESSAGE_JS_SERVICEID;
+      const templateId = import.meta.env.VITE_MESSAGE_JS_TEMPLATEID;
+      try {
+        setIsLoading(true);
+        await emailjs.send(serviceId, templateId, {
+          from_name: values.name,
+          message: values.message,
+          email: values.email,
+          name: 'Diego',
+          recipient: 'diego.stonerough@gmail.com',
+        });
+        handleDisplaySuccess();
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
 
@@ -70,6 +94,7 @@ export const Contact = () => {
   } = formik;
 
   const handleDisplayToast = () => {
+    setToastMessage(t('contact.tabs.one.copy'));
     ref?.current?.handleDisplayToast();
   };
 
@@ -84,12 +109,12 @@ export const Contact = () => {
 
   const items = [
     {
-      title: 'Links',
+      title: t('contact.tabs.one.title'),
       children: (
         <div className={styles.subContainer1}>
           <br />
           <br />
-          <Typography type='subtitle'>EMAIL</Typography>
+          <Typography type='subtitle'>{t('contact.tabs.one.email')}</Typography>
           <br />
           <div className={styles.row}>
             <Typography>diego.stonerough@gmail.com</Typography>
@@ -101,7 +126,7 @@ export const Contact = () => {
             </button>
           </div>
           <br />
-          <Typography type='subtitle'>PHONE</Typography>
+          <Typography type='subtitle'>{t('contact.tabs.one.phone')}</Typography>
           <br />
           <div className={styles.row}>
             <Typography>+52 55 40 76 24 69</Typography>
@@ -113,12 +138,14 @@ export const Contact = () => {
             </button>
           </div>
           <br />
-          <Typography type='subtitle'>DOWNLOAD</Typography>
+          <Typography type='subtitle'>
+            {t('contact.tabs.one.download')}
+          </Typography>
           <br />
           <div className={styles.row}>
-            <Typography>Download CV</Typography>
+            <Typography>{t('contact.tabs.one.downloadDescription')}</Typography>
             <div className={styles.iconContainer}>
-              <Link href={cv} download>
+              <Link href={i18n.language === 'en' ? cv : cvSpanish} download>
                 <IoMdDownload
                   size={22}
                   color={isDark ? '#31dab5' : '#ff1d4a'}
@@ -126,41 +153,12 @@ export const Contact = () => {
               </Link>
             </div>
           </div>
-          <div className={styles.linksContainer}>
-            <Link
-              href='https://github.com/DiegoSt23'
-              target='_blank'
-              className={isDark ? '' : styles.link}
-            >
-              <AiFillGithub size={20} />
-            </Link>
-            <Link
-              href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
-              target='_blank'
-              className={isDark ? '' : styles.link}
-            >
-              <AiFillLinkedin size={20} />
-            </Link>
-            <Link target='_blank' className={isDark ? '' : styles.link}>
-              <AiOutlineInstagram size={20} />
-            </Link>
-            <Link target='_blank' className={isDark ? '' : styles.link}>
-              <BsTwitterX size={16} />
-            </Link>
-            <Link
-              href='https://github.com/DiegoSt23/delta-ui'
-              target='_blank'
-              className={isDark ? '' : styles.link}
-            >
-              <BsFillTriangleFill size={17} />
-            </Link>
-          </div>
         </div>
       ),
       key: 'tab1',
     },
     {
-      title: 'Form',
+      title: t('contact.tabs.two.title'),
       children: (
         <form
           className={styles.subContainer2}
@@ -171,8 +169,8 @@ export const Contact = () => {
         >
           <Input
             name='name'
-            label='Name'
-            placeholder='Name'
+            label={t('contact.tabs.two.form.name.label')}
+            placeholder={t('contact.tabs.two.form.name.placeholder')}
             value={values.email}
             onChange={(val) => setFieldValue('name', val)}
             error={!!errors.name}
@@ -182,8 +180,8 @@ export const Contact = () => {
           <br />
           <Input
             name='email'
-            label='Email'
-            placeholder='Email'
+            label={t('contact.tabs.two.form.email.label')}
+            placeholder={t('contact.tabs.two.form.email.placeholder')}
             value={values.email}
             onChange={(val) => setFieldValue('email', val)}
             error={!!errors.email}
@@ -193,8 +191,8 @@ export const Contact = () => {
           <br />
           <TextArea
             name='message'
-            label='Message'
-            placeholder='Message'
+            label={t('contact.tabs.two.form.message.label')}
+            placeholder={t('contact.tabs.two.form.message.placeholder')}
             value={values.email}
             onChange={(val) => setFieldValue('message', val)}
             error={!!errors.message}
@@ -203,8 +201,8 @@ export const Contact = () => {
           />
           <br />
           <br />
-          <Button small onClick={() => handleSubmit()} type='submit'>
-            Submit
+          <Button small onClick={() => handleSubmit()} type='submit' disabled={isLoading}>
+            {isLoading ? <Spinner size="sm" /> : 'Submit'}
           </Button>
         </form>
       ),
@@ -212,8 +210,10 @@ export const Contact = () => {
     },
   ];
 
+  useEffect(() => emailjs.init(import.meta.env.VITE_MESSAGE_JS_KEY), []);
+
   return (
-    <ViewLayout id='contact' title="Let's talk">
+    <ViewLayout id='contact'>
       <ParallaxBanner
         layers={[
           {
@@ -225,15 +225,43 @@ export const Contact = () => {
       >
         <Parallax speed={-10} style={{ width: '100%' }}>
           <Card
-            headerTitle="Let's talk"
+            headerTitle={t('contact.title')}
             fullWidth
             mainContainerClassName={styles.contactCard}
           >
             <Typography className={styles.contactMessage}>
-              Have some big idea? Then please reach out, I would love to hear
-              more from you, your project and how can I help.
+              {t('contact.description')}
             </Typography>
             <Tabs items={items} tabPosition='fixed' />
+            <div className={styles.linksContainer}>
+              <Link
+                href='https://github.com/DiegoSt23'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <AiFillGithub size={20} />
+              </Link>
+              <Link
+                href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <AiFillLinkedin size={20} />
+              </Link>
+              <Link target='_blank' className={isDark ? '' : styles.link}>
+                <AiOutlineInstagram size={20} />
+              </Link>
+              <Link target='_blank' className={isDark ? '' : styles.link}>
+                <BsTwitterX size={16} />
+              </Link>
+              <Link
+                href='https://github.com/DiegoSt23/delta-ui'
+                target='_blank'
+                className={isDark ? '' : styles.link}
+              >
+                <BsFillTriangleFill size={17} />
+              </Link>
+            </div>
           </Card>
         </Parallax>
       </ParallaxBanner>
@@ -244,14 +272,12 @@ export const Contact = () => {
         <Typography type='paragraph2' className={styles.footerText}>
           {'Created with Delta UI'}
         </Typography>
-        <Typography type='paragraph2' className={styles.triangle}>
-          ▲
-        </Typography>
+        <BsFillTriangleFill size={12} />
       </div>
       <Toast
         ref={ref}
         variant='success'
-        text='Copied!'
+        text={toastMessage}
         position={isMobile ? 'topLeft' : 'topRight'}
       />
     </ViewLayout>

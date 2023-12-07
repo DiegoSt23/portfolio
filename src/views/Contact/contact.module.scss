@@ -107,6 +107,7 @@
   width: 100%;
   padding-left: 50px;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 3px;
   gap: 3px;
@@ -118,10 +119,5 @@
     @media screen and (max-width: $large-tablet) {
       margin-left: 0px;
     }
-  }
-
-  .triangle {
-    color: #000000;
-    font-size: 15px;
   }
 }
