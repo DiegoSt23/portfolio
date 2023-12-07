@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTranslation } from 'react-i18next';
 import {
-  AiOutlineCode,
   AiFillGithub,
   AiFillLinkedin,
   AiOutlineInstagram,
