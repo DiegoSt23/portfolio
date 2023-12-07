@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { ResponsiveCalendar } from '@nivo/calendar';
 import { Parallax } from 'react-scroll-parallax';
+import { useTranslation } from 'react-i18next';
 import {
   Typography,
   Card,
@@ -79,6 +80,7 @@ const getActivity2023 = gql`
 
 export const GitHub = () => {
   const { isDark, theme } = useTheme();
+  const { t } = useTranslation();
   const { loading: loading2022, data: data2022 } = useQuery(getActivity2022);
   const { loading: loading2023, data: data2023 } = useQuery(getActivity2023);
   const [localData, setLocalData] = useState<ItemProps[]>([]);
@@ -130,7 +132,7 @@ export const GitHub = () => {
   }, [data2023?.user, data2022?.user]);
 
   return (
-    <ViewLayout id='github' title='GitHub Contributions'>
+    <ViewLayout id='github' title={t('github.title')}>
       <Parallax speed={20} className={styles.githubMainContainer}>
         <Card
           footer={
@@ -180,7 +182,7 @@ export const GitHub = () => {
                   return (
                     <div className={styles[`tooltip${theme}`]}>
                       <div className={styles.row}>
-                        <p className={styles.label}>Date:</p>
+                        <p className={styles.label}>{t('github.date')}</p>
                         <p className={styles.value}>
                           {new Date(
                             info.day.replace(/-/g, '/')
@@ -192,7 +194,7 @@ export const GitHub = () => {
                         </p>
                       </div>
                       <div className={styles.row}>
-                        <p className={styles.label}>Contributions:</p>
+                        <p className={styles.label}>{t('github.contributions')}</p>
                         <p className={styles.value}>{info.value}</p>
                       </div>
                     </div>

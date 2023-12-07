@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import { Modal, Typography, Link } from 'diego-react-delta-ui';
+import { useTranslation } from 'react-i18next';
 import { BsLink45Deg, BsInfoCircleFill } from 'react-icons/bs';
 import { ViewLayout } from '../../components';
 import { nonPersonalProjectsData } from '../../data/data';
@@ -20,6 +21,7 @@ interface ProjectViewProps {
 }
 
 export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
+  const { t } = useTranslation();
   const [selectedData, setSelectedData] = useState<NonPersonalProjectProps | null>(null);
   const [isModalOpenLocal, setIsModalOpenLocal] = useState<boolean>(false);
 
@@ -35,7 +37,7 @@ export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
   }, [isModalOpenLocal]);
 
   return (
-    <ViewLayout id='projects' title='Projects I have participated in'>
+    <ViewLayout id='projects' title={t('projects1.title')}>
       <Parallax speed={20} className={styles.projectsMainContainer}>
         <div className={styles.projectsContainer}>
           {nonPersonalProjectsData.map((item) => (

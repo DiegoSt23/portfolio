@@ -38,11 +38,7 @@
     }
 
     .textContainer {
-      width: 45%;
-
-      @media screen and (max-width: $large-tablet) {
-        width: 100%;
-      }
+      width: 100%;
 
       .text {
         display: inline;
