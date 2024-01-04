@@ -1,7 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import { Modal, Typography, Link } from 'diego-react-delta-ui';
+import {
+  Modal,
+  Typography,
+  Link,
+  Tooltip,
+} from 'diego-react-delta-ui';
 import { useTranslation } from 'react-i18next';
 import { BsLink45Deg, BsInfoCircleFill } from 'react-icons/bs';
 import { ViewLayout } from '../../components';
@@ -48,7 +53,9 @@ export const NonPersonalProjects = ({ isModalOpen }: ProjectViewProps) => {
             >
               <img src={item.imageUrl} alt={item.name} className={styles.img} />
               <div className={styles.overlay}>
-                <BsInfoCircleFill size={20} />
+                <Tooltip tooltipContent={t('projects1.info')} maxWidth={150}>
+                  <BsInfoCircleFill size={20} />
+                </Tooltip>
               </div>
             </button>
           ))}

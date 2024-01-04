@@ -7,20 +7,13 @@ import {
   useWindowDimensions,
   Link,
 } from 'diego-react-delta-ui';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineInstagram,
-} from 'react-icons/ai';
-import {
-  BsTwitterX,
   BsFillTriangleFill,
 } from 'react-icons/bs';
 import { ViewLayout } from '../../components';
 import backgroundDark from '../../assets/images/skylar.jpg';
-import backgroundLight from '../../assets/images/white-background.jpg';
-import img from '../../assets/images/diego-2.jpg';
-import imgLight from '../../assets/images/diego-light.jpg';
+import backgroundLight from '../../assets/images/white.jpg';
 import styles from './hero.module.scss';
 
 export const Hero = () => {
@@ -43,19 +36,6 @@ export const Hero = () => {
         className={styles.heroMainContainer}
       >
         <div className={styles.contentContainer}>
-          <Parallax speed={20} className={styles.imgContainer}>
-            <motion.img
-              src={isDark ? img : imgLight}
-              alt='Diego'
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.2,
-                duration: 0.7,
-              }}
-              style={{ filter: `brightness(${isDark ? 0.6 : 1})` }}
-            />
-          </Parallax>
           <motion.div
             className={styles.contentSubContainer}
             initial={{ opacity: 0, x: -100 }}
@@ -104,27 +84,21 @@ export const Hero = () => {
               target='_blank'
               className={isDark ? '' : styles.link}
             >
-              <AiFillGithub size={20} />
+              <AiFillGithub size={25} />
             </Link>
             <Link
               href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
               target='_blank'
               className={isDark ? '' : styles.link}
             >
-              <AiFillLinkedin size={20} />
-            </Link>
-            <Link target='_blank' className={isDark ? '' : styles.link}>
-              <AiOutlineInstagram size={20} />
-            </Link>
-            <Link target='_blank' className={isDark ? '' : styles.link}>
-              <BsTwitterX size={16} />
+              <AiFillLinkedin size={25} />
             </Link>
             <Link
               href='https://github.com/DiegoSt23/delta-ui'
               target='_blank'
               className={isDark ? '' : styles.link}
             >
-              <BsFillTriangleFill size={16} />
+              <BsFillTriangleFill size={20} />
             </Link>
           </motion.div>
         </div>
@@ -139,6 +113,7 @@ export const Hero = () => {
           style={{ translateY: scrollY }}
         />
       </ParallaxBanner>
+      <div className={styles.glassBox} />
     </ViewLayout>
   );
 };

@@ -4,11 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { Pivot as Hamburger } from 'hamburger-react';
 import { useTranslation } from 'react-i18next';
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineInstagram,
-} from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { RiHomeLine } from 'react-icons/ri';
 import { BiMessageSquareDetail } from 'react-icons/bi';
 import { GoStack } from 'react-icons/go';
@@ -16,7 +12,6 @@ import {
   BsFillGridFill,
   BsFillSunFill,
   BsMoon,
-  BsTwitterX,
   BsFillTriangleFill,
 } from 'react-icons/bs';
 import { IoPersonSharp } from 'react-icons/io5';
@@ -274,8 +269,8 @@ export const Main = () => {
             <About />
             <HardSkills />
             <Technologies />
-            <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
             <Projects isModalOpen={(val) => setIsModalOpen(val)} />
+            <NonPersonalProjects isModalOpen={(val) => setIsModalOpen(val)} />
             <GitHub />
             <Contact />
           </div>
@@ -373,12 +368,6 @@ export const Main = () => {
                 className={isDark ? '' : styles.link}
               >
                 <AiFillLinkedin size={20} />
-              </Link>
-              <Link target='_blank' className={isDark ? '' : styles.link}>
-                <AiOutlineInstagram size={20} />
-              </Link>
-              <Link target='_blank' className={isDark ? '' : styles.link}>
-                <BsTwitterX size={16} />
               </Link>
               <Link
                 href='https://github.com/DiegoSt23/delta-ui'
