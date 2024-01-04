@@ -135,7 +135,7 @@ export const GitHub = () => {
     <ViewLayout id='github' title={t('github.title')}>
       <Parallax speed={20} className={styles.githubMainContainer}>
         <Card
-          footer={
+          headerElement={
             <div className={styles.totalContainer}>
               <Typography type='paragraph'>Total:</Typography>
               <Typography type='subtitle'>
@@ -149,7 +149,7 @@ export const GitHub = () => {
           {(!loading2023 || !loading2022) && localData?.length ? (
             <div
               style={{
-                height: isMobile ? 600 : 350,
+                height: isMobile ? 350 : 450,
                 width: '100%',
               }}
             >
@@ -157,7 +157,7 @@ export const GitHub = () => {
                 data={localData}
                 from='2023-01-01'
                 to={new Date().toDateString()}
-                direction={isMobile ? 'vertical' : 'horizontal'}
+                direction='horizontal'
                 emptyColor={isDark ? '#1b1b1b' : '#f3f3f3'}
                 colors={
                   isDark
@@ -168,12 +168,12 @@ export const GitHub = () => {
                   labels: { text: { fill: '#888888' } },
                 }}
                 margin={{
-                  top: isMobile ? 80 : 20,
-                  right: 40,
-                  bottom: isMobile ? 40 : 0,
-                  left: 40,
+                  top: isMobile ? 20 : 30,
+                  right: isMobile ? 0 : 40,
+                  bottom: isMobile ? 0 : 10,
+                  left: isMobile ? 0 : 40,
                 }}
-                yearSpacing={isMobile ? 100 : 60}
+                yearSpacing={60}
                 monthBorderColor='#000000'
                 monthBorderWidth={0}
                 dayBorderWidth={1}
@@ -194,7 +194,9 @@ export const GitHub = () => {
                         </p>
                       </div>
                       <div className={styles.row}>
-                        <p className={styles.label}>{t('github.contributions')}</p>
+                        <p className={styles.label}>
+                          {t('github.contributions')}
+                        </p>
                         <p className={styles.value}>{info.value}</p>
                       </div>
                     </div>

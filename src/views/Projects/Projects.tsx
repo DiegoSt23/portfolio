@@ -1,7 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import { Modal, Typography, Link, Chip } from 'diego-react-delta-ui';
+import {
+  Modal,
+  Typography,
+  Link,
+  Chip,
+  Tooltip,
+} from 'diego-react-delta-ui';
 import { useTranslation } from 'react-i18next';
 import { BsLink45Deg, BsGithub, BsInfoCircleFill } from 'react-icons/bs';
 import spotify from '../../assets/images/spotify.png';
@@ -10,7 +16,7 @@ import space from '../../assets/images/space.jpeg';
 import metal from '../../assets/images/metal.jpeg';
 import github from '../../assets/images/github.jpeg';
 import todo from '../../assets/images/todo.jpeg';
-import pokemon from '../../assets/images/pokemon.png';
+import reservamos from '../../assets/images/reservamos.png';
 import countdown from '../../assets/images/countdown.jpeg';
 import { ViewLayout } from '../../components';
 import styles from './projects.module.scss';
@@ -52,9 +58,19 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/delta-ui',
       name: 'Delta UI',
       description: t('projects2.projects.delta.description'),
-      id: 1,
+      id: 2,
       status: 'New',
       releaseDate: 'Aug 2023',
+    },
+    {
+      imageUrl: reservamos,
+      projectUrl: 'https://reservamos-eta.vercel.app/',
+      repoUrl: 'https://github.com/DiegoSt23/reservamos',
+      name: 'Reservamos Weather Forecast',
+      description: t('projects2.projects.reservamos.description'),
+      id: 3,
+      status: 'New',
+      releaseDate: 'Dec 2023',
     },
     {
       imageUrl: space,
@@ -62,7 +78,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/Space-Tourism',
       name: 'Space Tourism',
       description: t('projects2.projects.space.description'),
-      id: 1,
+      id: 4,
       releaseDate: 'Dec 2021',
     },
     {
@@ -71,7 +87,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/metal-records-store',
       name: 'Metal Records Store',
       description: t('projects2.projects.metal.description'),
-      id: 2,
+      id: 5,
       releaseDate: 'Oct 2021',
     },
     {
@@ -80,7 +96,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/GitHub-DevSearcher',
       name: 'GitHub Dev Searcher',
       description: t('projects2.projects.github.description'),
-      id: 3,
+      id: 6,
       releaseDate: 'Nov 2021',
     },
     {
@@ -89,17 +105,8 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/Todo-Frontend-Mentor',
       name: 'Todo App',
       description: t('projects2.projects.todo.description'),
-      id: 4,
+      id: 7,
       releaseDate: 'Dec 2021',
-    },
-    {
-      imageUrl: pokemon,
-      projectUrl: 'https://pokedex-app-diego.vercel.app/',
-      repoUrl: 'https://github.com/DiegoSt23/pokedex-diego',
-      name: 'Pokedex',
-      description: t('projects2.projects.pokemon.description'),
-      id: 6,
-      releaseDate: 'Sep 2021',
     },
     {
       imageUrl: countdown,
@@ -107,7 +114,7 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
       repoUrl: 'https://github.com/DiegoSt23/New-Year-Countdown',
       name: 'New Year Coundown Timer',
       description: t('projects2.projects.countdown.description'),
-      id: 7,
+      id: 8,
       releaseDate: 'Dec 2021',
     },
   ];
@@ -140,7 +147,9 @@ export const Projects = ({ isModalOpen }: ProjectViewProps) => {
                     <Chip>{item.status}</Chip>
                   </div>
                 )}
-                <BsInfoCircleFill size={20} />
+                <Tooltip tooltipContent={t('projects2.info')} maxWidth={150}>
+                  <BsInfoCircleFill size={20} />
+                </Tooltip>
               </div>
             </button>
           ))}

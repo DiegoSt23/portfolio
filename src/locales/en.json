@@ -14,7 +14,7 @@
   "hero": {
     "line1": "Hello!",
     "line2": "I'm Diego",
-    "line3": "Front-End Developer"
+    "line3": "frontEndDeveloper()"
   },
   "about": {
     "title": "About",
@@ -69,16 +69,18 @@
     "title": "Technologies"
   },
   "projects1": {
-    "title": "Projects I have participated in"
+    "title": "Projects I have participated in",
+    "info": "Click to get more info"
   },
   "projects2": {
     "title": "Personal projects",
+    "info": "Click to get more info",
     "projects": {
       "spotify": {
         "description": "My own version of Spotify with the Spotify API, created with Delta UI. Still under development."
       },
       "delta": {
-        "description": "A lightweight and minimalistic React components library designed to provide a seamless user experience. It offers a curated set of reusable and customizable components that can easily be integrated into any React project."
+        "description": "A lightweight and minimalistic React components library designed to provide a seamless user experience. It offers a curated set of reusable and customizable components that can easily be integrated into any React project. Completely designed by me."
       },
       "space": {
         "description": "A Frontendmentor.io challenge made with React, a multipage web app about space tourism, destinations, the team and their technologies."
@@ -92,8 +94,8 @@
       "todo": {
         "description": "Made with React, a simple app to make a todo list, you can filter by all, incomplete or completed tasks. Also select light or dark themes."
       },
-      "pokemon": {
-        "description": "Made with the Pokemon API, you can search for Pokemons by name, ID or type to find images, type, statistics and general information about them, also you can save your favorites!."
+      "reservamos": {
+        "description": "A simple app to get the 5-day weather forecast in any city of USA and México. Made with React, Typescript and Sass, it uses the Reservamos Api and the Open Weather Api. Completely designed by me."
       },
       "countdown": {
         "description": "A React App which displays the remaining days, hours, minutes and seconds until new year! It works with every year. This is one of the Frontendmentor.io challenges."

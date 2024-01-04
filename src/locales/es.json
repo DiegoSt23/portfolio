@@ -14,7 +14,7 @@
   "hero": {
     "line1": "Hola!",
     "line2": "Soy Diego",
-    "line3": "Desarrollador Front-End"
+    "line3": "desarrolladorFrontEnd()"
   },
   "about": {
     "title": "Sobre mi",
@@ -70,16 +70,18 @@
     "title": "Tecnologias"
   },
   "projects1": {
-    "title": "Proyectos en los que he participado"
+    "title": "Proyectos en los que he participado",
+    "info": "Click para obtener mas informacion"
   },
   "projects2": {
     "title": "Proyectos personales",
+    "info": "Click para obtener mas informacion",
     "projects": {
       "spotify": {
         "description": "Mi propia versión de Spotify con la API de Spotify, creada con Delta UI. Todavía en desarrollo."
       },
       "delta": {
-        "description": "Una biblioteca de componentes React ligera y minimalista diseñada para proporcionar una experiencia de usuario fluida. Ofrece un conjunto seleccionado de componentes reutilizables y personalizables que pueden integrarse fácilmente en cualquier proyecto de React."
+        "description": "Una biblioteca de componentes React ligera y minimalista diseñada para proporcionar una experiencia de usuario fluida. Ofrece un conjunto seleccionado de componentes reutilizables y personalizables que pueden integrarse fácilmente en cualquier proyecto de React. Completamente diseñada por mí."
       },
       "space": {
         "description": "Un desafío de Frontendmentor.io realizado con React, una aplicación web multipágina sobre turismo espacial, destinos, el equipo y sus tecnologías."
@@ -93,8 +95,8 @@
       "todo": {
         "description": "Hecha con React, una aplicación simple para hacer una lista de tareas pendientes, puedes filtrar por todas las tareas, las incompletas o las completadas. También tiene tema claro y oscuro."
       },
-      "pokemon": {
-        "description": "Hecha con la API de Pokémon, puedes buscar Pokémons por nombre, ID o tipo para encontrar imágenes, tipo, estadísticas e información general sobre ellos, ¡también puedes guardar tus favoritos!"
+      "reservamos": {
+        "description": "Una aplicación sencilla para obtener el pronóstico del clima de 5 días en cualquier ciudad de Estados Unidos y México. Hecha con React, Typescript y Sass, utiliza la API de Reservamos y la API de Open Weather. Completamente diseñada por mí."
       },
       "countdown": {
         "description": "Una aplicación React que muestra los días, horas, minutos y segundos restantes hasta el año nuevo. Funciona con cada año. Este es uno de los desafíos de Frontendmentor.io."

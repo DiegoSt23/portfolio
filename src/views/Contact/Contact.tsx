@@ -5,12 +5,8 @@ import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { FiCopy } from 'react-icons/fi';
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineInstagram,
-} from 'react-icons/ai';
-import { BsTwitterX, BsFillTriangleFill } from 'react-icons/bs';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { BsFillTriangleFill } from 'react-icons/bs';
 import { IoMdDownload } from 'react-icons/io';
 import {
   Typography,
@@ -28,7 +24,7 @@ import {
 } from 'diego-react-delta-ui';
 import { ViewLayout } from '../../components';
 import backgroundDark from '../../assets/images/black-sky.jpg';
-import backgroundLight from '../../assets/images/white-marmol.jpg';
+import backgroundLight from '../../assets/images/white-background.jpg';
 import cv from '../../assets/docs/CV_Diego.pdf';
 import cvSpanish from '../../assets/docs/CV_Diego_spanish.pdf';
 import styles from './contact.module.scss';
@@ -247,12 +243,6 @@ export const Contact = () => {
                 className={isDark ? '' : styles.link}
               >
                 <AiFillLinkedin size={20} />
-              </Link>
-              <Link target='_blank' className={isDark ? '' : styles.link}>
-                <AiOutlineInstagram size={20} />
-              </Link>
-              <Link target='_blank' className={isDark ? '' : styles.link}>
-                <BsTwitterX size={16} />
               </Link>
               <Link
                 href='https://github.com/DiegoSt23/delta-ui'
