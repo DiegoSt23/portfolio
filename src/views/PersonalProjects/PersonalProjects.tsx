@@ -360,7 +360,7 @@ export const PersonalProjects = () => {
       <Carousel setApi={setApi} className='w-full max-w-xs'>
         <CarouselContent>
           {projectsData.map((item) => (
-            <Project {...item} isMobile={isMobile} />
+            <Project key={item.id} {...item} isMobile={isMobile} />
           ))}
         </CarouselContent>
         {!isMobile && (

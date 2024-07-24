@@ -86,6 +86,8 @@
   },
   "github": {
     "title": "Contribuciones Totales En GitHub",
+    "date": "Fecha:",
+    "contributions": "Contribuciones:",
     "visitProfile": "Checa mi perfil en GitHub",
     "visit": "VISITAR"
   },

@@ -48,6 +48,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+console.log(client)
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
