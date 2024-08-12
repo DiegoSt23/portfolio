@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "title": "Desarrollador Front End"
+  },
+  "about": {
+    "title": "Sobre mi",
+    "line1": "Como Desarrollador Front-End especializado en React JS con Typescript en Blackstone Studio soy responsable de crear aplicaciones web y móviles visualmente atractivas y funcionalmente sólidas utilizando una variedad de tecnologías de vanguardia.",
+    "line2": "Impulsado por una fuerte aptitud para resolver problemas, un ojo agudo para el detalle y una pasión por crear aplicaciones web y móviles elegantes y de alto rendimiento, me enorgullezco de entregar código de alta calidad que no solo cumple con los requisitos del proyecto, sino que también sigue las mejores prácticas y estándares de la industria."
+  },
+  "hardSkills": {
+    "title": "Habilidades Duras",
+    "one": {
+      "title": "HTML & CSS",
+      "description": "El lenguaje de marcado estándar para la construcción de páginas web es HyperText Markup Language (HTML). Es el bloque de construcción más fundamental para crear páginas web. CSS se utiliza para crear el diseño, color, fuentes y estilo de la página."
+    },
+    "two": {
+      "title": "Javascript & Typescript",
+      "description": "Lenguajes de programación utilizados en el desarrollo web para crear páginas web dinámicas e interactivas. JavaScript es un lenguaje de secuencias de comandos que te permite crear contenido de actualización dinámica, controlar multimedia, animar imágenes y prácticamente cualquier otra cosa, mientras que TypeScript es un superset de JavaScript con tipado estático, añadiendo tipado fuerte para una mayor fiabilidad del código."
+    },
+    "three": {
+      "title": "Diseño Responsivo",
+      "description": "Enfoque de diseño web que asegura que los sitios web se adapten y se muestren de manera efectiva en diferentes tamaños de pantalla y dispositivos, proporcionando una experiencia de usuario fluida."
+    },
+
+    "four": {
+      "title": "Control de Versiones/Git",
+      "description": "Un sistema para seguir los cambios en el código, gestionar el historial del proyecto y facilitar la colaboración entre desarrolladores. Git es una herramienta de control de versiones ampliamente utilizada en el desarrollo de software."
+    },
+    "five": {
+      "title": "Frameworks y Bibliotecas de JavaScript",
+      "description": "Librerías y herramientas preconstruidas que ofrecen una forma estructurada y eficiente de desarrollar aplicaciones web. Estos frameworks facilitan la creación de interfaces de usuario interactivas y simplifican tareas complejas en el desarrollo web. Por ejemplo, React, React Native, Vue."
+    },
+    "six": {
+      "title": "Pruebas/Depuración",
+      "description": "Procesos y herramientas utilizados para evaluar la funcionalidad del código, identificar problemas y garantizar la fiabilidad del software. Las pruebas implican evaluar sistemáticamente el comportamiento del código, mientras que la depuración implica localizar y resolver errores o fallos en el código."
+    },
+    "seven": {
+      "title": "Herramientas de Desarrollo del Navegador",
+      "description": "Funcionalidades integradas en el navegador web que permiten a los desarrolladores inspeccionar, depurar y analizar páginas web y aplicaciones web en tiempo real. Estas herramientas ofrecen información valiosa sobre HTML, CSS y JavaScript, facilitando la resolución de problemas y la optimización."
+    },
+    "eight": {
+      "title": "Rendimiento Web",
+      "description": "Conjunto de técnicas y prácticas orientadas a mejorar la velocidad, eficiencia y experiencia general del usuario en sitios web y aplicaciones web. Esto implica optimizar los tiempos de carga de las páginas, reducir el consumo de recursos y mejorar la capacidad de respuesta."
+    },
+    "nine": {
+      "title": "Preprocesadores de CSS",
+      "description": "Técnica de mejora del flujo de trabajo que implica el uso de lenguajes preprocesadores como SASS o LESS para escribir CSS de manera más organizada y eficiente. Estos preprocesadores ofrecen características como variables, anidamiento y mixins, lo que facilita la gestión y el mantenimiento de hojas de estilo complejas."
+    },
+    "ten": {
+      "title": "Línea de Comandos",
+      "description": "Una interfaz basada en texto utilizada para interactuar con el sistema operativo de una computadora o software a través de comandos. Permite a los usuarios realizar una amplia gama de tareas, incluyendo gestión de archivos, instalación de software y automatización, utilizando comandos de texto en lugar de interfaces gráficas."
+    }
+  },
+  "technologies": {
+    "title": "Tecnologias"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "info": "Click para obtener mas informacion",
+    "projects": {
+      "spotify": {
+        "description": "Mi propia versión de Spotify con la API de Spotify, creada con Delta UI. Todavía en desarrollo."
+      },
+      "delta": {
+        "description": "Una biblioteca de componentes React ligera y minimalista diseñada para proporcionar una experiencia de usuario fluida. Ofrece un conjunto seleccionado de componentes reutilizables y personalizables que pueden integrarse fácilmente en cualquier proyecto de React. Completamente diseñada por mí."
+      },
+      "space": {
+        "description": "Un desafío de Frontendmentor.io realizado con React, una aplicación web multipágina sobre turismo espacial, destinos, el equipo y sus tecnologías."
+      },
+      "metal": {
+        "description": "Una tienda demo con algunos increíbles discos de música metal. Está hecha con React, React Router, Context y algunos Hooks como useState, useEffect, useReducer, etc."
+      },
+      "github": {
+        "description": "App de React hecha con la API de GitHub, puedes buscar desarrolladores para encontrar su información, repositorios, seguidores, etc."
+      },
+      "todo": {
+        "description": "Hecha con React, una aplicación simple para hacer una lista de tareas pendientes, puedes filtrar por todas las tareas, las incompletas o las completadas. También tiene tema claro y oscuro."
+      },
+      "reservamos": {
+        "description": "Una aplicación sencilla para obtener el pronóstico del clima de 5 días en cualquier ciudad de Estados Unidos y México. Hecha con React, Typescript y Sass, utiliza la API de Reservamos y la API de Open Weather. Completamente diseñada por mí."
+      },
+      "countdown": {
+        "description": "Una aplicación React que muestra los días, horas, minutos y segundos restantes hasta el año nuevo. Funciona con cada año. Este es uno de los desafíos de Frontendmentor.io."
+      }
+    }
+  },
+  "github": {
+    "title": "Contribuciones Totales En GitHub",
+    "date": "Fecha:",
+    "contributions": "Contribuciones:",
+    "visitProfile": "Checa mi perfil en GitHub",
+    "visit": "VISITAR"
+  },
+  "contact": {
+    "title": "Contacto",
+    "letsTalk": "Hablemos",
+    "description": "¿Tienes alguna gran idea? Entonces contáctame, me encantaría saber más sobre ti, tu proyecto y cómo puedo ayudarte.",
+    "tabs": {
+      "one": {
+        "title": "Enlaces",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "download": "CV",
+        "downloadDescription": "Descargar CV",
+        "copy": "¡Copiado!",
+        "message": "Mensaje enviado exitosamente!"
+      },
+      "two": {
+        "title": "Formulario",
+        "form": {
+          "name": {
+            "label": "Nombre",
+            "placeholder": "Ingresa tu nombre...",
+            "error": "Requerido"
+          },
+          "email": {
+            "label": "Correo electrónico",
+            "placeholder": "Ingresa tu correo electrónico...",
+            "error": "Requerido",
+            "error2": "Por favor, ingrese un correo electrónico válido"
+          },
+          "message": {
+            "label": "Mensaje",
+            "placeholder": "Ingresa tu mensaje...",
+            "error": "Requerido"
+          },
+          "button": "Enviar"
+        }
+      }
+    },
+    "messageSent": {
+      "title": "Mensaje enviado",
+      "description": "Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo lo antes posible. ¡Gracias!"
+    }
+  }
+}
