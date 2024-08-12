@@ -166,6 +166,8 @@ export const GitHub = () => {
         data2022.user.contributionsCollection?.contributionCalendar
           .totalContributions +
         data2023.user.contributionsCollection?.contributionCalendar
+          .totalContributions +
+        data2024.user.contributionsCollection?.contributionCalendar
           .totalContributions;
 
       setLocalData(uniqueArray);
