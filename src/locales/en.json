@@ -84,12 +84,12 @@
     }
   },
   "github": {
-    "title": "Total GitHub Contributions",
+    "title": "Total GitHub Contributions*",
     "date": "Date:",
     "contributions": "Contributions:",
     "visitProfile": "Check my GitHub profile",
     "visit": "VISIT",
-    "updated": "updated on real time"
+    "updated": "*updated on real time"
   },
   "contact": {
     "title": "Contact",
