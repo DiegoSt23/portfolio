@@ -229,7 +229,7 @@ export const GitHub = () => {
             <>
               <div
                 style={{
-                  height: isMobile ? 280 : 450,
+                  height: isMobile ? 400 : 450,
                   width: '100%',
                 }}
               >

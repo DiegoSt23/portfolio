@@ -85,12 +85,12 @@
     }
   },
   "github": {
-    "title": "Contribuciones Totales En GitHub",
+    "title": "Contribuciones Totales En GitHub*",
     "date": "Fecha:",
     "contributions": "Contribuciones:",
     "visitProfile": "Checa mi perfil en GitHub",
     "visit": "VISITAR",
-    "updated": "actualizado en tiempo real"
+    "updated": "*actualizado en tiempo real"
   },
   "contact": {
     "title": "Contacto",
