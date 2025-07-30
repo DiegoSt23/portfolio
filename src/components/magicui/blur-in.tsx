@@ -22,13 +22,13 @@ const BlurIn = ({ word, className, variant, duration = 1 }: BlurIntProps) => {
 
   return (
     <motion.h1
-      initial="hidden"
-      animate="visible"
+      initial='hidden'
+      animate='visible'
       transition={{ duration }}
       variants={combinedVariants}
       className={cn(
         className,
-        "font-display text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]",
+        'font-display text-center text-7xl font-black leading-[4rem] tracking-[-0.02em] drop-shadow-sm md:text-8xl md:leading-[5rem]'
       )}
     >
       {word}

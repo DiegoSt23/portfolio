@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { LiaHackerrank } from 'react-icons/lia';
 import { PiSunDim } from 'react-icons/pi';
 import { PiMoonStarsLight } from 'react-icons/pi';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
@@ -18,7 +17,7 @@ import { useTheme } from '@/context';
 import { useWindowDimensions } from '@/helpers';
 
 export const Hero = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
   const { width } = useWindowDimensions();
   const [currentLang, setCurrentLang] = useState<'en' | 'es'>('en');
@@ -72,9 +71,6 @@ export const Hero = () => {
           >
             <AiFillLinkedin size={20} />
           </a>
-          <a href='https://github.com/DiegoSt23/delta-ui' target='_blank'>
-            <LiaHackerrank size={22} />
-          </a>
         </div>
         <div className='flex items-center self-start gap-3'>
           <button
@@ -116,13 +112,13 @@ export const Hero = () => {
           </Popover>
         </div>
       </motion.div>
-      <h2 className='text-neutral-400 text-3xl font-semibold tracking-tight'>
-        Diego Alvarez
-      </h2>
       <BlurIn
-        word={t('hero.title')}
-        className='text-4xl font-bold text-black dark:text-white'
+        word='DIEGO'
+        className='text-4xl font-black text-black dark:text-white'
       />
+      <BlurIn word='FRONT' className='text-9xl font-black text-neutral-400' />
+      <BlurIn word='END' className='text-4xl font-black text-neutral-400' />
+      <BlurIn word='DEV' className='text-4xl font-black text-neutral-400' />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}

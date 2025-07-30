@@ -7,17 +7,17 @@ import { BsCopy } from 'react-icons/bs';
 import { MdDownload } from 'react-icons/md';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { LiaHackerrank } from 'react-icons/lia';
+import { useTheme } from '@/context';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
-  Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { MagicCard } from '@/components/magicui/magic-card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -27,6 +27,7 @@ import cv from '../../assets/docs/CV_Diego.pdf';
 
 export const Contact = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -107,7 +108,7 @@ export const Contact = () => {
           <TabsTrigger value='links'>{t('contact.tabs.one.title')}</TabsTrigger>
           <TabsTrigger value='form'>{t('contact.tabs.two.title')}</TabsTrigger>
         </TabsList>
-        <Card>
+        <MagicCard gradientColor={theme === 'dark' ? '#36393e' : '#dcdcdc'}>
           <CardHeader>
             <CardTitle>{t('contact.letsTalk')}</CardTitle>
             <CardDescription>{t('contact.description')}</CardDescription>
@@ -244,7 +245,7 @@ export const Contact = () => {
               </CardFooter>
             </form>
           </TabsContent>
-        </Card>
+        </MagicCard>
       </Tabs>
       <div className='flex items-center justify-center gap-3 mt-2'>
         <a href='https://github.com/DiegoSt23' target='_blank'>
@@ -255,9 +256,6 @@ export const Contact = () => {
           target='_blank'
         >
           <AiFillLinkedin size={20} />
-        </a>
-        <a href='https://github.com/DiegoSt23/delta-ui' target='_blank'>
-          <LiaHackerrank size={22} />
         </a>
       </div>
     </div>
