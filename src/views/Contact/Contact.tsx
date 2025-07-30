@@ -112,7 +112,7 @@ export const Contact = () => {
             <CardTitle>{t('contact.letsTalk')}</CardTitle>
             <CardDescription>{t('contact.description')}</CardDescription>
           </CardHeader>
-          <TabsContent value='links'> 
+          <TabsContent value='links'>
             <CardContent className='flex flex-col gap-4'>
               <div className='flex justify-between items-center'>
                 <div className='flex flex-col gap-1'>
@@ -251,7 +251,7 @@ export const Contact = () => {
           <AiFillGithub size={20} />
         </a>
         <a
-          href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+          href='https://www.linkedin.com/in/diego-alvarez-dev/'
           target='_blank'
         >
           <AiFillLinkedin size={20} />
