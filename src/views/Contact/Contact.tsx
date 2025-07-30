@@ -7,17 +7,16 @@ import { BsCopy } from 'react-icons/bs';
 import { MdDownload } from 'react-icons/md';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { useTheme } from '@/context';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
+  Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { MagicCard } from '@/components/magicui/magic-card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -27,7 +26,6 @@ import cv from '../../assets/docs/CV_Diego.pdf';
 
 export const Contact = () => {
   const { t } = useTranslation();
-  const { theme } = useTheme();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -108,7 +106,7 @@ export const Contact = () => {
           <TabsTrigger value='links'>{t('contact.tabs.one.title')}</TabsTrigger>
           <TabsTrigger value='form'>{t('contact.tabs.two.title')}</TabsTrigger>
         </TabsList>
-        <MagicCard gradientColor={theme === 'dark' ? '#36393e' : '#dcdcdc'}>
+        <Card>
           <CardHeader>
             <CardTitle>{t('contact.letsTalk')}</CardTitle>
             <CardDescription>{t('contact.description')}</CardDescription>
@@ -143,7 +141,7 @@ export const Contact = () => {
                     {t('contact.tabs.one.phone')}
                   </p>
                   <p className='className="text-lg font-semibold"'>
-                    +52 55 40 76 24 69
+                    +52 77 12 35 19 18
                   </p>
                 </div>
                 <Button
@@ -245,7 +243,7 @@ export const Contact = () => {
               </CardFooter>
             </form>
           </TabsContent>
-        </MagicCard>
+        </Card>
       </Tabs>
       <div className='flex items-center justify-center gap-3 mt-2'>
         <a href='https://github.com/DiegoSt23' target='_blank'>
