@@ -91,7 +91,7 @@ export const HardSkills = () => {
             <MagicCard
               key={title}
               className='w-full p-4 flex flex-col'
-              gradientColor={theme === 'dark' ? '#262626' : '#dcdcdc'}
+              gradientColor={theme === 'dark' ? '#36393e' : '#dcdcdc'}
             >
               <div className='flex justify-between items-start gap-4'>
                 <p className='className="text-lg font-semibold'>{title}</p>
