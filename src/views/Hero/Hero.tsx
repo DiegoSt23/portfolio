@@ -67,7 +67,7 @@ export const Hero = () => {
             <AiFillGithub size={20} />
           </a>
           <a
-            href='https://www.linkedin.com/in/diego-%C3%A1lvarez-garc%C3%ADa/'
+            href='https://www.linkedin.com/in/diego-alvarez-dev/'
             target='_blank'
           >
             <AiFillLinkedin size={20} />
