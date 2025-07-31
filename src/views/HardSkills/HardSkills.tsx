@@ -11,9 +11,12 @@ import { MagicCard } from '@/components/magicui/magic-card';
 import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/context';
+import { useWindowDimensions } from '@/helpers';
 
 export const HardSkills = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { width } = useWindowDimensions();
+  const isMobile = width < 564;
   const { t } = useTranslation();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
@@ -22,7 +25,12 @@ export const HardSkills = () => {
   });
   const scale = useTransform(scrollYProgress, [0, 0.5], [300, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const x = useTransform(scrollYProgress, [0, 0.5], [-466, 0]);
+  const x = useTransform(scrollYProgress, [0, 0.5], [isMobile ? -294 : -466, 0]);
+  const letterSpacing = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    ['3em', '-0.025em']
+  );
   const iconProps = { size: 20 };
   
   const hardSkillsData = [
@@ -82,17 +90,17 @@ export const HardSkills = () => {
     <>
       <div
         ref={containerRef}
-        className='relative flex w-full h-dvh items-center justify-center p-20 overflow-x-clip'
-        
+        className='relative flex w-full h-dvh items-center justify-center p-20 overflow-x-clip contain-layout'
       >
         <motion.p
           style={{
             scale,
             opacity,
             x,
-            pointerEvents: opacity.get() < 0.1 ? 'none' : 'auto',
+            letterSpacing,
+            pointerEvents: 'none',
           }}
-          className='z-10 whitespace-pre-wrap text-center text-6xl md:text-8xl font-medium tracking-tighter text-black dark:text-white select-none'
+          className='absolute z-10 whitespace-pre-wrap text-center text-6xl md:text-8xl font-medium tracking-tighter text-black dark:text-white select-none'
         >
           {t('hardSkills.title')}
         </motion.p>
