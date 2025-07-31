@@ -82,7 +82,8 @@ export const HardSkills = () => {
     <>
       <div
         ref={containerRef}
-        className='relative flex w-full h-dvh items-center justify-center p-20'
+        className='relative flex w-full h-dvh items-center justify-center p-20 overflow-x-clip'
+        
       >
         <motion.p
           style={{
