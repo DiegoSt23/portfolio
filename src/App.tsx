@@ -1,5 +1,8 @@
+import { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ReactLenis } from 'lenis/react';
+import { ReactLenis, LenisRef } from 'lenis/react';
+import 'lenis/dist/lenis.css';
+import { cancelFrame, frame } from 'framer-motion';
 import { Separator } from '@/components/ui/separator';
 import {
   Hero,
@@ -13,10 +16,21 @@ import {
 
 const App = () => {
   const { t } = useTranslation();
+  const lenisRef = useRef<LenisRef>(null);
+
+  useEffect(() => {
+    function update(data: { timestamp: number }) {
+      const time = data.timestamp;
+      lenisRef.current?.lenis?.raf(time);
+    }
+
+    frame.update(update, true);
+
+    return () => cancelFrame(update);
+  }, []);
 
   return (
-    <>
-      <ReactLenis root />
+    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <Hero />
       <About text={t('about.line1')} />
       <Separator className='mb-6' />
@@ -30,7 +44,7 @@ const App = () => {
       <GitHub />
       <Separator className='mx-auto max-w-6xl' />
       <Contact />
-    </>
+    </ReactLenis>
   );
 };
 
