@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { ReactLenis } from 'lenis/react';
 import { Separator } from '@/components/ui/separator';
 import {
   Hero,
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <>
+      <ReactLenis root />
       <Hero />
       <About text={t('about.line1')} />
       <Separator className='mb-6' />

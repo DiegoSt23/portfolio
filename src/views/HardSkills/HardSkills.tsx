@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FaHtml5, FaReact, FaSass } from 'react-icons/fa';
 import { BiLogoTypescript, BiLayout } from 'react-icons/bi';
@@ -11,10 +13,18 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/context';
 
 export const HardSkills = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.5], [300, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const x = useTransform(scrollYProgress, [0, 0.5], [-466, 0]);
   const iconProps = { size: 20 };
-
+  
   const hardSkillsData = [
     {
       title: t('hardSkills.one.title'),
@@ -70,17 +80,29 @@ export const HardSkills = () => {
 
   return (
     <>
-      <div className='relative flex w-full h-dvh items-center justify-center overflow-hidden p-20'>
-        <p className='z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white'>
+      <div
+        ref={containerRef}
+        className='relative flex w-full h-dvh items-center justify-center p-20 overflow-x-clip'
+        
+      >
+        <motion.p
+          style={{
+            scale,
+            opacity,
+            x,
+            pointerEvents: opacity.get() < 0.1 ? 'none' : 'auto',
+          }}
+          className='z-10 whitespace-pre-wrap text-center text-6xl md:text-8xl font-medium tracking-tighter text-black dark:text-white select-none'
+        >
           {t('hardSkills.title')}
-        </p>
+        </motion.p>
         <AnimatedGridPattern
-          numSquares={30}
-          maxOpacity={0.2}
+          numSquares={50}
+          maxOpacity={0.4}
           duration={1}
           repeatDelay={1}
           className={cn(
-            '[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]',
+            '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
             'inset-x-0 inset-y-[-45%] h-[200%] skew-y-12'
           )}
         />

@@ -49,7 +49,7 @@ export const Hero = () => {
     <div className='flex h-dvh w-full flex-col items-center justify-center rounded-lg bg-background md:shadow-xl'>
       <DotPattern
         className={cn(
-          '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)] rotate-animation'
+          '[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]'
         )}
       />
       <motion.div
