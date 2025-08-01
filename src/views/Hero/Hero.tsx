@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { PiSunDim } from 'react-icons/pi';
 import { PiMoonStarsLight } from 'react-icons/pi';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { cn } from '@/lib/utils';
+import { useParallax } from '@/helpers';
 import DotPattern from '@/components/magicui/dot-pattern';
 import BlurIn from '@/components/magicui/blur-in';
 import {
@@ -17,6 +18,15 @@ import { useTheme } from '@/context';
 import { useWindowDimensions } from '@/helpers';
 
 export const Hero = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+  const titleVerticalParallax = useParallax(scrollYProgress, 100);
+  const title2VerticalParallax = useParallax(scrollYProgress, 120);
+  const title3VerticalParallax = useParallax(scrollYProgress, 150);
+  const opacity = useTransform(scrollYProgress, [0.5, 0.8], [1, 0]);
   const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
   const { width } = useWindowDimensions();
@@ -46,10 +56,13 @@ export const Hero = () => {
   }, [isMobile]);
 
   return (
-    <div className='flex h-dvh w-full flex-col items-center justify-center rounded-lg bg-background md:shadow-xl'>
+    <div
+      ref={containerRef}
+      className='flex h-dvh w-full flex-col items-center justify-center rounded-lg bg-background'
+    >
       <DotPattern
         className={cn(
-          '[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]'
+          `[mask-image:radial-gradient(${isMobile ? 300 : 500}px_circle_at_center,white,transparent)]`
         )}
       />
       <motion.div
@@ -116,9 +129,21 @@ export const Hero = () => {
         word='DIEGO'
         className='text-4xl font-black text-black dark:text-white'
       />
-      <BlurIn word='FRONT' className='text-9xl font-black text-neutral-400' />
-      <BlurIn word='END' className='text-4xl font-black text-neutral-400' />
-      <BlurIn word='DEV' className='text-4xl font-black text-neutral-400' />
+      <BlurIn
+        word='FRONT'
+        className='text-9xl font-black text-neutral-400'
+        style={{ y: titleVerticalParallax }}
+      />
+      <BlurIn
+        word='END'
+        className='text-4xl font-black text-neutral-400'
+        style={{ y: title2VerticalParallax }}
+      />
+      <BlurIn
+        word='DEV'
+        className='text-4xl font-black text-neutral-400'
+        style={{ y: title3VerticalParallax }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,6 +152,7 @@ export const Hero = () => {
           duration: 0.5,
         }}
         className={theme === 'dark' ? 'scrollDownDark' : 'scrollDownLight'}
+        style={{ opacity }}
       />
     </div>
   );
