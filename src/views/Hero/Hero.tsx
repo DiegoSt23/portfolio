@@ -5,7 +5,6 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { PiSunDim } from 'react-icons/pi';
 import { PiMoonStarsLight } from 'react-icons/pi';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
-import { cn } from '@/lib/utils';
 import { useParallax } from '@/helpers';
 import DotPattern from '@/components/magicui/dot-pattern';
 import BlurIn from '@/components/magicui/blur-in';
@@ -61,9 +60,11 @@ export const Hero = () => {
       className='flex h-dvh w-full flex-col items-center justify-center rounded-lg bg-background'
     >
       <DotPattern
-        className={cn(
-          `[mask-image:radial-gradient(${isMobile ? 300 : 500}px_circle_at_center,white,transparent)]`
-        )}
+        className={
+          isMobile
+            ? '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]'
+            : '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]'
+        }
       />
       <motion.div
         initial={{ opacity: 0, y: -50 }}
