@@ -22,9 +22,7 @@ export const Hero = () => {
     target: containerRef,
     offset: ['start end', 'end start'],
   });
-  const titleVerticalParallax = useParallax(scrollYProgress, 100);
-  const title2VerticalParallax = useParallax(scrollYProgress, 120);
-  const title3VerticalParallax = useParallax(scrollYProgress, 150);
+  const titleVerticalParallax = useParallax(scrollYProgress, 250);
   const opacity = useTransform(scrollYProgress, [0.5, 0.8], [1, 0]);
   const { i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
@@ -126,24 +124,21 @@ export const Hero = () => {
           </Popover>
         </div>
       </motion.div>
+      <BlurIn word='Diego' className='font-black text-black dark:text-white' />
       <BlurIn
-        word='DIEGO'
-        className='text-4xl font-black text-black dark:text-white'
-      />
-      <BlurIn
-        word='FRONT'
-        className='text-9xl font-black text-neutral-400'
+        word='Front'
+        className='text-red-400 text-8xl'
         style={{ y: titleVerticalParallax }}
       />
       <BlurIn
-        word='END'
-        className='text-4xl font-black text-neutral-400'
-        style={{ y: title2VerticalParallax }}
+        word='End'
+        className='font-black text-red-400'
+        style={{ y: titleVerticalParallax }}
       />
       <BlurIn
-        word='DEV'
-        className='text-4xl font-black text-neutral-400'
-        style={{ y: title3VerticalParallax }}
+        word='Dev'
+        className='font-black text-red-400'
+        style={{ y: titleVerticalParallax }}
       />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
