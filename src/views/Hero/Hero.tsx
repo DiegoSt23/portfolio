@@ -132,12 +132,12 @@ export const Hero = () => {
       />
       <BlurIn
         word='End'
-        className='font-black text-gray-400'
+        className='text-gray-400'
         style={{ y: titleVerticalParallax }}
       />
       <BlurIn
         word='Dev'
-        className='font-black text-gray-400'
+        className='text-gray-400'
         style={{ y: titleVerticalParallax }}
       />
       <motion.div
