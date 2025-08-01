@@ -127,17 +127,17 @@ export const Hero = () => {
       <BlurIn word='Diego' className='font-black text-black dark:text-white' />
       <BlurIn
         word='Front'
-        className='text-red-400 text-8xl'
+        className='text-gray-400'
         style={{ y: titleVerticalParallax }}
       />
       <BlurIn
         word='End'
-        className='font-black text-red-400'
+        className='text-gray-400'
         style={{ y: titleVerticalParallax }}
       />
       <BlurIn
         word='Dev'
-        className='font-black text-red-400'
+        className='text-gray-400'
         style={{ y: titleVerticalParallax }}
       />
       <motion.div
