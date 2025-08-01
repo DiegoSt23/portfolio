@@ -8,7 +8,8 @@
     "line2": "Driven by a strong problem-solving aptitude, a keen eye for detail and a passion for crafting elegant and performant web and mobile applications I take pride in delivering high-quality code that not only meets project requirements but also adheres to best coding practices and standards."
   },
   "hardSkills": {
-    "title": "SKILLS",
+    "title": "TECH",
+    "title2": "SKILLS",
     "one": {
       "title": "HTML & CSS",
       "description": "The standard markup language for constructing web pages is HyperText Markup Language (HTML). It is the most fundamental building block for creating web pages. CSS, it is used to create the page’s layout, colour, fonts, and style."

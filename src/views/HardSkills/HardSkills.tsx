@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, easeInOut } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FaHtml5, FaReact, FaSass } from 'react-icons/fa';
 import { BiLogoTypescript, BiLayout } from 'react-icons/bi';
@@ -7,31 +7,46 @@ import { FaSquareGit } from 'react-icons/fa6';
 import { SiJest } from 'react-icons/si';
 import { BsBrowserChrome, BsLightningChargeFill } from 'react-icons/bs';
 import { HiCommandLine } from 'react-icons/hi2';
+import { useParallax } from '@/helpers';
 import { MagicCard } from '@/components/magicui/magic-card';
 import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/context';
-import { useWindowDimensions } from '@/helpers';
+
+const iconProps = { size: 20 };
 
 export const HardSkills = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { width } = useWindowDimensions();
-  const isMobile = width < 564;
   const { t } = useTranslation();
   const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
   });
-  const scale = useTransform(scrollYProgress, [0, 0.5], [300, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const x = useTransform(scrollYProgress, [0, 0.5], [isMobile ? -294 : -466, 0]);
+  const y = useParallax(scrollYProgress, 200);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [300, 1], {
+    ease: easeInOut,
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1], {
+    ease: easeInOut,
+  });
   const letterSpacing = useTransform(
     scrollYProgress,
     [0, 0.5],
-    ['3em', '-0.025em']
+    ['10em', '-0.025em'],
+    { ease: easeInOut }
   );
-  const iconProps = { size: 20 };
+  const titleProperties = {
+    style: {
+      scale,
+      opacity,
+      letterSpacing,
+      y,
+      pointerEvents: 'none' as const,
+    },
+    className:
+      'z-10 whitespace-pre-wrap text-center text-6xl md:text-7xl font-bold tracking-tighter text-black dark:text-white select-none',
+  };
   
   const hardSkillsData = [
     {
@@ -90,20 +105,10 @@ export const HardSkills = () => {
     <>
       <div
         ref={containerRef}
-        className='relative flex w-full h-dvh items-center justify-center p-20 overflow-x-clip contain-layout'
+        className='relative flex flex-col w-full h-[1200px] md:h-dvh items-center justify-center p-20 overflow-x-clip contain-layout'
       >
-        <motion.p
-          style={{
-            scale,
-            opacity,
-            x,
-            letterSpacing,
-            pointerEvents: 'none',
-          }}
-          className='absolute z-10 whitespace-pre-wrap text-center text-6xl md:text-8xl font-medium tracking-tighter text-black dark:text-white select-none'
-        >
-          {t('hardSkills.title')}
-        </motion.p>
+        <motion.p {...titleProperties}>{t('hardSkills.title')}</motion.p>
+        <motion.p {...titleProperties}>{t('hardSkills.title2')}</motion.p>
         <AnimatedGridPattern
           numSquares={50}
           maxOpacity={0.4}
