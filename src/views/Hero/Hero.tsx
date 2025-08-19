@@ -30,6 +30,11 @@ export const Hero = () => {
   const [currentLang, setCurrentLang] = useState<'en' | 'es'>('en');
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const isMobile = width < 640;
+    const titleColor = useTransform(
+      scrollYProgress,
+      [0.5, 0.7],
+      [theme === 'light' ? '#000' : '#fff', '#ff0000']
+    );
 
   const handleSwitchTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -124,7 +129,11 @@ export const Hero = () => {
           </Popover>
         </div>
       </motion.div>
-      <BlurIn word='Diego' className='font-black text-black dark:text-white' />
+      <BlurIn
+        word='Diego'
+        className='font-black text-black dark:text-white'
+        style={{ y: titleVerticalParallax, color: titleColor }}
+      />
       <BlurIn
         word='Front'
         className='text-gray-400'
