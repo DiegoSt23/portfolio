@@ -11,44 +11,52 @@
     "title": "TECH",
     "title2": "SKILLS",
     "one": {
-      "title": "HTML & CSS",
-      "description": "The standard markup language for constructing web pages is HyperText Markup Language (HTML). It is the most fundamental building block for creating web pages. CSS, it is used to create the page’s layout, colour, fonts, and style."
+      "title": "JavaScript & TypeScript",
+      "description": "I rely on JavaScript and TypeScript to create interactive and reliable applications. I use JavaScript to handle dynamic content, manage state changes, and build smooth user experiences. TypeScript strengthens my code with type safety, making large-scale projects easier to maintain and less prone to errors. I frequently implement features that require asynchronous requests, complex logic, and user interactions, ensuring performance and clarity. TypeScript also improves collaboration, as strong typing makes the codebase easier for teams to understand. These languages are the foundation of my development process and central to delivering clean, scalable applications."
     },
     "two": {
-      "title": "Javascript & Typescript",
-      "description": "Programming languages used in web development to create dynamic and interactive web pages. Javascript is a scripting language that allows you to create dynamically updating content, control multimedia, animate images, and pretty much everything else, while TypeScript is a statically typed superset of JavaScript, adding strong typing for enhanced code reliability."
+      "title": "JavaScript Frameworks & Libraries",
+      "description": "Frameworks and libraries like React and React Native are core to my development workflow. I use them to build component-based architectures that are scalable, reusable, and easy to maintain. React helps me create rich user interfaces with smooth navigation and efficient state management, while React Native enables me to deliver cross-platform mobile solutions with the same principles. I apply libraries like Redux, Axios, or styled-components to simplify complex tasks, handle data effectively, and ensure design consistency. These tools allow me to move quickly while maintaining quality, delivering products that combine strong functionality with clean, modern user experiences."
     },
     "three": {
-      "title": "Responsive Design",
-      "description": "Approach to web design ensuring websites adapt and display effectively on various screen sizes and devices, providing a seamless user experience."
+      "title": "HTML & CSS",
+      "description": "I apply HTML and CSS to build the structural and visual foundation of web applications. My focus is on writing semantic HTML that improves accessibility and SEO while keeping the structure clear for future maintenance. With CSS, I design responsive layouts using Flexbox and Grid, and I apply consistent styles that match design systems. I also work with modern CSS features like variables, transitions, and animations to enhance usability and engagement. By combining structure and design, I ensure that interfaces are not only functional but also visually polished, creating experiences that align closely with client and user expectations."
     },
     "four": {
-      "title": "Version Control/Git",
-      "description": "A system for tracking changes in code, managing project history, and facilitating collaboration among developers. Git is a widely used version control tool in software development."
+      "title": "Responsive Design",
+      "description": "In every project, I ensure that interfaces adapt seamlessly to different devices and screen sizes. I use media queries, fluid layouts, and scalable assets to make designs responsive and mobile-friendly. This approach ensures that applications look and perform consistently whether accessed on desktops, tablets, or smartphones. I also pay attention to accessibility and usability, making sure interactions remain intuitive across platforms. By implementing responsive design principles from the start, I reduce rework and provide products that feel natural on any device. This has been crucial in industries like e-commerce and healthcare, where user experience directly impacts engagement."
     },
     "five": {
-      "title": "Javascript Frameworks and Libraries",
-      "description": "Pre-built libraries and tools that provide a structured and efficient way to develop web applications. These frameworks facilitate the creation of interactive user interfaces and simplify complex tasks in web development. e.g. React, React Native, Vue."
+      "title": "Web Performance",
+      "description": "Optimizing performance is a constant part of my workflow. I minimize load times by compressing assets, using lazy loading, and reducing unnecessary re-renders in React. I also manage network requests efficiently, implement caching strategies, and rely on code-splitting to deliver only what users need. These practices ensure that applications remain fast and responsive, even on slower connections. My focus on performance not only improves user satisfaction but also contributes to better SEO and retention rates. By combining technical improvements with careful monitoring, I make sure the applications I deliver are smooth, efficient, and able to scale effectively."
     },
     "six": {
-      "title": "Testing/Debugging",
-      "description": "Processes and tools used to evaluate code functionality, identify issues, and ensure software reliability. Testing involves systematically assessing code behavior, while debugging involves locating and resolving errors or bugs in the code."
+      "title": "Version Control / Git",
+      "description": "I use Git daily to manage project history, collaborate with teammates, and ensure clean and traceable development workflows. I create and manage branches for new features, handle pull requests, and resolve merge conflicts, keeping the codebase organized and maintainable. Git enables me to experiment with ideas without risk, since I can always roll back changes or review past versions. I also integrate Git with platforms like GitHub and GitLab, supporting code reviews, continuous integration, and collaborative workflows. This practice has helped me work effectively in teams, maintain consistency, and contribute to complex projects without losing development agility."
     },
     "seven": {
-      "title": "Browser Developer Tools",
-      "description": "Built-in web browser features that enable developers to inspect, debug, and analyze web pages and web applications in real-time. These tools provide valuable insights into HTML, CSS, and JavaScript, aiding in troubleshooting and optimization."
+      "title": "Testing & Debugging",
+      "description": "I integrate testing and debugging into my development routine to ensure stability and reliability. I use testing frameworks like Jest and React Testing Library to validate functionality with unit and integration tests. Debugging is a daily task where I identify and fix logical errors, performance issues, or unexpected behaviors using browser dev tools and console logging. By combining these practices, I can catch issues early and deliver code with confidence. This approach reduces the risk of production errors and helps maintain quality over time. Testing and debugging are not just safeguards but active tools to improve my development process."
     },
     "eight": {
-      "title": "Web Performance",
-      "description": "Set of techniques and practices aimed at improving the speed, efficiency, and overall user experience of websites and web applications. This involves optimizing page loading times, reducing resource consumption, and enhancing responsiveness."
+      "title": "APIs & Data Handling",
+      "description": "Most applications I build rely heavily on data, and I work extensively with APIs to connect front-end interfaces with back-end systems. I use REST and GraphQL to fetch and manipulate data, ensuring it is displayed accurately and efficiently to users. I handle asynchronous operations with care, providing feedback through loaders, error states, and retries when necessary. Security and performance are priorities, so I sanitize inputs and optimize requests to avoid unnecessary calls. By integrating APIs seamlessly, I create applications that feel connected and reliable, providing users with up-to-date information and smooth interactions across different environments."
     },
     "nine": {
-      "title": "CSS Preprocessing",
-      "description": "A workflow enhancement technique that involves using preprocessor languages like SASS or LESS to write CSS in a more organized and efficient manner. These preprocessors offer features like variables, nesting, and mixins, which make it easier to manage and maintain complex stylesheets."
+      "title": "Accessibility (A11y)",
+      "description": "Accessibility is a priority in all of my projects, ensuring that applications are usable by everyone, including people with disabilities. I apply semantic HTML, ARIA roles, and keyboard navigation to make interfaces more inclusive. I also ensure color contrast, focus states, and text alternatives are in place to meet accessibility standards like WCAG. Beyond compliance, I see accessibility as a way to improve usability for all users, not just those with special needs. By integrating accessibility practices into my workflow, I build products that are more ethical, professional, inclusive and aligned with real-world user needs across diverse audiences."
     },
     "ten": {
+      "title": "Browser Developer Tools",
+      "description": "I rely on browser developer tools to inspect, debug, and optimize applications during development. They allow me to analyze HTML structure, monitor CSS rules, track network requests, and measure performance metrics in real time. I often use them to troubleshoot layout issues, check responsiveness, or identify bottlenecks in JavaScript execution. These tools also help me debug complex state management problems in React and validate API calls. Using developer tools effectively speeds up my workflow, reduces guesswork, and ensures a higher level of precision when solving issues. They are an indispensable part of delivering polished and efficient applications."
+    },
+    "eleven": {
+      "title": "CSS Preprocessing",
+      "description": "To keep stylesheets clean and scalable, I use preprocessors like Sass. They allow me to organize styles with nesting, variables, and mixins, which improves readability and reduces duplication. I apply modular architectures to manage large projects and keep styles consistent across components. Sass also integrates well with build tools like Webpack, which I use to automate preprocessing tasks and improve efficiency. This structured approach saves time when working in teams and ensures future changes can be made without breaking existing styles. By leveraging preprocessing, I deliver well-organized, maintainable, and professional styling in every application I build."
+    },
+    "twelve": {
       "title": "Command Line",
-      "description": "A text-based interface used for interacting with a computer's operating system or software through commands. It allows users to perform a wide range of tasks, including file management, software installation, and automation, using text commands instead of graphical interfaces."
+      "description": "I frequently use the command line to speed up my workflow and perform tasks that would take longer in graphical interfaces. It helps me navigate file systems, manage project dependencies with npm or yarn, run build scripts, and interact with Git more efficiently. I also use it to configure environments, run automated tests, and manage local servers during development. This tool makes repetitive tasks faster through scripting and gives me better control over processes that support front-end development. By integrating the command line into my routine, I increase productivity and maintain a professional, streamlined workflow across projects."
     }
   },
   "technologies": {
