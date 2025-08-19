@@ -11,45 +11,52 @@
     "title": "TECH",
     "title2": "SKILLS",
     "one": {
-      "title": "HTML & CSS",
-      "description": "El lenguaje de marcado estándar para la construcción de páginas web es HyperText Markup Language (HTML). Es el bloque de construcción más fundamental para crear páginas web. CSS se utiliza para crear el diseño, color, fuentes y estilo de la página."
+      "title": "JavaScript & TypeScript",
+      "description": "Utilizo JavaScript y TypeScript para crear aplicaciones interactivas y confiables. JavaScript para manejar contenido dinámico, gestionar cambios de estado y construir experiencias de usuario fluidas. TypeScript fortalece mi código con tipado estático, haciendo que los proyectos a gran escala sean más fáciles de mantener y menos propensos a errores. Implemento con frecuencia funciones que requieren solicitudes asíncronas, lógica compleja e interacciones de usuario, asegurando rendimiento y claridad. TypeScript también mejora la colaboración, ya que el tipado fuerte hace que la base de código sea más comprensible. Ambos son la base de mi proceso de desarrollo y fundamentales para entregar aplicaciones limpias y escalables."
     },
     "two": {
-      "title": "Javascript & Typescript",
-      "description": "Lenguajes de programación utilizados en el desarrollo web para crear páginas web dinámicas e interactivas. JavaScript es un lenguaje de secuencias de comandos que te permite crear contenido de actualización dinámica, controlar multimedia, animar imágenes y prácticamente cualquier otra cosa, mientras que TypeScript es un superset de JavaScript con tipado estático, añadiendo tipado fuerte para una mayor fiabilidad del código."
+      "title": "Frameworks y Librerías de JavaScript",
+      "description": "Frameworks y librerías como React y React Native son esenciales en mi flujo de trabajo. Los utilizo para construir arquitecturas basadas en componentes que son escalables, reutilizables y fáciles de mantener. React me permite crear interfaces de usuario dinámicas con navegación fluida y gestión eficiente del estado, mientras que React Native me da la posibilidad de entregar soluciones móviles multiplataforma con los mismos principios. Aplico librerías como Redux, Axios o styled-components para simplificar tareas complejas, manejar datos de forma eficaz y garantizar consistencia en el diseño. Estas herramientas me permiten avanzar rápido sin sacrificar calidad, logrando productos funcionales y modernos."
     },
     "three": {
-      "title": "Diseño Responsivo",
-      "description": "Enfoque de diseño web que asegura que los sitios web se adapten y se muestren de manera efectiva en diferentes tamaños de pantalla y dispositivos, proporcionando una experiencia de usuario fluida."
+      "title": "HTML & CSS",
+      "description": "Aplico HTML y CSS para construir la base estructural y visual de las aplicaciones web. Me enfoco en escribir HTML semántico que mejora la accesibilidad y el SEO, manteniendo la estructura clara para su mantenimiento futuro. Con CSS diseño interfaces responsivas usando Flexbox y Grid, y aplico estilos consistentes que se ajustan a sistemas de diseño. También empleo características modernas como variables, transiciones y animaciones para enriquecer la experiencia. Al combinar estructura y diseño, garantizo que las interfaces no solo sean funcionales, sino también estéticamente atractivas, creando experiencias alineadas con las expectativas de clientes y usuarios."
     },
-
     "four": {
-      "title": "Control de Versiones/Git",
-      "description": "Un sistema para seguir los cambios en el código, gestionar el historial del proyecto y facilitar la colaboración entre desarrolladores. Git es una herramienta de control de versiones ampliamente utilizada en el desarrollo de software."
+      "title": "Diseño Responsivo",
+      "description": "En cada proyecto me aseguro de que las interfaces se adapten perfectamente a diferentes dispositivos y tamaños de pantalla. Uso media queries, diseños fluidos y recursos escalables para que las aplicaciones sean responsivas y amigables en móviles. Este enfoque garantiza que los productos luzcan y funcionen de forma consistente, ya sea en escritorio, tablet o smartphone. También priorizo la accesibilidad y usabilidad, asegurando que las interacciones se mantengan intuitivas en cualquier plataforma. Implementar diseño responsivo desde el inicio reduce retrabajo y entrega aplicaciones que se sienten naturales en cualquier dispositivo, algo clave en industrias como e-commerce y salud."
     },
     "five": {
-      "title": "Frameworks y Bibliotecas de JavaScript",
-      "description": "Librerías y herramientas preconstruidas que ofrecen una forma estructurada y eficiente de desarrollar aplicaciones web. Estos frameworks facilitan la creación de interfaces de usuario interactivas y simplifican tareas complejas en el desarrollo web. Por ejemplo, React, React Native, Vue."
+      "title": "Rendimiento Web",
+      "description": "Optimizar el rendimiento es una parte constante de mi flujo de trabajo. Minimizo tiempos de carga comprimiendo recursos, usando lazy loading y reduciendo renders innecesarios en React. También administro solicitudes de red de manera eficiente, aplico estrategias de caché y utilizo code-splitting para entregar solo lo necesario. Estas prácticas aseguran que las aplicaciones se mantengan rápidas y responsivas incluso en conexiones lentas. Mi enfoque en rendimiento no solo mejora la satisfacción del usuario, sino también el SEO y las tasas de retención. Combinando mejoras técnicas con monitoreo constante, garantizo experiencias fluidas, eficientes y escalables."
     },
     "six": {
-      "title": "Pruebas/Depuración",
-      "description": "Procesos y herramientas utilizados para evaluar la funcionalidad del código, identificar problemas y garantizar la fiabilidad del software. Las pruebas implican evaluar sistemáticamente el comportamiento del código, mientras que la depuración implica localizar y resolver errores o fallos en el código."
+      "title": "Control de Versiones / Git",
+      "description": "Uso Git a diario para gestionar el historial de proyectos, colaborar con compañeros y asegurar flujos de trabajo limpios y trazables. Creo y administro ramas para nuevas funciones, gestiono pull requests y resuelvo conflictos de manera que el código se mantenga organizado y mantenible. Git me permite experimentar sin riesgos, ya que siempre puedo revertir cambios o revisar versiones anteriores. También lo integro con plataformas como GitHub o GitLab para soportar revisiones de código y pipelines de integración continua. Este manejo me ayuda a trabajar en equipo de forma eficiente, mantener consistencia y contribuir a proyectos complejos con agilidad."
     },
     "seven": {
-      "title": "Herramientas de Desarrollo del Navegador",
-      "description": "Funcionalidades integradas en el navegador web que permiten a los desarrolladores inspeccionar, depurar y analizar páginas web y aplicaciones web en tiempo real. Estas herramientas ofrecen información valiosa sobre HTML, CSS y JavaScript, facilitando la resolución de problemas y la optimización."
+      "title": "Pruebas y Depuración",
+      "description": "Integro pruebas y depuración en mi rutina de desarrollo para garantizar estabilidad y confiabilidad. Utilizo frameworks como Jest y React Testing Library para validar funcionalidades con pruebas unitarias e integraciones. La depuración es una tarea diaria en la que identifico y corrijo errores lógicos, problemas de rendimiento o comportamientos inesperados usando herramientas del navegador y registros en consola. Al combinar ambas prácticas, detecto problemas temprano y entrego código con confianza. Este enfoque reduce riesgos en producción y asegura calidad a largo plazo. Las pruebas y la depuración son herramientas activas para mejorar continuamente mis aplicaciones."
     },
     "eight": {
-      "title": "Rendimiento Web",
-      "description": "Conjunto de técnicas y prácticas orientadas a mejorar la velocidad, eficiencia y experiencia general del usuario en sitios web y aplicaciones web. Esto implica optimizar los tiempos de carga de las páginas, reducir el consumo de recursos y mejorar la capacidad de respuesta."
+      "title": "APIs y Manejo de Datos",
+      "description": "La mayoría de las aplicaciones en las que trabajo dependen de datos, y utilizo APIs para conectar las interfaces con sistemas back-end. Trabajo con REST y GraphQL para obtener y manipular información, mostrando datos dinámicos de manera clara y eficiente. Manejo operaciones asíncronas con loaders, estados de error y reintentos cuando es necesario. La seguridad y el rendimiento son clave, por lo que valido entradas y optimizo solicitudes para evitar sobrecarga. Al integrar APIs de forma fluida, logro aplicaciones conectadas, seguras y confiables, que ofrecen experiencias en tiempo real y funcionalidad extendida mediante servicios externos."
     },
     "nine": {
-      "title": "Preprocesadores de CSS",
-      "description": "Técnica de mejora del flujo de trabajo que implica el uso de lenguajes preprocesadores como SASS o LESS para escribir CSS de manera más organizada y eficiente. Estos preprocesadores ofrecen características como variables, anidamiento y mixins, lo que facilita la gestión y el mantenimiento de hojas de estilo complejas."
+      "title": "Accesibilidad (A11y)",
+      "description": "La accesibilidad es una prioridad en mis proyectos, asegurando que las aplicaciones sean usables por todas las personas, incluidas aquellas con discapacidad. Aplico HTML semántico, roles ARIA y navegación por teclado para hacer interfaces más inclusivas. También cuido el contraste de colores, estados de foco y descripciones alternativas para cumplir con estándares como WCAG. Más allá de la normativa, entiendo la accesibilidad como una forma de mejorar la experiencia para todos los usuarios. Al integrarla en mi flujo de trabajo, construyo productos éticos, profesionales y alineados con las necesidades reales de audiencias diversas."
     },
     "ten": {
+      "title": "Herramientas de Desarrollador del Navegador",
+      "description": "Dependo de las herramientas de desarrollador del navegador para inspeccionar, depurar y optimizar aplicaciones en tiempo real. Me permiten analizar la estructura HTML, monitorear reglas CSS, rastrear solicitudes de red y medir métricas de rendimiento. Las utilizo para resolver problemas de diseño, revisar responsividad e identificar cuellos de botella en la ejecución de JavaScript. También me sirven para depurar estados complejos en React y validar llamadas a APIs. Este uso acelera mi flujo de trabajo, reduce errores y asegura precisión al resolver problemas. Son una parte indispensable de la entrega de aplicaciones pulidas y eficientes."
+    },
+    "eleven": {
+      "title": "Preprocesadores CSS",
+      "description": "Para mantener hojas de estilo limpias y escalables, uso preprocesadores como Sass. Me permiten organizar estilos con nesting, variables y mixins, lo que mejora la legibilidad y reduce duplicación. Aplico arquitecturas modulares para gestionar proyectos grandes y mantener consistencia entre componentes. Sass se integra con herramientas como Webpack, lo que agiliza procesos y automatiza tareas. Este enfoque estructurado ahorra tiempo en equipos y facilita cambios futuros sin romper estilos existentes. Al usar preprocesadores, entrego aplicaciones con estilos profesionales, bien organizados y listos para crecer de manera ordenada en el largo plazo."
+    },
+    "twelve": {
       "title": "Línea de Comandos",
-      "description": "Una interfaz basada en texto utilizada para interactuar con el sistema operativo de una computadora o software a través de comandos. Permite a los usuarios realizar una amplia gama de tareas, incluyendo gestión de archivos, instalación de software y automatización, utilizando comandos de texto en lugar de interfaces gráficas."
+      "description": "Uso la línea de comandos con frecuencia para agilizar mi flujo de trabajo y realizar tareas que serían más lentas en interfaces gráficas. Me permite navegar por sistemas de archivos, gestionar dependencias con npm o yarn, ejecutar scripts de compilación e interactuar con Git de forma más eficiente. También la utilizo para configurar entornos, ejecutar pruebas automatizadas y administrar servidores locales durante el desarrollo. La línea de comandos acelera tareas repetitivas mediante scripts y da un control más preciso sobre procesos clave. Integrarla en mi rutina aumenta mi productividad y mejora la calidad de mis entregas."
     }
   },
   "technologies": {
