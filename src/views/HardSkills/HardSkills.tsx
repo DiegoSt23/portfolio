@@ -140,7 +140,7 @@ export const HardSkills = () => {
       </div>
       <div
         ref={skillsContainerRef}
-        className='mx-auto flex flex-col gap-[300px] h-[50%] max-w-6xl items-center px-[1rem] pt-[0rem] pb-[6rem] p-5'
+        className='mx-auto flex flex-col gap-[300px] h-[50%] max-w-6xl items-center px-[1rem] pt-[0rem] pb-5 md:pb-[40px] p-5'
       >
         <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[40px] z-10`}>
           <MagicCard {...magicCardProps}>
