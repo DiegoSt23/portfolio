@@ -135,9 +135,9 @@ export const HardSkills = () => {
         {hardSkillsData.map(({ title, content }, index) => (
           <motion.div
             key={title}
-            className={`w-full flex items-center justify-center h-dvh sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-950 px-[1rem] border-t border-neutral-200 dark:border-neutral-800 overflow-hidden`}
+            className={`w-full flex items-center justify-center h-dvh sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-950 px-[1rem] border-t border-b border-neutral-200 dark:border-neutral-800 overflow-hidden`}
           >
-            <p className='absolute text-[40rem] md:text-[50rem] font-black top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 text-neutral-200 dark:text-muted'>
+            <p className='absolute text-[40rem] md:text-[80rem] font-black top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 text-neutral-200 dark:text-muted'>
               {index + 1}
             </p>
             <div className='max-w-2xl p-5 relative'>
