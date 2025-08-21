@@ -38,7 +38,6 @@ const App = () => {
       <Separator className='mt-6' />
       <About text={t('about.line2')} />
       <HardSkills />
-      <Separator className='mx-auto max-w-6xl' />
       <PersonalProjects />
       <Separator className='mx-auto max-w-6xl' />
       <GitHub />
