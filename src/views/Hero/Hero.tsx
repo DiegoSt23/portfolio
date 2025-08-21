@@ -33,7 +33,7 @@ export const Hero = () => {
     const titleColor = useTransform(
       scrollYProgress,
       [0.5, 0.7],
-      [theme === 'light' ? '#000' : '#fff', '#ff0000']
+      [theme === 'light' ? '#7b7a82' : '#7b7a82', '#ff0000']
     );
 
   const handleSwitchTheme = () => {
@@ -132,22 +132,22 @@ export const Hero = () => {
       <BlurIn
         word='Diego'
         className='font-black text-black dark:text-white'
-        style={{ y: titleVerticalParallax, color: titleColor }}
+        style={{ y: titleVerticalParallax }}
       />
       <BlurIn
         word='Front'
-        className='text-gray-400'
-        style={{ y: titleVerticalParallax }}
+        className='font-black text-gray-400'
+        style={{ y: titleVerticalParallax, color: titleColor }}
       />
       <BlurIn
         word='End'
-        className='text-gray-400'
-        style={{ y: titleVerticalParallax }}
+        className='font-black text-gray-400'
+        style={{ y: titleVerticalParallax, color: titleColor }}
       />
       <BlurIn
         word='Dev'
-        className='text-gray-400'
-        style={{ y: titleVerticalParallax }}
+        className='font-black text-gray-400'
+        style={{ y: titleVerticalParallax, color: titleColor }}
       />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
