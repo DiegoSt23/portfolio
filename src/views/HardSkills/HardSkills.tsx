@@ -8,18 +8,15 @@ import { SiJest, SiAxios } from 'react-icons/si';
 import { BsBrowserChrome, BsLightningChargeFill } from 'react-icons/bs';
 import { HiCommandLine } from 'react-icons/hi2';
 import { useParallax } from '@/helpers';
-import { MagicCard } from '@/components/magicui/magic-card';
 import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/context';
 
-const iconProps = { size: 20 };
+const iconProps = { size: 25 };
 
 export const HardSkills = () => {
   const titleContainerRef = useRef<HTMLDivElement>(null);
   const skillsContainerRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-  const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
     target: titleContainerRef,
     offset: ['start end', 'end start'],
@@ -48,13 +45,6 @@ export const HardSkills = () => {
     className:
       'z-10 whitespace-pre-wrap text-center text-6xl md:text-7xl font-bold tracking-tighter text-black dark:text-white select-none',
   };
-  const magicCardProps = {
-    className: 'w-full p-4 flex flex-col',
-    gradientColor: theme === 'dark' ? '#36393e' : '#dcdcdc',
-  };
-  const magicCardContentContainerClassName = 'flex justify-between items-start gap-4';
-  const magicCardTitleClassName = 'className="text-lg font-bold';
-  const magicCardDescriptionClassName = 'text-sm text-muted-foreground mt-4';
 
   const hardSkillsData = [
     {
@@ -140,164 +130,29 @@ export const HardSkills = () => {
       </div>
       <div
         ref={skillsContainerRef}
-        className='mx-auto flex flex-col gap-[300px] h-[50%] max-w-6xl items-center px-[1rem] pt-[0rem] pb-5 md:pb-[40px] p-5'
+        className='mx-auto flex flex-col w-full items-center'
       >
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[40px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[0].title}
-              </p>
-              {hardSkillsData[0].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[0].content}
+        {hardSkillsData.map(({ title, content }, index) => (
+          <motion.div
+            key={title}
+            className={`w-full flex items-center justify-center h-dvh sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-950 px-[1rem] border-t border-neutral-200 dark:border-neutral-800 overflow-hidden`}
+          >
+            <p className='absolute text-[40rem] md:text-[50rem] font-black top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 text-neutral-200 dark:text-muted'>
+              {index + 1}
             </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[80px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[1].title}
+            <div className='max-w-2xl p-5 relative'>
+              <div className='flex flex-col items-center'>
+                {/* {icon} */}
+                <p className='text-2xl font-semibold leading-none tracking-tight text-center'>
+                  {title}
+                </p>
+              </div>
+              <p className='text-sm md:text-lg dark:text-muted-foreground mt-6'>
+                {content}
               </p>
-              {hardSkillsData[1].icon}
             </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[1].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[120px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[2].title}
-              </p>
-              {hardSkillsData[2].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[2].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[160px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[3].title}
-              </p>
-              {hardSkillsData[3].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[3].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[200px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[4].title}
-              </p>
-              {hardSkillsData[4].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[4].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[240px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[5].title}
-              </p>
-              {hardSkillsData[5].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[5].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[280px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[6].title}
-              </p>
-              {hardSkillsData[6].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[6].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[320px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[7].title}
-              </p>
-              {hardSkillsData[7].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[7].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[360px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[8].title}
-              </p>
-              {hardSkillsData[8].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[8].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[400px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[9].title}
-              </p>
-              {hardSkillsData[9].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[9].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[440px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[10].title}
-              </p>
-              {hardSkillsData[10].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[10].content}
-            </p>
-          </MagicCard>
-        </motion.div>
-        <motion.div className={`w-full md:w-1/2 sticky top-5 md:top-[480px] z-10`}>
-          <MagicCard {...magicCardProps}>
-            <div className={magicCardContentContainerClassName}>
-              <p className={magicCardTitleClassName}>
-                {hardSkillsData[11].title}
-              </p>
-              {hardSkillsData[11].icon}
-            </div>
-            <p className={magicCardDescriptionClassName}>
-              {hardSkillsData[11].content}
-            </p>
-          </MagicCard>
-        </motion.div>
+          </motion.div>
+        ))}
       </div>
     </>
   );
