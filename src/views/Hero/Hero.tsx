@@ -136,7 +136,7 @@ export const Hero = () => {
       />
       <BlurIn
         word='Front'
-        className='text-gray-400'
+        className='font-black text-gray-400'
         style={{ y: titleVerticalParallax, color: titleColor }}
       />
       <BlurIn
